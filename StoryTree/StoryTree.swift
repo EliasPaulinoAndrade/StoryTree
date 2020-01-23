@@ -11,7 +11,7 @@ import Foundation
 class StoryTree {
     let title: String
     let description: String
-    var rootPassage: Passage
+    let rootPassage: Passage
     var currentPassage: Passage? {
         didSet {
             guard let currentPassage = self.currentPassage else {
@@ -48,7 +48,8 @@ protocol Passage: AnyObject {
 
 extension Passage {
     var asConditional: ConditionalPassage? {
-        return self as? ConditionalPassage
+        let condionalPassage = Self.findPassage(ofType: ConditionalPassage.self)
+        return self as? ConditionalPassage ?? condionalPassage
     }
     func add(action: String, toPassage passage: Passage) {
         passage.story = self.story
@@ -60,6 +61,12 @@ extension Passage {
             return
         }
         story?.currentPassage = passage
+    }
+    
+    private static func findPassage<PassageType>(ofType passageType: PassageType.Type) -> ConditionalPassage? {
+        
+        
+        return nil
     }
 }
 
@@ -112,5 +119,61 @@ class PassageWithImage: Passage {
         self.description = description
         self.imageURL = imageURL
         self.actions = actions
+    }
+}
+
+class PassageDecorator: Passage {
+    var description: String {
+        get {
+            return decoratedPassage.description
+        }
+    }
+    
+    var actions: [String : Passage] {
+        get {
+            return decoratedPassage.actions
+        } set {
+            decoratedPassage.actions = newValue
+        }
+    }
+    
+    var story: StoryTree? {
+        get {
+            return decoratedPassage.story
+        } set {
+            decoratedPassage.story = newValue
+        }
+    }
+    
+    var decoratedPassage: Passage
+    
+    init(_ passage: Passage) {
+        self.decoratedPassage = passage
+    }
+    
+    func goAhead(action: String) {
+        decoratedPassage.goAhead(action: action)
+    }
+    
+    func add(action: String, toPassage passage: Passage) {
+        decoratedPassage.add(action: action, toPassage: passage)
+    }
+}
+
+class ConditionalPassageDecorator: PassageDecorator, ConditionalPassage {
+    var passageCondition: ((Passage) -> Bool)? {
+        didSet {
+            
+        }
+    }
+    
+    override func goAhead(action: String) {
+        guard let passage = actions[action] else {
+            return
+        }
+        
+        if self.passageCondition?(passage) == true {
+            super.goAhead(action: action)
+        }
     }
 }

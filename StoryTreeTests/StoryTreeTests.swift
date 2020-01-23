@@ -39,150 +39,125 @@ class StoryTreeTests: XCTestCase {
     
     func test_storyWithNoActionsAndCallGoAhead_dontCallsCallback() {
         let sut = makeSUT()
-        var actionHappen = false
-        
-        sut.actionDidHappen = { passage in
-            actionHappen = true
-        }
+        let sutSpy = StoryTreeSpy(tree: sut)
         
         sut.goAhead(action: "south")
-        
-        XCTAssertTrue(!actionHappen)
+        XCTAssertTrue(sutSpy.historyIsEqual(to: []))
     }
     
     func test_storyWithOneActionAndCallGoAhead_callsCallback() {
         let sut = makeSUT()
         let southPassage = makeSouthPassage()
-        var calledPassage: Passage?
+        let sutSpy = StoryTreeSpy(tree: sut)
 
         sut.rootPassage.add(action: "south", toPassage: southPassage)
-        sut.actionDidHappen = { passage in
-            calledPassage = passage
-        }
-
         sut.goAhead(action: "south")
-
-        XCTAssertNotNil(calledPassage)
-        XCTAssertTrue(calledPassage === southPassage)
+        
+        XCTAssertTrue(sutSpy.historyIsEqual(to: [southPassage]))
     }
     
     func test_storyWithTwoActionsAndCallGoAhead_callsRightCallback() {
         let sut = makeSUT()
         let northPassage = makeNorthPassage()
-        var actionHappen = false
+        let sutSpy = StoryTreeSpy(tree: sut)
 
         sut.rootPassage.add(action: "south", toPassage: makeSouthPassage())
         sut.rootPassage.add(action: "north", toPassage: northPassage)
-
-        sut.actionDidHappen = { passage in
-            XCTAssertTrue(passage === northPassage)
-            actionHappen = true
-        }
-
         sut.goAhead(action: "north")
 
-        XCTAssertTrue(actionHappen)
+        XCTAssertTrue(sutSpy.historyIsEqual(to: [northPassage]))
     }
     
     func test_goAheadTwoTimes_callsCallbackTwoTimes() {
         let sut = makeSUT()
         let southPassage = makeSouthPassage()
         let northPassage = makeNorthPassage()
+        let sutSpy = StoryTreeSpy(tree: sut)
         
         sut.rootPassage.add(action: "south", toPassage: southPassage)
         southPassage.add(action: "north", toPassage: northPassage)
         
-        var traveledPassages: [Passage] = []
-        
-        sut.actionDidHappen = { passage in
-            traveledPassages.append(passage)
-            sut.goAhead(action: "north")
-        }
-    
         sut.goAhead(action: "south")
+        sut.goAhead(action: "north")
         
-        XCTAssertTrue(traveledPassages.first === southPassage)
-        XCTAssertTrue(traveledPassages[1] === northPassage)
+        XCTAssertTrue(sutSpy.historyIsEqual(to: [southPassage, northPassage]))
     }
     
     func test_goAheadThreeTimesWithTwoActions_callsCallbackTwoTimes() {
         let sut = makeSUT()
         let southPassage = makeSouthPassage()
         let northPassage = makeNorthPassage()
+        let sutSpy = StoryTreeSpy(tree: sut)
         
         sut.rootPassage.add(action: "south", toPassage: southPassage)
         southPassage.add(action: "north", toPassage: northPassage)
-        
-        var passagesCount = 0
-        sut.actionDidHappen = { _ in
-            passagesCount += 1
-        }
         
         sut.goAhead(action: "south")
         sut.goAhead(action: "north")
         sut.goAhead(action: "north")
         
-        XCTAssertTrue(passagesCount == 2)
+        XCTAssertTrue(sutSpy.historyIsEqual(to: [southPassage, northPassage]))
     }
     
     func test_storyWithOneActionAndCallGoAheadToWrongAction_dontCallsCallback() {
         let sut = makeSUT()
         let southPassage = makeSouthPassage()
-        var actionHappen = false
-
+        let sutSpy = StoryTreeSpy(tree: sut)
+        
         sut.rootPassage.add(action: "south", toPassage: southPassage)
-        sut.actionDidHappen = { passage in
-            XCTAssertTrue(passage === southPassage)
-            actionHappen = true
-        }
-
         sut.goAhead(action: "north")
-
-        XCTAssertTrue(!actionHappen)
+        
+        XCTAssertTrue(sutSpy.historyIsEqual(to: []))
     }
     
     func test_storyWithOneActionAndFailedInActionCondition_dontCallsCalback() {
         let sut = makeSUT(rootPassage: SimpleConditionalPassage(description: "tree", actions: [:]))
         let southPassage = makeSouthPassage()
-        var actionHappen = false
+        let sutSpy = StoryTreeSpy(tree: sut)
         
         sut.rootPassage.add(action: "south", toPassage: southPassage)
         sut.rootPassage.asConditional?.passageCondition = { passage in
             return false
         }
         
-        sut.actionDidHappen = { passage in
-            actionHappen = true
-        }
-        
         sut.goAhead(action: "south")
-        
-        XCTAssertTrue(!actionHappen)
+        XCTAssertTrue(sutSpy.historyIsEqual(to: []))
     }
     
     func test_storyWithOneActionAndSuceedInActionCondition_callsCallback() {
         let sut = makeSUT(rootPassage: SimpleConditionalPassage(description: "tree", actions: [:]))
         let southPassage = makeSouthPassage()
-        var actionHappen = false
-
+        let sutSpy = StoryTreeSpy(tree: sut)
+        
         sut.rootPassage.add(action: "south", toPassage: southPassage)
         sut.rootPassage.asConditional?.passageCondition = { passage in
            return true
         }
 
-        sut.actionDidHappen = { passage in
-           actionHappen = true
-        }
-
         sut.goAhead(action: "south")
 
-        XCTAssertTrue(actionHappen)
+        XCTAssertTrue(sutSpy.historyIsEqual(to: [southPassage]))
     }
     
-    
+    func test_storyWithOneActionAndFailedInActionConditionAndDecoratedPassage_dontCallsCalback() {
+        let sut = makeSUT(
+            rootPassage: ConditionalPassageDecorator(
+                SimplePassage(description: "south", actions: [:])
+            )
+        )
+        let sutSpy = StoryTreeSpy(tree: sut)
+                
+        sut.rootPassage.add(action: "south", toPassage: makeSouthPassage())
+        sut.rootPassage.asConditional?.passageCondition = { passage in
+            return false
+        }
+        
+        sut.goAhead(action: "south")
+        
+        XCTAssertTrue(sutSpy.historyIsEqual(to: []))
+    }
     
     // MARK: - Helpers
-
     func makeSUT(rootPassage: Passage = SimplePassage(description: "something happend", actions: [:])) -> StoryTree {
         return StoryTree(title: "tree", description: "description", rootPassage: rootPassage)
     }
@@ -193,5 +168,23 @@ class StoryTreeTests: XCTestCase {
     
     func makeNorthPassage() -> Passage {
         return SimplePassage(description: "you are at north", actions: [:])
+    }
+}
+
+class StoryTreeSpy {
+    var passagesHistory: [Passage] = []
+    init(tree: StoryTree) {
+        tree.actionDidHappen = { [weak self] passage in
+            self?.passagesHistory.append(passage)
+        }
+    }
+    
+    func historyIsEqual(to passages: [Passage]) -> Bool {
+        guard passages.count == passagesHistory.count else {
+            return false
+        }
+        return zip(passagesHistory, passages).allSatisfy { (passages) -> Bool in
+            passages.0 === passages.1
+        }
     }
 }
