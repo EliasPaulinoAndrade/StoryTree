@@ -74,34 +74,10 @@ protocol ConditionalPassage: Passage {
     var passageCondition: ((Passage) -> Bool)? { get set }
 }
 
-extension ConditionalPassage {
-    func goAhead(action: String) {
-        guard let passage = actions[action] else {
-            return
-        }
-        
-        if self.passageCondition?(passage) == true {
-            story?.currentPassage = passage
-        }
-    }
-}
-
 class SimplePassage: Passage {
     let description: String
     var actions: [String: Passage]
     var story: StoryTree?
-    
-    init(description: String, actions: [String: Passage]) {
-        self.description = description
-        self.actions = actions
-    }
-}
-
-class SimpleConditionalPassage: ConditionalPassage {
-    let description: String
-    var actions: [String: Passage]
-    var story: StoryTree?
-    var passageCondition: ((Passage) -> Bool)?
     
     init(description: String, actions: [String: Passage]) {
         self.description = description
