@@ -17,9 +17,11 @@ class StoryTreeTests: XCTestCase {
     
     func test_createStoryWithImagePassage_savesTheImage() {
         let rootPassage = PassageWithImage(
-            description: "something happend",
-            imageURL: URL(string: "fakeURL")!,
-            actions: [:]
+            SimplePassage(
+                description: "something happend",
+                actions: [:]
+            ),
+            withImageURL: URL(string: "fakeURL")!
         )
         let _ = makeSUT(rootPassage: rootPassage)
         

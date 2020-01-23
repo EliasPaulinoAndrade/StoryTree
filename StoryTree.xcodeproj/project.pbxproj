@@ -11,6 +11,12 @@
 		E3D66CF423D87DC40067D782 /* StoryTreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D66CF323D87DC40067D782 /* StoryTreeTests.swift */; };
 		E3D66CF623D87DC40067D782 /* StoryTree.h in Headers */ = {isa = PBXBuildFile; fileRef = E3D66CE823D87DC40067D782 /* StoryTree.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E3D66D0023D8811C0067D782 /* StoryTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D66CFF23D8811C0067D782 /* StoryTree.swift */; };
+		E3D66D0223D9D0320067D782 /* Passage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D66D0123D9D0320067D782 /* Passage.swift */; };
+		E3D66D0423D9D0550067D782 /* PassageDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D66D0323D9D0550067D782 /* PassageDecorator.swift */; };
+		E3D66D0623D9D0710067D782 /* SimplePassage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D66D0523D9D0710067D782 /* SimplePassage.swift */; };
+		E3D66D0923D9D0AA0067D782 /* ConditionalPassageDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D66D0823D9D0AA0067D782 /* ConditionalPassageDecorator.swift */; };
+		E3D66D0C23D9D0D30067D782 /* ConditionalPassage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D66D0B23D9D0D30067D782 /* ConditionalPassage.swift */; };
+		E3D66D0E23D9D0EF0067D782 /* PassageWithImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D66D0D23D9D0EF0067D782 /* PassageWithImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +37,12 @@
 		E3D66CF323D87DC40067D782 /* StoryTreeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryTreeTests.swift; sourceTree = "<group>"; };
 		E3D66CF523D87DC40067D782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3D66CFF23D8811C0067D782 /* StoryTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryTree.swift; sourceTree = "<group>"; };
+		E3D66D0123D9D0320067D782 /* Passage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Passage.swift; sourceTree = "<group>"; };
+		E3D66D0323D9D0550067D782 /* PassageDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassageDecorator.swift; sourceTree = "<group>"; };
+		E3D66D0523D9D0710067D782 /* SimplePassage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplePassage.swift; sourceTree = "<group>"; };
+		E3D66D0823D9D0AA0067D782 /* ConditionalPassageDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionalPassageDecorator.swift; sourceTree = "<group>"; };
+		E3D66D0B23D9D0D30067D782 /* ConditionalPassage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionalPassage.swift; sourceTree = "<group>"; };
+		E3D66D0D23D9D0EF0067D782 /* PassageWithImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassageWithImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +88,10 @@
 				E3D66CE823D87DC40067D782 /* StoryTree.h */,
 				E3D66CE923D87DC40067D782 /* Info.plist */,
 				E3D66CFF23D8811C0067D782 /* StoryTree.swift */,
+				E3D66D0323D9D0550067D782 /* PassageDecorator.swift */,
+				E3D66D0523D9D0710067D782 /* SimplePassage.swift */,
+				E3D66D0A23D9D0C20067D782 /* protocols */,
+				E3D66D0723D9D09B0067D782 /* decorators */,
 			);
 			path = StoryTree;
 			sourceTree = "<group>";
@@ -87,6 +103,24 @@
 				E3D66CF523D87DC40067D782 /* Info.plist */,
 			);
 			path = StoryTreeTests;
+			sourceTree = "<group>";
+		};
+		E3D66D0723D9D09B0067D782 /* decorators */ = {
+			isa = PBXGroup;
+			children = (
+				E3D66D0823D9D0AA0067D782 /* ConditionalPassageDecorator.swift */,
+				E3D66D0D23D9D0EF0067D782 /* PassageWithImage.swift */,
+			);
+			path = decorators;
+			sourceTree = "<group>";
+		};
+		E3D66D0A23D9D0C20067D782 /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+				E3D66D0123D9D0320067D782 /* Passage.swift */,
+				E3D66D0B23D9D0D30067D782 /* ConditionalPassage.swift */,
+			);
+			path = protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,7 +233,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3D66D0623D9D0710067D782 /* SimplePassage.swift in Sources */,
+				E3D66D0423D9D0550067D782 /* PassageDecorator.swift in Sources */,
+				E3D66D0923D9D0AA0067D782 /* ConditionalPassageDecorator.swift in Sources */,
+				E3D66D0C23D9D0D30067D782 /* ConditionalPassage.swift in Sources */,
+				E3D66D0223D9D0320067D782 /* Passage.swift in Sources */,
 				E3D66D0023D8811C0067D782 /* StoryTree.swift in Sources */,
+				E3D66D0E23D9D0EF0067D782 /* PassageWithImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
