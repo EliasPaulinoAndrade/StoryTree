@@ -38,9 +38,3 @@ class PassageTests: XCTestCase {
         XCTAssertEqual(callbackWasCalled, false)
     }
 }
-
-extension SimplePassage {
-    convenience init() {
-        self.init(description: "", actions: [:])
-    }
-}

@@ -162,21 +162,3 @@ class StoryTreeTests: XCTestCase {
         return SimplePassage(description: "you are at north", actions: [:])
     }
 }
-
-class StoryTreeSpy {
-    var passagesHistory: [Passage] = []
-    init(tree: StoryTree) {
-        tree.actionDidHappen = { [weak self] passage in
-            self?.passagesHistory.append(passage)
-        }
-    }
-    
-    func historyIsEqual(to passages: [Passage]) -> Bool {
-        guard passages.count == passagesHistory.count else {
-            return false
-        }
-        return zip(passagesHistory, passages).allSatisfy { (passages) -> Bool in
-            passages.0 === passages.1
-        }
-    }
-}

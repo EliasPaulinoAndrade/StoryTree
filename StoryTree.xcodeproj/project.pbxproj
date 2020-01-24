@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E32AE20023DB88A5006BB2C5 /* StoryTreeSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE1FF23DB88A5006BB2C5 /* StoryTreeSpy.swift */; };
+		E32AE20223DB88E5006BB2C5 /* PassageSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE20123DB88E5006BB2C5 /* PassageSpy.swift */; };
+		E32AE20523DB891A006BB2C5 /* PassageProtocolsAndDecoratorsMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE20423DB891A006BB2C5 /* PassageProtocolsAndDecoratorsMocks.swift */; };
+		E32AE20723DB8949006BB2C5 /* DecoratorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE20623DB8949006BB2C5 /* DecoratorMock.swift */; };
+		E32AE20A23DB8984006BB2C5 /* Passage+setAttributtesForTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE20923DB8984006BB2C5 /* Passage+setAttributtesForTests.swift */; };
+		E32AE20C23DB89CA006BB2C5 /* SimplePassage+init.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE20B23DB89CA006BB2C5 /* SimplePassage+init.swift */; };
 		E3D66CEF23D87DC40067D782 /* StoryTree.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3D66CE523D87DC40067D782 /* StoryTree.framework */; };
 		E3D66CF423D87DC40067D782 /* StoryTreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D66CF323D87DC40067D782 /* StoryTreeTests.swift */; };
 		E3D66CF623D87DC40067D782 /* StoryTree.h in Headers */ = {isa = PBXBuildFile; fileRef = E3D66CE823D87DC40067D782 /* StoryTree.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -32,6 +38,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E32AE1FF23DB88A5006BB2C5 /* StoryTreeSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryTreeSpy.swift; sourceTree = "<group>"; };
+		E32AE20123DB88E5006BB2C5 /* PassageSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassageSpy.swift; sourceTree = "<group>"; };
+		E32AE20423DB891A006BB2C5 /* PassageProtocolsAndDecoratorsMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassageProtocolsAndDecoratorsMocks.swift; sourceTree = "<group>"; };
+		E32AE20623DB8949006BB2C5 /* DecoratorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecoratorMock.swift; sourceTree = "<group>"; };
+		E32AE20923DB8984006BB2C5 /* Passage+setAttributtesForTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Passage+setAttributtesForTests.swift"; sourceTree = "<group>"; };
+		E32AE20B23DB89CA006BB2C5 /* SimplePassage+init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SimplePassage+init.swift"; sourceTree = "<group>"; };
 		E3D66CE523D87DC40067D782 /* StoryTree.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StoryTree.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3D66CE823D87DC40067D782 /* StoryTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StoryTree.h; sourceTree = "<group>"; };
 		E3D66CE923D87DC40067D782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -68,6 +80,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E32AE1FE23DB8893006BB2C5 /* spys */ = {
+			isa = PBXGroup;
+			children = (
+				E32AE1FF23DB88A5006BB2C5 /* StoryTreeSpy.swift */,
+				E32AE20123DB88E5006BB2C5 /* PassageSpy.swift */,
+			);
+			path = spys;
+			sourceTree = "<group>";
+		};
+		E32AE20323DB8910006BB2C5 /* mocks */ = {
+			isa = PBXGroup;
+			children = (
+				E32AE20423DB891A006BB2C5 /* PassageProtocolsAndDecoratorsMocks.swift */,
+				E32AE20623DB8949006BB2C5 /* DecoratorMock.swift */,
+			);
+			path = mocks;
+			sourceTree = "<group>";
+		};
+		E32AE20823DB896F006BB2C5 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				E32AE20923DB8984006BB2C5 /* Passage+setAttributtesForTests.swift */,
+				E32AE20B23DB89CA006BB2C5 /* SimplePassage+init.swift */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		E32AE20D23DB89EA006BB2C5 /* tests */ = {
+			isa = PBXGroup;
+			children = (
+				E3D66D0F23D9D1E50067D782 /* PassageDecoratorTests.swift */,
+				E3D66D1123D9D7520067D782 /* PassageTests.swift */,
+				E3D66CF323D87DC40067D782 /* StoryTreeTests.swift */,
+			);
+			path = tests;
+			sourceTree = "<group>";
+		};
 		E3D66CDB23D87DC40067D782 = {
 			isa = PBXGroup;
 			children = (
@@ -103,10 +152,11 @@
 		E3D66CF223D87DC40067D782 /* StoryTreeTests */ = {
 			isa = PBXGroup;
 			children = (
-				E3D66CF323D87DC40067D782 /* StoryTreeTests.swift */,
-				E3D66D0F23D9D1E50067D782 /* PassageDecoratorTests.swift */,
+				E32AE20D23DB89EA006BB2C5 /* tests */,
+				E32AE20823DB896F006BB2C5 /* utils */,
+				E32AE20323DB8910006BB2C5 /* mocks */,
+				E32AE1FE23DB8893006BB2C5 /* spys */,
 				E3D66CF523D87DC40067D782 /* Info.plist */,
-				E3D66D1123D9D7520067D782 /* PassageTests.swift */,
 			);
 			path = StoryTreeTests;
 			sourceTree = "<group>";
@@ -253,9 +303,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E32AE20723DB8949006BB2C5 /* DecoratorMock.swift in Sources */,
+				E32AE20523DB891A006BB2C5 /* PassageProtocolsAndDecoratorsMocks.swift in Sources */,
 				E3D66D1023D9D1E50067D782 /* PassageDecoratorTests.swift in Sources */,
+				E32AE20223DB88E5006BB2C5 /* PassageSpy.swift in Sources */,
 				E3D66D1223D9D7520067D782 /* PassageTests.swift in Sources */,
+				E32AE20C23DB89CA006BB2C5 /* SimplePassage+init.swift in Sources */,
+				E32AE20023DB88A5006BB2C5 /* StoryTreeSpy.swift in Sources */,
 				E3D66CF423D87DC40067D782 /* StoryTreeTests.swift in Sources */,
+				E32AE20A23DB8984006BB2C5 /* Passage+setAttributtesForTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
