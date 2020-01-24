@@ -9,7 +9,7 @@
 import Foundation
 @testable import StoryTree
 
-protocol MockPassageProtocol { }
-protocol MockPassageProtocol2 { }
+protocol MockPassageProtocol: Passage { }
+protocol MockPassageProtocol2: Passage { }
 class DecoratorMockImplementingProtocol: PassageDecorator, MockPassageProtocol { }
 class DecoratorMockImplementingProtocol2: PassageDecorator, MockPassageProtocol2 { }

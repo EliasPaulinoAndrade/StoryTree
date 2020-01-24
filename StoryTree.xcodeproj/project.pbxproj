@@ -117,6 +117,17 @@
 			path = tests;
 			sourceTree = "<group>";
 		};
+		E32AE20E23DB99D6006BB2C5 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				E3D66CFF23D8811C0067D782 /* StoryTree.swift */,
+				E3D66D0323D9D0550067D782 /* PassageDecorator.swift */,
+				E3D66D0523D9D0710067D782 /* SimplePassage.swift */,
+				E3D66D0723D9D09B0067D782 /* decorators */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
 		E3D66CDB23D87DC40067D782 = {
 			isa = PBXGroup;
 			children = (
@@ -140,11 +151,8 @@
 			children = (
 				E3D66CE823D87DC40067D782 /* StoryTree.h */,
 				E3D66CE923D87DC40067D782 /* Info.plist */,
-				E3D66CFF23D8811C0067D782 /* StoryTree.swift */,
-				E3D66D0323D9D0550067D782 /* PassageDecorator.swift */,
-				E3D66D0523D9D0710067D782 /* SimplePassage.swift */,
+				E32AE20E23DB99D6006BB2C5 /* models */,
 				E3D66D0A23D9D0C20067D782 /* protocols */,
-				E3D66D0723D9D09B0067D782 /* decorators */,
 			);
 			path = StoryTree;
 			sourceTree = "<group>";

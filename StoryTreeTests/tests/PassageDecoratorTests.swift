@@ -41,14 +41,14 @@ class PassageDecoratorTests: XCTestCase {
         XCTAssertEqual(decoretedSut.description, "testDescription")
     }
     
-    func test_findDecoratorWithOneDecorator_returnsTheCorrectDecorator() {
+    func test_findDecoratorWithOneDecoratorUsingProtocols_returnsTheCorrectDecorator() {
         let passage = SimplePassage()
         let sut = DecoratorMockImplementingProtocol(passage)
             
         XCTAssertNotNil(sut.findPassageDecorator(ofType: MockPassageProtocol.self))
     }
     
-    func test_findDecoratorWithTwoDecorator_returnsTheCorrectDecorators() {
+    func test_findDecoratorWithTwoDecoratorsUsingProtocols_returnsTheCorrectDecorators() {
         let passage = SimplePassage()
         let decoratedSut = DecoratorMockImplementingProtocol(passage)
         let sut = DecoratorMockImplementingProtocol2(decoratedSut)
@@ -62,5 +62,29 @@ class PassageDecoratorTests: XCTestCase {
         XCTAssertNil(passage.findPassageDecorator(ofType: MockPassageProtocol2.self))
         XCTAssertNil(passage.findPassageDecorator(ofType: MockPassageProtocol.self))
     }
+    
+    func test_findDecoratorUsingClassType_returnsTheCorrectDecorator() {
+        let passage = SimplePassage()
+        let sut: Passage = PassageWithImage(passage, withImageURL: URL(string: "fakeURL")!)
+        
+        XCTAssertNotNil(sut.findPassageDecorator(ofType: PassageWithImage.self))
+    }
+    
+    func test_findDecoratorUsingClassAndProtocolTypes_returnsTheCorrectDecorators() {
+        let passage = SimplePassage()
+        let decoratedSut: Passage = PassageWithImage(passage, withImageURL: URL(string: "fakeURL")!)
+        let sut: Passage = DecoratorMockImplementingProtocol(decoratedSut)
+        
+        XCTAssertNotNil(sut.findPassageDecorator(ofType: PassageWithImage.self))
+        XCTAssertNotNil(sut.findPassageDecorator(ofType: MockPassageProtocol.self))
+    }
+    
+    func test_findDecoratorOfRepeatedType_returnsTheFirstInstance() {
+        let passage = SimplePassage()
+        let decoratedSut: Passage = DecoratorMockImplementingProtocol(passage)
+        let sut: Passage = DecoratorMockImplementingProtocol(decoratedSut)
+        
+        let foundPassage = sut.findPassageDecorator(ofType: MockPassageProtocol.self)
+        XCTAssertTrue(foundPassage === sut)
+    }
 }
-
