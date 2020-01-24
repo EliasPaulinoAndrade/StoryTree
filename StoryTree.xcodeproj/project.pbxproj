@@ -17,6 +17,8 @@
 		E3D66D0923D9D0AA0067D782 /* ConditionalPassageDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D66D0823D9D0AA0067D782 /* ConditionalPassageDecorator.swift */; };
 		E3D66D0C23D9D0D30067D782 /* ConditionalPassage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D66D0B23D9D0D30067D782 /* ConditionalPassage.swift */; };
 		E3D66D0E23D9D0EF0067D782 /* PassageWithImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D66D0D23D9D0EF0067D782 /* PassageWithImage.swift */; };
+		E3D66D1023D9D1E50067D782 /* PassageDecoratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D66D0F23D9D1E50067D782 /* PassageDecoratorTests.swift */; };
+		E3D66D1223D9D7520067D782 /* PassageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D66D1123D9D7520067D782 /* PassageTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,8 @@
 		E3D66D0823D9D0AA0067D782 /* ConditionalPassageDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionalPassageDecorator.swift; sourceTree = "<group>"; };
 		E3D66D0B23D9D0D30067D782 /* ConditionalPassage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionalPassage.swift; sourceTree = "<group>"; };
 		E3D66D0D23D9D0EF0067D782 /* PassageWithImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassageWithImage.swift; sourceTree = "<group>"; };
+		E3D66D0F23D9D1E50067D782 /* PassageDecoratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassageDecoratorTests.swift; sourceTree = "<group>"; };
+		E3D66D1123D9D7520067D782 /* PassageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassageTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +104,9 @@
 			isa = PBXGroup;
 			children = (
 				E3D66CF323D87DC40067D782 /* StoryTreeTests.swift */,
+				E3D66D0F23D9D1E50067D782 /* PassageDecoratorTests.swift */,
 				E3D66CF523D87DC40067D782 /* Info.plist */,
+				E3D66D1123D9D7520067D782 /* PassageTests.swift */,
 			);
 			path = StoryTreeTests;
 			sourceTree = "<group>";
@@ -247,6 +253,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3D66D1023D9D1E50067D782 /* PassageDecoratorTests.swift in Sources */,
+				E3D66D1223D9D7520067D782 /* PassageTests.swift in Sources */,
 				E3D66CF423D87DC40067D782 /* StoryTreeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

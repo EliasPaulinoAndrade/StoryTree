@@ -19,24 +19,38 @@ protocol Passage: AnyObject {
 
 extension Passage {
     var asConditional: ConditionalPassage? {
-        let condionalPassage = Self.findPassage(ofType: ConditionalPassage.self)
-        return self as? ConditionalPassage ?? condionalPassage
+        return findPassageDecorator(ofType: ConditionalPassage.self)
     }
+    
     func add(action: String, toPassage passage: Passage) {
         passage.story = self.story
         actions[action] = passage
     }
     
-    func goAhead(action: String) {
+    func findPassage(forAction action: String, didFindCompletion: (Passage) -> Void ) {
         guard let passage = actions[action] else {
             return
         }
-        story?.currentPassage = passage
+        
+        didFindCompletion(passage)
     }
     
-    private static func findPassage<PassageType>(ofType passageType: PassageType.Type) -> ConditionalPassage? {
-        
-        
+    func goAhead(action: String) {
+        findPassage(forAction: action) { passage in
+            story?.currentPassage = passage
+        }
+    }
+    
+    func findPassageDecorator<PassageType>(ofType passageType: PassageType.Type) -> PassageType? {
+        var currentDecorator: PassageDecorator? = self as? PassageDecorator
+        while(currentDecorator != nil) {
+            if let currentDecoratorAsType = currentDecorator as? PassageType {
+                return currentDecoratorAsType
+            }
+           
+            currentDecorator = currentDecorator?.decoratedPassage as? PassageDecorator
+        }
+
         return nil
     }
 }

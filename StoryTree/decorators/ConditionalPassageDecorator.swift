@@ -12,12 +12,10 @@ class ConditionalPassageDecorator: PassageDecorator, ConditionalPassage {
     var passageCondition: ((Passage) -> Bool)?
     
     override func goAhead(action: String) {
-        guard let passage = actions[action] else {
-            return
-        }
-        
-        if self.passageCondition?(passage) == true {
-            super.goAhead(action: action)
+        findPassage(forAction: action) { (passage) in
+            if self.passageCondition?(passage) == true {
+                super.goAhead(action: action)
+            }
         }
     }
 }

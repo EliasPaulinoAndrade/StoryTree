@@ -130,6 +130,25 @@ class StoryTreeTests: XCTestCase {
         XCTAssertTrue(sutSpy.historyIsEqual(to: []))
     }
     
+    func test_storyWithOneActionAndSuceedInActionConditionAndDecoratedPassage_callsCalback() {
+        let sut = makeSUT(
+            rootPassage: ConditionalPassageDecorator(
+                SimplePassage(description: "south", actions: [:])
+            )
+        )
+        let southPassage = makeSouthPassage()
+        let sutSpy = StoryTreeSpy(tree: sut)
+                
+        sut.rootPassage.add(action: "south", toPassage: southPassage)
+        sut.rootPassage.asConditional?.passageCondition = { passage in
+            return true
+        }
+        
+        sut.goAhead(action: "south")
+        
+        XCTAssertTrue(sutSpy.historyIsEqual(to: [southPassage]))
+    }
+    
     // MARK: - Helpers
     func makeSUT(rootPassage: Passage = SimplePassage(description: "something happend", actions: [:])) -> StoryTree {
         return StoryTree(title: "tree", description: "description", rootPassage: rootPassage)

@@ -12,11 +12,8 @@ class StoryTree {
     let title: String
     let description: String
     let rootPassage: Passage
-    var currentPassage: Passage? {
+    var currentPassage: Passage! {
         didSet {
-            guard let currentPassage = self.currentPassage else {
-                return
-            }
             self.actionDidHappen?(currentPassage)
         }
     }
