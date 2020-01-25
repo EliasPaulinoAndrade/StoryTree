@@ -15,19 +15,6 @@ class StoryTreeTests: XCTestCase {
         XCTAssert(sut.rootPassage.actions.isEmpty)
     }
     
-    func test_createStoryWithImagePassage_savesTheImage() {
-        let rootPassage = PassageWithImage(
-            SimplePassage(
-                description: "something happend",
-                actions: [:]
-            ),
-            withImageURL: URL(string: "fakeURL")!
-        )
-        let _ = makeSUT(rootPassage: rootPassage)
-        
-        XCTAssertTrue(rootPassage.imageURL.absoluteString == "fakeURL")
-    }
-    
     func test_addActionToPassage_addsPassageNodeToActions() {
         let sut = makeSUT()
         let southPassage = makeSouthPassage()
