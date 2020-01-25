@@ -37,8 +37,7 @@ story.foreachAction { passage in
     print("-----------------------------------------")
     
     if !passage.actions.isEmpty {
-        let userInputAction = findValidUserInput(forActions: Array(passage.actions.keys))
-        passage.goAhead(action: userInputAction)
+        passage.goAhead(action: findValidUserInput(forActions: Array(passage.actions.keys)))
     }
 }
 

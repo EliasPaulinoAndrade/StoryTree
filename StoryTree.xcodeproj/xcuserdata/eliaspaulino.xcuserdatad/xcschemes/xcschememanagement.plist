@@ -14,6 +14,11 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>StoryTreeiOS.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -23,6 +28,21 @@
 			<true/>
 		</dict>
 		<key>E32AE23323DC60ED006BB2C5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E32AE24923DCB2F4006BB2C5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E32AE25E23DCB2F9006BB2C5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E32AE26923DCB2FA006BB2C5</key>
 		<dict>
 			<key>primary</key>
 			<true/>

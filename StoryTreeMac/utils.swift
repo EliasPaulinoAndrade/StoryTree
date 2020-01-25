@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import StoryTree
 
 func formattedPassage(_ passage: Passage) -> String {
     if let passageWithSections = passage.asPassageWithExtraSections {
