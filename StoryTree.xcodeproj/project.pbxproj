@@ -19,8 +19,6 @@
 		E32AE22723DBDC66006BB2C5 /* Choice.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE22623DBDC66006BB2C5 /* Choice.swift */; };
 		E32AE22923DBDE58006BB2C5 /* InitializablePassage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE22823DBDE58006BB2C5 /* InitializablePassage.swift */; };
 		E32AE22D23DBDF9E006BB2C5 /* PassageWithImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE22C23DBDF9E006BB2C5 /* PassageWithImageTests.swift */; };
-		E32AE22F23DBE419006BB2C5 /* StoryRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE22E23DBE419006BB2C5 /* StoryRunner.swift */; };
-		E32AE23723DC60ED006BB2C5 /* StoryTreeMacTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE23623DC60ED006BB2C5 /* StoryTreeMacTests.swift */; };
 		E32AE23F23DC73B4006BB2C5 /* SimplePassageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE23E23DC73B4006BB2C5 /* SimplePassageTests.swift */; };
 		E3D66CEF23D87DC40067D782 /* StoryTree.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3D66CE523D87DC40067D782 /* StoryTree.framework */; };
 		E3D66CF423D87DC40067D782 /* StoryTreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D66CF323D87DC40067D782 /* StoryTreeTests.swift */; };
@@ -37,13 +35,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		E32AE23C23DC6501006BB2C5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E3D66CDC23D87DC40067D782 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E32AE21623DBC9A3006BB2C5;
-			remoteInfo = StoryTreeMac;
-		};
 		E3D66CF023D87DC40067D782 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E3D66CDC23D87DC40067D782 /* Project object */;
@@ -79,10 +70,6 @@
 		E32AE22623DBDC66006BB2C5 /* Choice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Choice.swift; sourceTree = "<group>"; };
 		E32AE22823DBDE58006BB2C5 /* InitializablePassage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitializablePassage.swift; sourceTree = "<group>"; };
 		E32AE22C23DBDF9E006BB2C5 /* PassageWithImageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassageWithImageTests.swift; sourceTree = "<group>"; };
-		E32AE22E23DBE419006BB2C5 /* StoryRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryRunner.swift; sourceTree = "<group>"; };
-		E32AE23423DC60ED006BB2C5 /* StoryTreeMacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StoryTreeMacTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E32AE23623DC60ED006BB2C5 /* StoryTreeMacTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryTreeMacTests.swift; sourceTree = "<group>"; };
-		E32AE23823DC60ED006BB2C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E32AE23E23DC73B4006BB2C5 /* SimplePassageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplePassageTests.swift; sourceTree = "<group>"; };
 		E3D66CE523D87DC40067D782 /* StoryTree.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StoryTree.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3D66CE823D87DC40067D782 /* StoryTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StoryTree.h; sourceTree = "<group>"; };
@@ -103,13 +90,6 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		E32AE21423DBC9A3006BB2C5 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E32AE23123DC60ED006BB2C5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -191,18 +171,8 @@
 			isa = PBXGroup;
 			children = (
 				E32AE21923DBC9A3006BB2C5 /* main.swift */,
-				E32AE22E23DBE419006BB2C5 /* StoryRunner.swift */,
 			);
 			path = StoryTreeMac;
-			sourceTree = "<group>";
-		};
-		E32AE23523DC60ED006BB2C5 /* StoryTreeMacTests */ = {
-			isa = PBXGroup;
-			children = (
-				E32AE23623DC60ED006BB2C5 /* StoryTreeMacTests.swift */,
-				E32AE23823DC60ED006BB2C5 /* Info.plist */,
-			);
-			path = StoryTreeMacTests;
 			sourceTree = "<group>";
 		};
 		E3D66CDB23D87DC40067D782 = {
@@ -211,7 +181,6 @@
 				E3D66CE723D87DC40067D782 /* StoryTree */,
 				E3D66CF223D87DC40067D782 /* StoryTreeTests */,
 				E32AE21823DBC9A3006BB2C5 /* StoryTreeMac */,
-				E32AE23523DC60ED006BB2C5 /* StoryTreeMacTests */,
 				E3D66CE623D87DC40067D782 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -222,7 +191,6 @@
 				E3D66CE523D87DC40067D782 /* StoryTree.framework */,
 				E3D66CEE23D87DC40067D782 /* StoryTreeTests.xctest */,
 				E32AE21723DBC9A3006BB2C5 /* StoryTreeMac */,
-				E32AE23423DC60ED006BB2C5 /* StoryTreeMacTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -300,24 +268,6 @@
 			productReference = E32AE21723DBC9A3006BB2C5 /* StoryTreeMac */;
 			productType = "com.apple.product-type.tool";
 		};
-		E32AE23323DC60ED006BB2C5 /* StoryTreeMacTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E32AE23923DC60ED006BB2C5 /* Build configuration list for PBXNativeTarget "StoryTreeMacTests" */;
-			buildPhases = (
-				E32AE23023DC60ED006BB2C5 /* Sources */,
-				E32AE23123DC60ED006BB2C5 /* Frameworks */,
-				E32AE23223DC60ED006BB2C5 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E32AE23D23DC6501006BB2C5 /* PBXTargetDependency */,
-			);
-			name = StoryTreeMacTests;
-			productName = StoryTreeMacTests;
-			productReference = E32AE23423DC60ED006BB2C5 /* StoryTreeMacTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		E3D66CE423D87DC40067D782 /* StoryTree */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E3D66CF923D87DC40067D782 /* Build configuration list for PBXNativeTarget "StoryTree" */;
@@ -367,9 +317,6 @@
 					E32AE21623DBC9A3006BB2C5 = {
 						CreatedOnToolsVersion = 11.3;
 					};
-					E32AE23323DC60ED006BB2C5 = {
-						CreatedOnToolsVersion = 11.3;
-					};
 					E3D66CE423D87DC40067D782 = {
 						CreatedOnToolsVersion = 11.3;
 						LastSwiftMigration = 1130;
@@ -395,19 +342,11 @@
 				E3D66CE423D87DC40067D782 /* StoryTree */,
 				E3D66CED23D87DC40067D782 /* StoryTreeTests */,
 				E32AE21623DBC9A3006BB2C5 /* StoryTreeMac */,
-				E32AE23323DC60ED006BB2C5 /* StoryTreeMacTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		E32AE23223DC60ED006BB2C5 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		E3D66CE323D87DC40067D782 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -430,15 +369,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E32AE21A23DBC9A3006BB2C5 /* main.swift in Sources */,
-				E32AE22F23DBE419006BB2C5 /* StoryRunner.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E32AE23023DC60ED006BB2C5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E32AE23723DC60ED006BB2C5 /* StoryTreeMacTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,11 +411,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		E32AE23D23DC6501006BB2C5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E32AE21623DBC9A3006BB2C5 /* StoryTreeMac */;
-			targetProxy = E32AE23C23DC6501006BB2C5 /* PBXContainerItemProxy */;
-		};
 		E3D66CF123D87DC40067D782 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E3D66CE423D87DC40067D782 /* StoryTree */;
@@ -511,42 +436,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z8P97P3QB4;
 				ENABLE_HARDENED_RUNTIME = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
-		E32AE23A23DC60ED006BB2C5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = Z8P97P3QB4;
-				INFOPLIST_FILE = StoryTreeMacTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zombiechallenge.StoryTreeMacTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		E32AE23B23DC60ED006BB2C5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = Z8P97P3QB4;
-				INFOPLIST_FILE = StoryTreeMacTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zombiechallenge.StoryTreeMacTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -768,15 +657,6 @@
 			buildConfigurations = (
 				E32AE21C23DBC9A3006BB2C5 /* Debug */,
 				E32AE21D23DBC9A3006BB2C5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E32AE23923DC60ED006BB2C5 /* Build configuration list for PBXNativeTarget "StoryTreeMacTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E32AE23A23DC60ED006BB2C5 /* Debug */,
-				E32AE23B23DC60ED006BB2C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
