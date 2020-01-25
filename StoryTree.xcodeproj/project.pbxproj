@@ -29,6 +29,31 @@
 		E32AE26F23DCB2FA006BB2C5 /* StoryTreeiOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE26E23DCB2FA006BB2C5 /* StoryTreeiOSUITests.swift */; };
 		E32AE27B23DCBC0D006BB2C5 /* BallonViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE27A23DCBC0D006BB2C5 /* BallonViewTests.swift */; };
 		E32AE27E23DCBDE1006BB2C5 /* BallonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE27D23DCBDE1006BB2C5 /* BallonView.swift */; };
+		E32AE2D123DCC2BD006BB2C5 /* Twiner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E32AE2C823DCC2BD006BB2C5 /* Twiner.framework */; };
+		E32AE2D623DCC2BD006BB2C5 /* TwinerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE2D523DCC2BD006BB2C5 /* TwinerTests.swift */; };
+		E32AE2D823DCC2BD006BB2C5 /* Twiner.h in Headers */ = {isa = PBXBuildFile; fileRef = E32AE2CA23DCC2BD006BB2C5 /* Twiner.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E32AE30C23DCC44B006BB2C5 /* ConstraintOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE30923DCC443006BB2C5 /* ConstraintOperation.swift */; };
+		E32AE30D23DCC44B006BB2C5 /* DefaultLayoutPropertyProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE30B23DCC443006BB2C5 /* DefaultLayoutPropertyProxy.swift */; };
+		E32AE30E23DCC44B006BB2C5 /* LayoutPropertyGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE30A23DCC443006BB2C5 /* LayoutPropertyGroup.swift */; };
+		E32AE30F23DCC44B006BB2C5 /* LayoutPropertyProxyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE30723DCC443006BB2C5 /* LayoutPropertyProxyType.swift */; };
+		E32AE31023DCC44B006BB2C5 /* LayoutProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE30823DCC443006BB2C5 /* LayoutProxy.swift */; };
+		E32AE31323DCC460006BB2C5 /* Anchorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE31123DCC45D006BB2C5 /* Anchorable.swift */; };
+		E32AE31423DCC460006BB2C5 /* LayoutPropertyProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE31223DCC45E006BB2C5 /* LayoutPropertyProxy.swift */; };
+		E32AE31A23DCC474006BB2C5 /* LayoutPropertyProxy+constraintMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE31723DCC471006BB2C5 /* LayoutPropertyProxy+constraintMethods.swift */; };
+		E32AE31B23DCC474006BB2C5 /* LayoutPropertyProxy+dimensionConstraintMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE31623DCC471006BB2C5 /* LayoutPropertyProxy+dimensionConstraintMethods.swift */; };
+		E32AE31C23DCC474006BB2C5 /* LayoutProxy+constraintsFillMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE31823DCC471006BB2C5 /* LayoutProxy+constraintsFillMethods.swift */; };
+		E32AE31D23DCC474006BB2C5 /* UIViewAndUILayoutGuide+layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE31923DCC471006BB2C5 /* UIViewAndUILayoutGuide+layout.swift */; };
+		E32AE31F23DCC495006BB2C5 /* BuilderBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE31E23DCC495006BB2C5 /* BuilderBlock.swift */; };
+		E32AE32123DCC748006BB2C5 /* ViewCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE32023DCC748006BB2C5 /* ViewCodable.swift */; };
+		E32AE32323DCC848006BB2C5 /* ChatViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE32223DCC848006BB2C5 /* ChatViewTests.swift */; };
+		E32AE32523DCCD63006BB2C5 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE32423DCCD63006BB2C5 /* ChatView.swift */; };
+		E32AE32723DCE7E5006BB2C5 /* UITableView+dequeueReusableCell+registerReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE32623DCE7E5006BB2C5 /* UITableView+dequeueReusableCell+registerReusableCell.swift */; };
+		E32AE32B23DCEBE3006BB2C5 /* BallonViewMockZib.xib in Resources */ = {isa = PBXBuildFile; fileRef = E32AE32A23DCEBE3006BB2C5 /* BallonViewMockZib.xib */; };
+		E32AE32D23DCEECE006BB2C5 /* ifIsSafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE32C23DCEECE006BB2C5 /* ifIsSafe.swift */; };
+		E32AE32F23DCEF02006BB2C5 /* IfIsSafeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE32E23DCEF02006BB2C5 /* IfIsSafeTests.swift */; };
+		E32AE33123DCF2EA006BB2C5 /* UITableViewDequeueAndRegisterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE33023DCF2EA006BB2C5 /* UITableViewDequeueAndRegisterTests.swift */; };
+		E32AE33923DCF610006BB2C5 /* PassageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE33823DCF610006BB2C5 /* PassageViewModel.swift */; };
+		E32AE33B23DCF628006BB2C5 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE33A23DCF628006BB2C5 /* ChatViewModel.swift */; };
 		E3D66CEF23D87DC40067D782 /* StoryTree.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3D66CE523D87DC40067D782 /* StoryTree.framework */; };
 		E3D66CF423D87DC40067D782 /* StoryTreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D66CF323D87DC40067D782 /* StoryTreeTests.swift */; };
 		E3D66CF623D87DC40067D782 /* StoryTree.h in Headers */ = {isa = PBXBuildFile; fileRef = E3D66CE823D87DC40067D782 /* StoryTree.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -57,6 +82,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = E32AE24923DCB2F4006BB2C5;
 			remoteInfo = StoryTreeiOS;
+		};
+		E32AE2D223DCC2BD006BB2C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E3D66CDC23D87DC40067D782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E32AE2C723DCC2BD006BB2C5;
+			remoteInfo = Twiner;
 		};
 		E3D66CF023D87DC40067D782 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -109,6 +141,34 @@
 		E32AE27023DCB2FA006BB2C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E32AE27A23DCBC0D006BB2C5 /* BallonViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallonViewTests.swift; sourceTree = "<group>"; };
 		E32AE27D23DCBDE1006BB2C5 /* BallonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallonView.swift; sourceTree = "<group>"; };
+		E32AE2C823DCC2BD006BB2C5 /* Twiner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Twiner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E32AE2CA23DCC2BD006BB2C5 /* Twiner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Twiner.h; sourceTree = "<group>"; };
+		E32AE2CB23DCC2BD006BB2C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E32AE2D023DCC2BD006BB2C5 /* TwinerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TwinerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E32AE2D523DCC2BD006BB2C5 /* TwinerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwinerTests.swift; sourceTree = "<group>"; };
+		E32AE2D723DCC2BD006BB2C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E32AE30723DCC443006BB2C5 /* LayoutPropertyProxyType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutPropertyProxyType.swift; sourceTree = "<group>"; };
+		E32AE30823DCC443006BB2C5 /* LayoutProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutProxy.swift; sourceTree = "<group>"; };
+		E32AE30923DCC443006BB2C5 /* ConstraintOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstraintOperation.swift; sourceTree = "<group>"; };
+		E32AE30A23DCC443006BB2C5 /* LayoutPropertyGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutPropertyGroup.swift; sourceTree = "<group>"; };
+		E32AE30B23DCC443006BB2C5 /* DefaultLayoutPropertyProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLayoutPropertyProxy.swift; sourceTree = "<group>"; };
+		E32AE31123DCC45D006BB2C5 /* Anchorable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anchorable.swift; sourceTree = "<group>"; };
+		E32AE31223DCC45E006BB2C5 /* LayoutPropertyProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutPropertyProxy.swift; sourceTree = "<group>"; };
+		E32AE31623DCC471006BB2C5 /* LayoutPropertyProxy+dimensionConstraintMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LayoutPropertyProxy+dimensionConstraintMethods.swift"; sourceTree = "<group>"; };
+		E32AE31723DCC471006BB2C5 /* LayoutPropertyProxy+constraintMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LayoutPropertyProxy+constraintMethods.swift"; sourceTree = "<group>"; };
+		E32AE31823DCC471006BB2C5 /* LayoutProxy+constraintsFillMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LayoutProxy+constraintsFillMethods.swift"; sourceTree = "<group>"; };
+		E32AE31923DCC471006BB2C5 /* UIViewAndUILayoutGuide+layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewAndUILayoutGuide+layout.swift"; sourceTree = "<group>"; };
+		E32AE31E23DCC495006BB2C5 /* BuilderBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuilderBlock.swift; sourceTree = "<group>"; };
+		E32AE32023DCC748006BB2C5 /* ViewCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCodable.swift; sourceTree = "<group>"; };
+		E32AE32223DCC848006BB2C5 /* ChatViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewTests.swift; sourceTree = "<group>"; };
+		E32AE32423DCCD63006BB2C5 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		E32AE32623DCE7E5006BB2C5 /* UITableView+dequeueReusableCell+registerReusableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+dequeueReusableCell+registerReusableCell.swift"; sourceTree = "<group>"; };
+		E32AE32A23DCEBE3006BB2C5 /* BallonViewMockZib.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BallonViewMockZib.xib; sourceTree = "<group>"; };
+		E32AE32C23DCEECE006BB2C5 /* ifIsSafe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ifIsSafe.swift; sourceTree = "<group>"; };
+		E32AE32E23DCEF02006BB2C5 /* IfIsSafeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IfIsSafeTests.swift; sourceTree = "<group>"; };
+		E32AE33023DCF2EA006BB2C5 /* UITableViewDequeueAndRegisterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewDequeueAndRegisterTests.swift; sourceTree = "<group>"; };
+		E32AE33823DCF610006BB2C5 /* PassageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassageViewModel.swift; sourceTree = "<group>"; };
+		E32AE33A23DCF628006BB2C5 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		E3D66CE523D87DC40067D782 /* StoryTree.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StoryTree.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3D66CE823D87DC40067D782 /* StoryTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StoryTree.h; sourceTree = "<group>"; };
 		E3D66CE923D87DC40067D782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -152,6 +212,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E32AE2C523DCC2BD006BB2C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E32AE2CD23DCC2BD006BB2C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E32AE2D123DCC2BD006BB2C5 /* Twiner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,11 +314,14 @@
 		E32AE24B23DCB2F4006BB2C5 /* StoryTreeiOS */ = {
 			isa = PBXGroup;
 			children = (
+				E32AE33223DCF5B4006BB2C5 /* Presentation */,
 				E32AE24C23DCB2F4006BB2C5 /* AppDelegate.swift */,
 				E32AE25523DCB2F9006BB2C5 /* Assets.xcassets */,
 				E32AE25723DCB2F9006BB2C5 /* LaunchScreen.storyboard */,
 				E32AE25A23DCB2F9006BB2C5 /* Info.plist */,
-				E32AE27D23DCBDE1006BB2C5 /* BallonView.swift */,
+				E32AE32023DCC748006BB2C5 /* ViewCodable.swift */,
+				E32AE32623DCE7E5006BB2C5 /* UITableView+dequeueReusableCell+registerReusableCell.swift */,
+				E32AE32C23DCEECE006BB2C5 /* ifIsSafe.swift */,
 			);
 			path = StoryTreeiOS;
 			sourceTree = "<group>";
@@ -253,6 +331,10 @@
 			children = (
 				E32AE26523DCB2FA006BB2C5 /* Info.plist */,
 				E32AE27A23DCBC0D006BB2C5 /* BallonViewTests.swift */,
+				E32AE32223DCC848006BB2C5 /* ChatViewTests.swift */,
+				E32AE32A23DCEBE3006BB2C5 /* BallonViewMockZib.xib */,
+				E32AE32E23DCEF02006BB2C5 /* IfIsSafeTests.swift */,
+				E32AE33023DCF2EA006BB2C5 /* UITableViewDequeueAndRegisterTests.swift */,
 			);
 			path = StoryTreeiOSTests;
 			sourceTree = "<group>";
@@ -266,6 +348,111 @@
 			path = StoryTreeiOSUITests;
 			sourceTree = "<group>";
 		};
+		E32AE2C923DCC2BD006BB2C5 /* Twiner */ = {
+			isa = PBXGroup;
+			children = (
+				E32AE2CA23DCC2BD006BB2C5 /* Twiner.h */,
+				E32AE2CB23DCC2BD006BB2C5 /* Info.plist */,
+				E32AE30523DCC42D006BB2C5 /* models */,
+				E32AE30623DCC434006BB2C5 /* protocols */,
+				E32AE31523DCC466006BB2C5 /* extensions */,
+			);
+			path = Twiner;
+			sourceTree = "<group>";
+		};
+		E32AE2D423DCC2BD006BB2C5 /* TwinerTests */ = {
+			isa = PBXGroup;
+			children = (
+				E32AE2D523DCC2BD006BB2C5 /* TwinerTests.swift */,
+				E32AE2D723DCC2BD006BB2C5 /* Info.plist */,
+			);
+			path = TwinerTests;
+			sourceTree = "<group>";
+		};
+		E32AE30523DCC42D006BB2C5 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				E32AE31E23DCC495006BB2C5 /* BuilderBlock.swift */,
+				E32AE30923DCC443006BB2C5 /* ConstraintOperation.swift */,
+				E32AE30B23DCC443006BB2C5 /* DefaultLayoutPropertyProxy.swift */,
+				E32AE30A23DCC443006BB2C5 /* LayoutPropertyGroup.swift */,
+				E32AE30723DCC443006BB2C5 /* LayoutPropertyProxyType.swift */,
+				E32AE30823DCC443006BB2C5 /* LayoutProxy.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		E32AE30623DCC434006BB2C5 /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+				E32AE31123DCC45D006BB2C5 /* Anchorable.swift */,
+				E32AE31223DCC45E006BB2C5 /* LayoutPropertyProxy.swift */,
+			);
+			path = protocols;
+			sourceTree = "<group>";
+		};
+		E32AE31523DCC466006BB2C5 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E32AE31723DCC471006BB2C5 /* LayoutPropertyProxy+constraintMethods.swift */,
+				E32AE31623DCC471006BB2C5 /* LayoutPropertyProxy+dimensionConstraintMethods.swift */,
+				E32AE31823DCC471006BB2C5 /* LayoutProxy+constraintsFillMethods.swift */,
+				E32AE31923DCC471006BB2C5 /* UIViewAndUILayoutGuide+layout.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
+		E32AE33223DCF5B4006BB2C5 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				E32AE33323DCF5BA006BB2C5 /* Scenes */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		E32AE33323DCF5BA006BB2C5 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				E32AE33423DCF5BF006BB2C5 /* Chat */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		E32AE33423DCF5BF006BB2C5 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				E32AE33623DCF5D9006BB2C5 /* View Models */,
+				E32AE33523DCF5C5006BB2C5 /* Views */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		E32AE33523DCF5C5006BB2C5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E32AE27D23DCBDE1006BB2C5 /* BallonView.swift */,
+				E32AE32423DCCD63006BB2C5 /* ChatView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E32AE33623DCF5D9006BB2C5 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				E32AE33723DCF607006BB2C5 /* Protocols */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		E32AE33723DCF607006BB2C5 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				E32AE33823DCF610006BB2C5 /* PassageViewModel.swift */,
+				E32AE33A23DCF628006BB2C5 /* ChatViewModel.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		E3D66CDB23D87DC40067D782 = {
 			isa = PBXGroup;
 			children = (
@@ -275,6 +462,8 @@
 				E32AE24B23DCB2F4006BB2C5 /* StoryTreeiOS */,
 				E32AE26223DCB2FA006BB2C5 /* StoryTreeiOSTests */,
 				E32AE26D23DCB2FA006BB2C5 /* StoryTreeiOSUITests */,
+				E32AE2C923DCC2BD006BB2C5 /* Twiner */,
+				E32AE2D423DCC2BD006BB2C5 /* TwinerTests */,
 				E3D66CE623D87DC40067D782 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -288,6 +477,8 @@
 				E32AE24A23DCB2F4006BB2C5 /* StoryTreeiOS.app */,
 				E32AE25F23DCB2F9006BB2C5 /* StoryTreeiOSTests.xctest */,
 				E32AE26A23DCB2FA006BB2C5 /* StoryTreeiOSUITests.xctest */,
+				E32AE2C823DCC2BD006BB2C5 /* Twiner.framework */,
+				E32AE2D023DCC2BD006BB2C5 /* TwinerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -338,6 +529,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		E32AE2C323DCC2BD006BB2C5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E32AE2D823DCC2BD006BB2C5 /* Twiner.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E3D66CE023D87DC40067D782 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -419,6 +618,42 @@
 			productReference = E32AE26A23DCB2FA006BB2C5 /* StoryTreeiOSUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		E32AE2C723DCC2BD006BB2C5 /* Twiner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E32AE2D923DCC2BD006BB2C5 /* Build configuration list for PBXNativeTarget "Twiner" */;
+			buildPhases = (
+				E32AE2C323DCC2BD006BB2C5 /* Headers */,
+				E32AE2C423DCC2BD006BB2C5 /* Sources */,
+				E32AE2C523DCC2BD006BB2C5 /* Frameworks */,
+				E32AE2C623DCC2BD006BB2C5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Twiner;
+			productName = Twiner;
+			productReference = E32AE2C823DCC2BD006BB2C5 /* Twiner.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E32AE2CF23DCC2BD006BB2C5 /* TwinerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E32AE2DC23DCC2BD006BB2C5 /* Build configuration list for PBXNativeTarget "TwinerTests" */;
+			buildPhases = (
+				E32AE2CC23DCC2BD006BB2C5 /* Sources */,
+				E32AE2CD23DCC2BD006BB2C5 /* Frameworks */,
+				E32AE2CE23DCC2BD006BB2C5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E32AE2D323DCC2BD006BB2C5 /* PBXTargetDependency */,
+			);
+			name = TwinerTests;
+			productName = TwinerTests;
+			productReference = E32AE2D023DCC2BD006BB2C5 /* TwinerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		E3D66CE423D87DC40067D782 /* StoryTree */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E3D66CF923D87DC40067D782 /* Build configuration list for PBXNativeTarget "StoryTree" */;
@@ -479,6 +714,12 @@
 						CreatedOnToolsVersion = 11.3;
 						TestTargetID = E32AE24923DCB2F4006BB2C5;
 					};
+					E32AE2C723DCC2BD006BB2C5 = {
+						CreatedOnToolsVersion = 11.3;
+					};
+					E32AE2CF23DCC2BD006BB2C5 = {
+						CreatedOnToolsVersion = 11.3;
+					};
 					E3D66CE423D87DC40067D782 = {
 						CreatedOnToolsVersion = 11.3;
 						LastSwiftMigration = 1130;
@@ -507,6 +748,8 @@
 				E32AE24923DCB2F4006BB2C5 /* StoryTreeiOS */,
 				E32AE25E23DCB2F9006BB2C5 /* StoryTreeiOSTests */,
 				E32AE26923DCB2FA006BB2C5 /* StoryTreeiOSUITests */,
+				E32AE2C723DCC2BD006BB2C5 /* Twiner */,
+				E32AE2CF23DCC2BD006BB2C5 /* TwinerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -525,10 +768,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E32AE32B23DCEBE3006BB2C5 /* BallonViewMockZib.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		E32AE26823DCB2FA006BB2C5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E32AE2C623DCC2BD006BB2C5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E32AE2CE23DCC2BD006BB2C5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -565,8 +823,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E32AE32523DCCD63006BB2C5 /* ChatView.swift in Sources */,
 				E32AE27E23DCBDE1006BB2C5 /* BallonView.swift in Sources */,
+				E32AE33B23DCF628006BB2C5 /* ChatViewModel.swift in Sources */,
+				E32AE33923DCF610006BB2C5 /* PassageViewModel.swift in Sources */,
+				E32AE32D23DCEECE006BB2C5 /* ifIsSafe.swift in Sources */,
 				E32AE24D23DCB2F4006BB2C5 /* AppDelegate.swift in Sources */,
+				E32AE32723DCE7E5006BB2C5 /* UITableView+dequeueReusableCell+registerReusableCell.swift in Sources */,
+				E32AE32123DCC748006BB2C5 /* ViewCodable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -574,6 +838,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E32AE32F23DCEF02006BB2C5 /* IfIsSafeTests.swift in Sources */,
+				E32AE33123DCF2EA006BB2C5 /* UITableViewDequeueAndRegisterTests.swift in Sources */,
+				E32AE32323DCC848006BB2C5 /* ChatViewTests.swift in Sources */,
 				E32AE27B23DCBC0D006BB2C5 /* BallonViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -583,6 +850,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				E32AE26F23DCB2FA006BB2C5 /* StoryTreeiOSUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E32AE2C423DCC2BD006BB2C5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E32AE31D23DCC474006BB2C5 /* UIViewAndUILayoutGuide+layout.swift in Sources */,
+				E32AE31323DCC460006BB2C5 /* Anchorable.swift in Sources */,
+				E32AE30E23DCC44B006BB2C5 /* LayoutPropertyGroup.swift in Sources */,
+				E32AE30D23DCC44B006BB2C5 /* DefaultLayoutPropertyProxy.swift in Sources */,
+				E32AE30C23DCC44B006BB2C5 /* ConstraintOperation.swift in Sources */,
+				E32AE31023DCC44B006BB2C5 /* LayoutProxy.swift in Sources */,
+				E32AE31423DCC460006BB2C5 /* LayoutPropertyProxy.swift in Sources */,
+				E32AE31F23DCC495006BB2C5 /* BuilderBlock.swift in Sources */,
+				E32AE31B23DCC474006BB2C5 /* LayoutPropertyProxy+dimensionConstraintMethods.swift in Sources */,
+				E32AE31C23DCC474006BB2C5 /* LayoutProxy+constraintsFillMethods.swift in Sources */,
+				E32AE30F23DCC44B006BB2C5 /* LayoutPropertyProxyType.swift in Sources */,
+				E32AE31A23DCC474006BB2C5 /* LayoutPropertyProxy+constraintMethods.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E32AE2CC23DCC2BD006BB2C5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E32AE2D623DCC2BD006BB2C5 /* TwinerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -636,6 +930,11 @@
 			isa = PBXTargetDependency;
 			target = E32AE24923DCB2F4006BB2C5 /* StoryTreeiOS */;
 			targetProxy = E32AE26B23DCB2FA006BB2C5 /* PBXContainerItemProxy */;
+		};
+		E32AE2D323DCC2BD006BB2C5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E32AE2C723DCC2BD006BB2C5 /* Twiner */;
+			targetProxy = E32AE2D223DCC2BD006BB2C5 /* PBXContainerItemProxy */;
 		};
 		E3D66CF123D87DC40067D782 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -807,6 +1106,102 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = StoryTreeiOS;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E32AE2DA23DCC2BD006BB2C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = Z8P97P3QB4;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Twiner/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zombiechallenge.Twiner;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E32AE2DB23DCC2BD006BB2C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = Z8P97P3QB4;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Twiner/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zombiechallenge.Twiner;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E32AE2DD23DCC2BD006BB2C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z8P97P3QB4;
+				INFOPLIST_FILE = TwinerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zombiechallenge.TwinerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E32AE2DE23DCC2BD006BB2C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z8P97P3QB4;
+				INFOPLIST_FILE = TwinerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zombiechallenge.TwinerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -1054,6 +1449,24 @@
 			buildConfigurations = (
 				E32AE27823DCB2FA006BB2C5 /* Debug */,
 				E32AE27923DCB2FA006BB2C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E32AE2D923DCC2BD006BB2C5 /* Build configuration list for PBXNativeTarget "Twiner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E32AE2DA23DCC2BD006BB2C5 /* Debug */,
+				E32AE2DB23DCC2BD006BB2C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E32AE2DC23DCC2BD006BB2C5 /* Build configuration list for PBXNativeTarget "TwinerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E32AE2DD23DCC2BD006BB2C5 /* Debug */,
+				E32AE2DE23DCC2BD006BB2C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
