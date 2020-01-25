@@ -39,7 +39,9 @@ class StoryBuilderTests: XCTestCase {
                         SimplePassage("northText") {
                             Choice("west", SimplePassage("nortWestText"))
                         }
-                    ).withImage(URL(string: "imageTest"))
+                    )
+                    .withImage(URL(string: "imageTest"))
+                    .addingTextSection("section")
                 }
             }
         )
@@ -53,5 +55,7 @@ class StoryBuilderTests: XCTestCase {
         XCTAssertNotNil(story.rootPassage.actions["left"]?.asConditional)
         XCTAssertNotNil(story.rootPassage.actions["left"]?.asPassageWithImage)
         XCTAssertNotNil(story.rootPassage.actions["north"]?.asPassageWithImage)
+        XCTAssertNotNil(story.rootPassage.actions["north"]?.asPassageWithExtraSections)
+        XCTAssertEqual(story.rootPassage.actions["north"]?.asPassageWithExtraSections?.allSections, ["northText", "section"])
     }
 }

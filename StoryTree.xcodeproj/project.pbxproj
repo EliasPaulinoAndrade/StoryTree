@@ -20,6 +20,8 @@
 		E32AE22923DBDE58006BB2C5 /* InitializablePassage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE22823DBDE58006BB2C5 /* InitializablePassage.swift */; };
 		E32AE22D23DBDF9E006BB2C5 /* PassageWithImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE22C23DBDF9E006BB2C5 /* PassageWithImageTests.swift */; };
 		E32AE23F23DC73B4006BB2C5 /* SimplePassageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE23E23DC73B4006BB2C5 /* SimplePassageTests.swift */; };
+		E32AE24123DC9CE7006BB2C5 /* PassageWithExtraTextSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE24023DC9CE7006BB2C5 /* PassageWithExtraTextSections.swift */; };
+		E32AE24323DC9DE8006BB2C5 /* PassageWithExtraTextSectionsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE24223DC9DE8006BB2C5 /* PassageWithExtraTextSectionsTest.swift */; };
 		E3D66CEF23D87DC40067D782 /* StoryTree.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3D66CE523D87DC40067D782 /* StoryTree.framework */; };
 		E3D66CF423D87DC40067D782 /* StoryTreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D66CF323D87DC40067D782 /* StoryTreeTests.swift */; };
 		E3D66CF623D87DC40067D782 /* StoryTree.h in Headers */ = {isa = PBXBuildFile; fileRef = E3D66CE823D87DC40067D782 /* StoryTree.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -71,6 +73,8 @@
 		E32AE22823DBDE58006BB2C5 /* InitializablePassage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitializablePassage.swift; sourceTree = "<group>"; };
 		E32AE22C23DBDF9E006BB2C5 /* PassageWithImageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassageWithImageTests.swift; sourceTree = "<group>"; };
 		E32AE23E23DC73B4006BB2C5 /* SimplePassageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplePassageTests.swift; sourceTree = "<group>"; };
+		E32AE24023DC9CE7006BB2C5 /* PassageWithExtraTextSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassageWithExtraTextSections.swift; sourceTree = "<group>"; };
+		E32AE24223DC9DE8006BB2C5 /* PassageWithExtraTextSectionsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassageWithExtraTextSectionsTest.swift; sourceTree = "<group>"; };
 		E3D66CE523D87DC40067D782 /* StoryTree.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StoryTree.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3D66CE823D87DC40067D782 /* StoryTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StoryTree.h; sourceTree = "<group>"; };
 		E3D66CE923D87DC40067D782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -150,6 +154,7 @@
 				E32AE21E23DBCC2D006BB2C5 /* StoryBuilderTests.swift */,
 				E32AE22C23DBDF9E006BB2C5 /* PassageWithImageTests.swift */,
 				E32AE23E23DC73B4006BB2C5 /* SimplePassageTests.swift */,
+				E32AE24223DC9DE8006BB2C5 /* PassageWithExtraTextSectionsTest.swift */,
 			);
 			path = tests;
 			sourceTree = "<group>";
@@ -223,6 +228,7 @@
 			children = (
 				E3D66D0823D9D0AA0067D782 /* ConditionalPassageDecorator.swift */,
 				E3D66D0D23D9D0EF0067D782 /* PassageWithImage.swift */,
+				E32AE24023DC9CE7006BB2C5 /* PassageWithExtraTextSections.swift */,
 			);
 			path = decorators;
 			sourceTree = "<group>";
@@ -380,6 +386,7 @@
 				E3D66D0423D9D0550067D782 /* PassageDecorator.swift in Sources */,
 				E32AE22923DBDE58006BB2C5 /* InitializablePassage.swift in Sources */,
 				E32AE22723DBDC66006BB2C5 /* Choice.swift in Sources */,
+				E32AE24123DC9CE7006BB2C5 /* PassageWithExtraTextSections.swift in Sources */,
 				E3D66D0923D9D0AA0067D782 /* ConditionalPassageDecorator.swift in Sources */,
 				E32AE22323DBD601006BB2C5 /* PassageBuilder.swift in Sources */,
 				E3D66D0C23D9D0D30067D782 /* ConditionalPassage.swift in Sources */,
@@ -402,6 +409,7 @@
 				E32AE20023DB88A5006BB2C5 /* StoryTreeSpy.swift in Sources */,
 				E32AE22D23DBDF9E006BB2C5 /* PassageWithImageTests.swift in Sources */,
 				E32AE23F23DC73B4006BB2C5 /* SimplePassageTests.swift in Sources */,
+				E32AE24323DC9DE8006BB2C5 /* PassageWithExtraTextSectionsTest.swift in Sources */,
 				E3D66CF423D87DC40067D782 /* StoryTreeTests.swift in Sources */,
 				E32AE20A23DB8984006BB2C5 /* Passage+setAttributtesForTests.swift in Sources */,
 				E32AE21F23DBCC2D006BB2C5 /* StoryBuilderTests.swift in Sources */,

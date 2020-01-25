@@ -22,7 +22,9 @@ public class StoryTree {
     
     public var actionDidHappen: ActionCompletion? {
         didSet {
-            self.actionDidHappen?(self.rootPassage)
+            if self.rootPassage === self.currentPassage {
+                self.actionDidHappen?(self.rootPassage)
+            }
         }
     }
     

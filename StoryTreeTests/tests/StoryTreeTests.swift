@@ -155,6 +155,18 @@ class StoryTreeTests: XCTestCase {
         XCTAssertTrue(passagesHistory.isEqual(to: [sut.rootPassage, southPassage, northPassage]))
     }
     
+    func test_goAhreadBeforeToSetCallback_dontCallsCallBackForOlderPassages() {
+        let sut = makeSUT()
+        let southPassage = makeSouthPassage()
+        
+        sut.rootPassage.add(action: "south", toPassage: southPassage)
+        sut.goAhead(action: "south")
+        
+        sut.foreachAction { _ in
+            XCTAssertTrue(false)
+        }
+    }
+    
     // MARK: - Helpers
     func makeSUT(rootPassage: Passage = SimplePassage(text: "something happend", actions: [:])) -> StoryTree {
         return StoryTree(title: "tree", description: "description", rootPassage)
