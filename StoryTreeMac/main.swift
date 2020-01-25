@@ -22,7 +22,7 @@ SimplePassage("You are in the spooky foyer! To the left is a creepy bathroom and
             Choice("Don't eat the cake") {
                 SimplePassage("Nice of you to not eat someone else's cake. You're so nice in fact that you take to tidying up the kitchen. Unfortunately, while washing the floor you slip and bang your head on the corner of the counter. You die from loss of blood. Never pays to be nice, eh?")
             }
-        }
+        }.withImage(URL(string: "testImage"))
     }
 }
 )

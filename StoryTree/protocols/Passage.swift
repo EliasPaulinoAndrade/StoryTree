@@ -18,10 +18,6 @@ public protocol Passage: AnyObject {
 }
 
 public extension Passage {
-    var asConditional: ConditionalPassage? {
-        return findPassageDecorator(ofType: ConditionalPassage.self)
-    }
-    
     func add(action: String, toPassage passage: Passage) {
         passage.story = self.story
         actions[action] = passage
@@ -39,18 +35,5 @@ public extension Passage {
         findPassage(forAction: action) { passage in
             story?.currentPassage = passage
         }
-    }
-    
-    func findPassageDecorator<PassageType>(ofType passageType: PassageType.Type) -> PassageType? {
-        var currentDecorator: PassageDecorator? = self as? PassageDecorator
-        while(currentDecorator != nil) {
-            if let currentDecoratorAsType = currentDecorator as? PassageType {
-                return currentDecoratorAsType
-            }
-           
-            currentDecorator = currentDecorator?.decoratedPassage as? PassageDecorator
-        }
-
-        return nil
     }
 }

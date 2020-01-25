@@ -8,11 +8,27 @@
 
 import Foundation
 
-class PassageWithImage: PassageDecorator {
-    let imageURL: URL
+public class PassageWithImage: PassageDecorator {
+    var imageURL: URL?
 
-    init(_ decorated: Passage, withImageURL imageURL: URL) {
+    public init(_ decorated: Passage, withImageURL imageURL: URL? = nil) {
         self.imageURL = imageURL
         super.init(decorated)
+    }
+    
+    @discardableResult
+    public func withImage(_ url: URL?) -> PassageWithImage {
+        self.imageURL = url
+        return self
+    }
+}
+
+public extension Passage {
+    var asConditional: ConditionalPassage? {
+        return findPassageDecorator(ofType: ConditionalPassage.self)
+    }
+    
+    func withImage(_ url: URL?) -> PassageWithImage {
+        return PassageWithImage(self).withImage(url)
     }
 }

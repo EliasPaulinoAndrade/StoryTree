@@ -45,3 +45,18 @@ public class PassageDecorator: Passage {
         decoratedPassage.add(action: action, toPassage: passage)
     }
 }
+
+public extension Passage {
+    func findPassageDecorator<PassageType>(ofType passageType: PassageType.Type) -> PassageType? {
+        var currentDecorator: PassageDecorator? = self as? PassageDecorator
+        while(currentDecorator != nil) {
+            if let currentDecoratorAsType = currentDecorator as? PassageType {
+                return currentDecoratorAsType
+            }
+          
+            currentDecorator = currentDecorator?.decoratedPassage as? PassageDecorator
+        }
+
+        return nil
+    }
+}

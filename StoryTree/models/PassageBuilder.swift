@@ -17,12 +17,12 @@ public struct PassageBuilder {
     }
 }
 
-public extension SimplePassage {
-    convenience init(_ text: String, @PassageBuilder _ content: () -> [String: Passage]) {
+public extension InitializablePassage {
+    init(_ text: String, @PassageBuilder _ content: () -> [String: Passage]) {
         self.init(text: text, actions: content())
     }
     
-    convenience init(_ text: String, @PassageBuilder _ content: () -> Choice) {
+    init(_ text: String, @PassageBuilder _ content: () -> Choice) {
         self.init(text: text, actions: [content().title: content().passage])
     }
 }

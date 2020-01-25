@@ -32,9 +32,15 @@ class StoryBuilderTests: XCTestCase {
                     SimplePassage("subDescription") {
                         Choice("north", SimplePassage("sub"))
                         Choice("left", SimplePassage("sub"))
-                    }
+                    }.withImage(URL(string: "imageTest"))
                 }
-                Choice("north", SimplePassage("subDescription"))
+                Choice("north") {
+                    PassageWithImage(
+                        SimplePassage("subDescription") {
+                            Choice("west", SimplePassage("subDescription"))
+                        }
+                    ).withImage(URL(string: "imageTest"))
+                }
             }
         )
 
@@ -43,5 +49,6 @@ class StoryBuilderTests: XCTestCase {
         XCTAssertNotNil(story.rootPassage.actions["north"])
         XCTAssertNotNil(story.rootPassage.actions["left"]?.actions["left"])
         XCTAssertNotNil(story.rootPassage.actions["left"]?.actions["north"])
+        XCTAssertNotNil(story.rootPassage.actions["north"]?.actions["west"])
     }
 }

@@ -8,12 +8,12 @@
 
 import Foundation
 
-public class SimplePassage: Passage {
+public class SimplePassage: InitializablePassage {
     public let text: String
     public var actions: [String: Passage]
     public var story: StoryTree?
     
-    public init(text: String, actions: [String: Passage]) {
+    required public init(text: String, actions: [String: Passage]) {
         self.text = text
         self.actions = actions
     }
