@@ -24,29 +24,21 @@ SimplePassage("You are in the spooky foyer! To the left is a creepy bathroom and
             }
         }
         .withImage(URL(string: "testImage"))
-        .addingTextSection("extra section")
+        .addingTextSection("make a good choice")
     }
 }
 )
-
-func formattedPassage(_ passage: Passage) -> String {
-    if let passageWithSections = passage.asPassageWithExtraSections {
-        return passageWithSections.allSections.reduce("") { (totalResult, currentValue) -> String in
-            "\(totalResult)\n\(currentValue)"
-        }
-    }
-    
-    return passage.text
-}
 
 story.foreachAction { passage in
     print(formattedPassage(passage), terminator: "\n")
     passage.actions.keys.forEach { (action) in
         print(">>> \(action)", terminator: "\n")
     }
+    print("-----------------------------------------")
     
-    if let firstAction = passage.actions.first {
-        passage.goAhead(action: firstAction.key)
+    if !passage.actions.isEmpty {
+        let userInputAction = findValidUserInput(forActions: Array(passage.actions.keys))
+        passage.goAhead(action: userInputAction)
     }
 }
 

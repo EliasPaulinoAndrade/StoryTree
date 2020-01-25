@@ -22,6 +22,7 @@
 		E32AE23F23DC73B4006BB2C5 /* SimplePassageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE23E23DC73B4006BB2C5 /* SimplePassageTests.swift */; };
 		E32AE24123DC9CE7006BB2C5 /* PassageWithExtraTextSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE24023DC9CE7006BB2C5 /* PassageWithExtraTextSections.swift */; };
 		E32AE24323DC9DE8006BB2C5 /* PassageWithExtraTextSectionsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE24223DC9DE8006BB2C5 /* PassageWithExtraTextSectionsTest.swift */; };
+		E32AE24523DCACB4006BB2C5 /* utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE24423DCACB4006BB2C5 /* utils.swift */; };
 		E3D66CEF23D87DC40067D782 /* StoryTree.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3D66CE523D87DC40067D782 /* StoryTree.framework */; };
 		E3D66CF423D87DC40067D782 /* StoryTreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D66CF323D87DC40067D782 /* StoryTreeTests.swift */; };
 		E3D66CF623D87DC40067D782 /* StoryTree.h in Headers */ = {isa = PBXBuildFile; fileRef = E3D66CE823D87DC40067D782 /* StoryTree.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -75,6 +76,7 @@
 		E32AE23E23DC73B4006BB2C5 /* SimplePassageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplePassageTests.swift; sourceTree = "<group>"; };
 		E32AE24023DC9CE7006BB2C5 /* PassageWithExtraTextSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassageWithExtraTextSections.swift; sourceTree = "<group>"; };
 		E32AE24223DC9DE8006BB2C5 /* PassageWithExtraTextSectionsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassageWithExtraTextSectionsTest.swift; sourceTree = "<group>"; };
+		E32AE24423DCACB4006BB2C5 /* utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = utils.swift; sourceTree = "<group>"; };
 		E3D66CE523D87DC40067D782 /* StoryTree.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StoryTree.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3D66CE823D87DC40067D782 /* StoryTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StoryTree.h; sourceTree = "<group>"; };
 		E3D66CE923D87DC40067D782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				E32AE21923DBC9A3006BB2C5 /* main.swift */,
+				E32AE24423DCACB4006BB2C5 /* utils.swift */,
 			);
 			path = StoryTreeMac;
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E32AE21A23DBC9A3006BB2C5 /* main.swift in Sources */,
+				E32AE24523DCACB4006BB2C5 /* utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
