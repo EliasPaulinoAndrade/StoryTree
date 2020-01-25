@@ -15,7 +15,7 @@ class BallonViewTests: XCTestCase {
         
         XCTAssertEqual(ballonView.descriptionLabel.text, nil)
         XCTAssertEqual(ballonView.descriptionLabel.superview, ballonView)
-        ballonView.viewModel = MockViewModel(text: "testText")
+        ballonView.viewModel = MockBallonViewModel(text: "testText")
         XCTAssertEqual(ballonView.descriptionLabel.text, "testText")
     }
     
@@ -30,16 +30,9 @@ class BallonViewTests: XCTestCase {
     func test_initilizeWithCoder_setupsTheView() {
         let ballonView = UINib(nibName: "BallonViewMockZib", bundle: Bundle(for: ChatViewTests.self)).instantiate(withOwner: nil, options: nil)[0] as? BallonView
         
-        ballonView?.viewModel = MockViewModel(text: "teste")
+        ballonView?.viewModel = MockBallonViewModel(text: "teste")
         
         XCTAssertNotNil(ballonView)
         XCTAssertEqual(ballonView?.descriptionLabel.text, "teste")
-    }
-}
-
-class MockViewModel: PassageViewModel {
-    let text: String
-    init(text: String) {
-        self.text = text
     }
 }

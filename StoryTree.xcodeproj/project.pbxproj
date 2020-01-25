@@ -66,6 +66,8 @@
 		E3D66D0E23D9D0EF0067D782 /* PassageWithImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D66D0D23D9D0EF0067D782 /* PassageWithImage.swift */; };
 		E3D66D1023D9D1E50067D782 /* PassageDecoratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D66D0F23D9D1E50067D782 /* PassageDecoratorTests.swift */; };
 		E3D66D1223D9D7520067D782 /* PassageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D66D1123D9D7520067D782 /* PassageTests.swift */; };
+		E3D936B623DCFA4700B0244F /* MockBallonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D936B523DCFA4700B0244F /* MockBallonViewModel.swift */; };
+		E3D936B923DCFA8400B0244F /* MockChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D936B823DCFA8400B0244F /* MockChatViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -184,6 +186,8 @@
 		E3D66D0D23D9D0EF0067D782 /* PassageWithImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassageWithImage.swift; sourceTree = "<group>"; };
 		E3D66D0F23D9D1E50067D782 /* PassageDecoratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassageDecoratorTests.swift; sourceTree = "<group>"; };
 		E3D66D1123D9D7520067D782 /* PassageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassageTests.swift; sourceTree = "<group>"; };
+		E3D936B523DCFA4700B0244F /* MockBallonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBallonViewModel.swift; sourceTree = "<group>"; };
+		E3D936B823DCFA8400B0244F /* MockChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockChatViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -319,9 +323,6 @@
 				E32AE25523DCB2F9006BB2C5 /* Assets.xcassets */,
 				E32AE25723DCB2F9006BB2C5 /* LaunchScreen.storyboard */,
 				E32AE25A23DCB2F9006BB2C5 /* Info.plist */,
-				E32AE32023DCC748006BB2C5 /* ViewCodable.swift */,
-				E32AE32623DCE7E5006BB2C5 /* UITableView+dequeueReusableCell+registerReusableCell.swift */,
-				E32AE32C23DCEECE006BB2C5 /* ifIsSafe.swift */,
 			);
 			path = StoryTreeiOS;
 			sourceTree = "<group>";
@@ -329,10 +330,9 @@
 		E32AE26223DCB2FA006BB2C5 /* StoryTreeiOSTests */ = {
 			isa = PBXGroup;
 			children = (
+				E3D936B723DCFA6A00B0244F /* ChatView */,
+				E3D936B423DCF9C300B0244F /* BallonView */,
 				E32AE26523DCB2FA006BB2C5 /* Info.plist */,
-				E32AE27A23DCBC0D006BB2C5 /* BallonViewTests.swift */,
-				E32AE32223DCC848006BB2C5 /* ChatViewTests.swift */,
-				E32AE32A23DCEBE3006BB2C5 /* BallonViewMockZib.xib */,
 				E32AE32E23DCEF02006BB2C5 /* IfIsSafeTests.swift */,
 				E32AE33023DCF2EA006BB2C5 /* UITableViewDequeueAndRegisterTests.swift */,
 			);
@@ -405,6 +405,7 @@
 		E32AE33223DCF5B4006BB2C5 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				E3D936B323DCF9A400B0244F /* Utils */,
 				E32AE33323DCF5BA006BB2C5 /* Scenes */,
 			);
 			path = Presentation;
@@ -524,6 +525,35 @@
 				E32AE22823DBDE58006BB2C5 /* InitializablePassage.swift */,
 			);
 			path = protocols;
+			sourceTree = "<group>";
+		};
+		E3D936B323DCF9A400B0244F /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E32AE32C23DCEECE006BB2C5 /* ifIsSafe.swift */,
+				E32AE32623DCE7E5006BB2C5 /* UITableView+dequeueReusableCell+registerReusableCell.swift */,
+				E32AE32023DCC748006BB2C5 /* ViewCodable.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		E3D936B423DCF9C300B0244F /* BallonView */ = {
+			isa = PBXGroup;
+			children = (
+				E32AE27A23DCBC0D006BB2C5 /* BallonViewTests.swift */,
+				E32AE32A23DCEBE3006BB2C5 /* BallonViewMockZib.xib */,
+				E3D936B523DCFA4700B0244F /* MockBallonViewModel.swift */,
+			);
+			path = BallonView;
+			sourceTree = "<group>";
+		};
+		E3D936B723DCFA6A00B0244F /* ChatView */ = {
+			isa = PBXGroup;
+			children = (
+				E32AE32223DCC848006BB2C5 /* ChatViewTests.swift */,
+				E3D936B823DCFA8400B0244F /* MockChatViewModel.swift */,
+			);
+			path = ChatView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -840,8 +870,10 @@
 			files = (
 				E32AE32F23DCEF02006BB2C5 /* IfIsSafeTests.swift in Sources */,
 				E32AE33123DCF2EA006BB2C5 /* UITableViewDequeueAndRegisterTests.swift in Sources */,
+				E3D936B923DCFA8400B0244F /* MockChatViewModel.swift in Sources */,
 				E32AE32323DCC848006BB2C5 /* ChatViewTests.swift in Sources */,
 				E32AE27B23DCBC0D006BB2C5 /* BallonViewTests.swift in Sources */,
+				E3D936B623DCFA4700B0244F /* MockBallonViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

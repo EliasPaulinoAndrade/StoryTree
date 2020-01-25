@@ -53,30 +53,3 @@ class ChatViewTests: XCTestCase {
         XCTAssertNil(chatView.ballonCellAt(position: 0))
     }
 }
-
-class MockChatViewModel: ChatViewModel {
-    struct Output: ChatViewModelOutput {
-        var ballonViewModelAt: (Int) -> PassageViewModel
-        var numberOfMessages: () -> Int
-        var showNewMessage: ((PassageViewModel) -> Void)?
-    }
-    
-    lazy var output: ChatViewModelOutput = Output(
-        ballonViewModelAt: { _ in
-            return MockViewModel(text: "teste")
-        }, numberOfMessages: { [weak self] in
-            return self?.numberOfMessages ?? 0
-        }
-    )
-    
-    var numberOfMessages: Int = 0
-    
-    init() {
-        
-    }
-    
-    func showNewMessage(text: String) {
-        numberOfMessages += 1
-        self.output.showNewMessage?(MockViewModel(text: text))
-    }
-}
