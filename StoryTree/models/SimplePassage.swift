@@ -8,13 +8,17 @@
 
 import Foundation
 
-class SimplePassage: Passage {
-    let description: String
-    var actions: [String: Passage]
-    var story: StoryTree?
+public class SimplePassage: Passage {
+    public let text: String
+    public var actions: [String: Passage]
+    public var story: StoryTree?
     
-    init(description: String, actions: [String: Passage]) {
-        self.description = description
+    public init(text: String, actions: [String: Passage]) {
+        self.text = text
         self.actions = actions
+    }
+    
+    public convenience init(_ text: String, actions: [String: Passage] = [:]) {
+        self.init(text: text, actions: actions)
     }
 }

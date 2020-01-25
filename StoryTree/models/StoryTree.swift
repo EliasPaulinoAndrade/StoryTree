@@ -8,19 +8,19 @@
 
 import Foundation
 
-class StoryTree {
-    let title: String
-    let description: String
-    let rootPassage: Passage
+public class StoryTree {
+    public let title: String
+    public let description: String
+    public let rootPassage: Passage
     var currentPassage: Passage! {
         didSet {
             self.actionDidHappen?(currentPassage)
         }
     }
     
-    var actionDidHappen: ((Passage) -> Void)?
+    public var actionDidHappen: ((Passage) -> Void)?
     
-    init(title: String, description: String, rootPassage: Passage) {
+    public init(title: String, description: String, rootPassage: Passage) {
         self.title = title
         self.description = description
         self.rootPassage = rootPassage
@@ -29,7 +29,7 @@ class StoryTree {
         rootPassage.story = self
     }
     
-    func goAhead(action: String) {
+    public func goAhead(action: String) {
         self.currentPassage?.goAhead(action: action)
     }
 }

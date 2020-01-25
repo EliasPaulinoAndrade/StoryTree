@@ -8,8 +8,8 @@
 
 import Foundation
 
-protocol Passage: AnyObject {
-    var description: String { get }
+public protocol Passage: AnyObject {
+    var text: String { get }
     var actions: [String: Passage] { get set }
     var story: StoryTree? { get set }
     
@@ -17,7 +17,7 @@ protocol Passage: AnyObject {
     func goAhead(action: String)
 }
 
-extension Passage {
+public extension Passage {
     var asConditional: ConditionalPassage? {
         return findPassageDecorator(ofType: ConditionalPassage.self)
     }

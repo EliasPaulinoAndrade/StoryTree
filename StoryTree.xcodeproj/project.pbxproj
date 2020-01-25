@@ -13,6 +13,10 @@
 		E32AE20723DB8949006BB2C5 /* DecoratorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE20623DB8949006BB2C5 /* DecoratorMock.swift */; };
 		E32AE20A23DB8984006BB2C5 /* Passage+setAttributtesForTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE20923DB8984006BB2C5 /* Passage+setAttributtesForTests.swift */; };
 		E32AE20C23DB89CA006BB2C5 /* SimplePassage+init.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE20B23DB89CA006BB2C5 /* SimplePassage+init.swift */; };
+		E32AE21A23DBC9A3006BB2C5 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE21923DBC9A3006BB2C5 /* main.swift */; };
+		E32AE21F23DBCC2D006BB2C5 /* StoryBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE21E23DBCC2D006BB2C5 /* StoryBuilderTests.swift */; };
+		E32AE22323DBD601006BB2C5 /* PassageBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE22223DBD601006BB2C5 /* PassageBuilder.swift */; };
+		E32AE22723DBDC66006BB2C5 /* Choice.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE22623DBDC66006BB2C5 /* Choice.swift */; };
 		E3D66CEF23D87DC40067D782 /* StoryTree.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3D66CE523D87DC40067D782 /* StoryTree.framework */; };
 		E3D66CF423D87DC40067D782 /* StoryTreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D66CF323D87DC40067D782 /* StoryTreeTests.swift */; };
 		E3D66CF623D87DC40067D782 /* StoryTree.h in Headers */ = {isa = PBXBuildFile; fileRef = E3D66CE823D87DC40067D782 /* StoryTree.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -37,6 +41,18 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		E32AE21523DBC9A3006BB2C5 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		E32AE1FF23DB88A5006BB2C5 /* StoryTreeSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryTreeSpy.swift; sourceTree = "<group>"; };
 		E32AE20123DB88E5006BB2C5 /* PassageSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassageSpy.swift; sourceTree = "<group>"; };
@@ -44,6 +60,11 @@
 		E32AE20623DB8949006BB2C5 /* DecoratorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecoratorMock.swift; sourceTree = "<group>"; };
 		E32AE20923DB8984006BB2C5 /* Passage+setAttributtesForTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Passage+setAttributtesForTests.swift"; sourceTree = "<group>"; };
 		E32AE20B23DB89CA006BB2C5 /* SimplePassage+init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SimplePassage+init.swift"; sourceTree = "<group>"; };
+		E32AE21723DBC9A3006BB2C5 /* StoryTreeMac */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = StoryTreeMac; sourceTree = BUILT_PRODUCTS_DIR; };
+		E32AE21923DBC9A3006BB2C5 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		E32AE21E23DBCC2D006BB2C5 /* StoryBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryBuilderTests.swift; sourceTree = "<group>"; };
+		E32AE22223DBD601006BB2C5 /* PassageBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassageBuilder.swift; sourceTree = "<group>"; };
+		E32AE22623DBDC66006BB2C5 /* Choice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Choice.swift; sourceTree = "<group>"; };
 		E3D66CE523D87DC40067D782 /* StoryTree.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StoryTree.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3D66CE823D87DC40067D782 /* StoryTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StoryTree.h; sourceTree = "<group>"; };
 		E3D66CE923D87DC40067D782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -62,6 +83,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		E32AE21423DBC9A3006BB2C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E3D66CE223D87DC40067D782 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -113,6 +141,7 @@
 				E3D66D0F23D9D1E50067D782 /* PassageDecoratorTests.swift */,
 				E3D66D1123D9D7520067D782 /* PassageTests.swift */,
 				E3D66CF323D87DC40067D782 /* StoryTreeTests.swift */,
+				E32AE21E23DBCC2D006BB2C5 /* StoryBuilderTests.swift */,
 			);
 			path = tests;
 			sourceTree = "<group>";
@@ -120,7 +149,9 @@
 		E32AE20E23DB99D6006BB2C5 /* models */ = {
 			isa = PBXGroup;
 			children = (
+				E32AE22623DBDC66006BB2C5 /* Choice.swift */,
 				E3D66CFF23D8811C0067D782 /* StoryTree.swift */,
+				E32AE22223DBD601006BB2C5 /* PassageBuilder.swift */,
 				E3D66D0323D9D0550067D782 /* PassageDecorator.swift */,
 				E3D66D0523D9D0710067D782 /* SimplePassage.swift */,
 				E3D66D0723D9D09B0067D782 /* decorators */,
@@ -128,11 +159,20 @@
 			path = models;
 			sourceTree = "<group>";
 		};
+		E32AE21823DBC9A3006BB2C5 /* StoryTreeMac */ = {
+			isa = PBXGroup;
+			children = (
+				E32AE21923DBC9A3006BB2C5 /* main.swift */,
+			);
+			path = StoryTreeMac;
+			sourceTree = "<group>";
+		};
 		E3D66CDB23D87DC40067D782 = {
 			isa = PBXGroup;
 			children = (
 				E3D66CE723D87DC40067D782 /* StoryTree */,
 				E3D66CF223D87DC40067D782 /* StoryTreeTests */,
+				E32AE21823DBC9A3006BB2C5 /* StoryTreeMac */,
 				E3D66CE623D87DC40067D782 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -142,6 +182,7 @@
 			children = (
 				E3D66CE523D87DC40067D782 /* StoryTree.framework */,
 				E3D66CEE23D87DC40067D782 /* StoryTreeTests.xctest */,
+				E32AE21723DBC9A3006BB2C5 /* StoryTreeMac */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -201,6 +242,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		E32AE21623DBC9A3006BB2C5 /* StoryTreeMac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E32AE21B23DBC9A3006BB2C5 /* Build configuration list for PBXNativeTarget "StoryTreeMac" */;
+			buildPhases = (
+				E32AE21323DBC9A3006BB2C5 /* Sources */,
+				E32AE21423DBC9A3006BB2C5 /* Frameworks */,
+				E32AE21523DBC9A3006BB2C5 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StoryTreeMac;
+			productName = StoryTreeMac;
+			productReference = E32AE21723DBC9A3006BB2C5 /* StoryTreeMac */;
+			productType = "com.apple.product-type.tool";
+		};
 		E3D66CE423D87DC40067D782 /* StoryTree */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E3D66CF923D87DC40067D782 /* Build configuration list for PBXNativeTarget "StoryTree" */;
@@ -247,6 +305,9 @@
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Elias Paulino";
 				TargetAttributes = {
+					E32AE21623DBC9A3006BB2C5 = {
+						CreatedOnToolsVersion = 11.3;
+					};
 					E3D66CE423D87DC40067D782 = {
 						CreatedOnToolsVersion = 11.3;
 						LastSwiftMigration = 1130;
@@ -271,6 +332,7 @@
 			targets = (
 				E3D66CE423D87DC40067D782 /* StoryTree */,
 				E3D66CED23D87DC40067D782 /* StoryTreeTests */,
+				E32AE21623DBC9A3006BB2C5 /* StoryTreeMac */,
 			);
 		};
 /* End PBXProject section */
@@ -293,13 +355,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		E32AE21323DBC9A3006BB2C5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E32AE21A23DBC9A3006BB2C5 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E3D66CE123D87DC40067D782 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				E3D66D0623D9D0710067D782 /* SimplePassage.swift in Sources */,
 				E3D66D0423D9D0550067D782 /* PassageDecorator.swift in Sources */,
+				E32AE22723DBDC66006BB2C5 /* Choice.swift in Sources */,
 				E3D66D0923D9D0AA0067D782 /* ConditionalPassageDecorator.swift in Sources */,
+				E32AE22323DBD601006BB2C5 /* PassageBuilder.swift in Sources */,
 				E3D66D0C23D9D0D30067D782 /* ConditionalPassage.swift in Sources */,
 				E3D66D0223D9D0320067D782 /* Passage.swift in Sources */,
 				E3D66D0023D8811C0067D782 /* StoryTree.swift in Sources */,
@@ -320,6 +392,7 @@
 				E32AE20023DB88A5006BB2C5 /* StoryTreeSpy.swift in Sources */,
 				E3D66CF423D87DC40067D782 /* StoryTreeTests.swift in Sources */,
 				E32AE20A23DB8984006BB2C5 /* Passage+setAttributtesForTests.swift in Sources */,
+				E32AE21F23DBCC2D006BB2C5 /* StoryBuilderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +407,28 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		E32AE21C23DBC9A3006BB2C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z8P97P3QB4;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		E32AE21D23DBC9A3006BB2C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z8P97P3QB4;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		E3D66CF723D87DC40067D782 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -545,6 +640,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		E32AE21B23DBC9A3006BB2C5 /* Build configuration list for PBXNativeTarget "StoryTreeMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E32AE21C23DBC9A3006BB2C5 /* Debug */,
+				E32AE21D23DBC9A3006BB2C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E3D66CDF23D87DC40067D782 /* Build configuration list for PBXProject "StoryTree" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

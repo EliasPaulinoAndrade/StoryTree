@@ -16,7 +16,7 @@ class PassageDecoratorTests: XCTestCase {
         
         sut.setAtributtesForTest()
         
-        XCTAssertEqual(sut.description, "testDescription")
+        XCTAssertEqual(sut.text, "testDescription")
         XCTAssertTrue(passageSpy.story === nil)
         XCTAssertEqual(passageSpy.actions.values.count, 1)
         XCTAssertEqual(passageSpy.goAheadWasCalled, true)
@@ -29,7 +29,7 @@ class PassageDecoratorTests: XCTestCase {
         
         sut.setAtributtesForTest()
         
-        XCTAssertEqual(sut.description, "testDescription")
+        XCTAssertEqual(sut.text, "testDescription")
         
         XCTAssertTrue(passageSpy.story === nil)
         XCTAssertEqual(passageSpy.actions.values.count, 1)
@@ -38,7 +38,7 @@ class PassageDecoratorTests: XCTestCase {
         XCTAssertTrue(decoretedSut.story === nil)
         XCTAssertEqual(decoretedSut.actions.values.count, 1)
         XCTAssertEqual(decoretedSut.goAheadWasCalled, true)
-        XCTAssertEqual(decoretedSut.description, "testDescription")
+        XCTAssertEqual(decoretedSut.text, "testDescription")
     }
     
     func test_findDecoratorWithOneDecoratorUsingProtocols_returnsTheCorrectDecorator() {

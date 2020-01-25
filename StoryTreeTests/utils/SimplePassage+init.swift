@@ -11,6 +11,6 @@ import Foundation
 
 extension SimplePassage {
     convenience init() {
-        self.init(description: "", actions: [:])
+        self.init(text: "", actions: [:])
     }
 }

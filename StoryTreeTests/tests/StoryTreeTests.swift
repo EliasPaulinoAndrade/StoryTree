@@ -102,7 +102,7 @@ class StoryTreeTests: XCTestCase {
     func test_storyWithOneActionAndFailedInActionConditionAndDecoratedPassage_dontCallsCalback() {
         let sut = makeSUT(
             rootPassage: ConditionalPassageDecorator(
-                SimplePassage(description: "south", actions: [:])
+                SimplePassage(text: "south", actions: [:])
             )
         )
         let sutSpy = StoryTreeSpy(tree: sut)
@@ -120,7 +120,7 @@ class StoryTreeTests: XCTestCase {
     func test_storyWithOneActionAndSuceedInActionConditionAndDecoratedPassage_callsCalback() {
         let sut = makeSUT(
             rootPassage: ConditionalPassageDecorator(
-                SimplePassage(description: "south", actions: [:])
+                SimplePassage(text: "south", actions: [:])
             )
         )
         let southPassage = makeSouthPassage()
@@ -137,15 +137,15 @@ class StoryTreeTests: XCTestCase {
     }
     
     // MARK: - Helpers
-    func makeSUT(rootPassage: Passage = SimplePassage(description: "something happend", actions: [:])) -> StoryTree {
+    func makeSUT(rootPassage: Passage = SimplePassage(text: "something happend", actions: [:])) -> StoryTree {
         return StoryTree(title: "tree", description: "description", rootPassage: rootPassage)
     }
     
     func makeSouthPassage() -> Passage {
-        return SimplePassage(description: "you are at south", actions: [:])
+        return SimplePassage(text: "you are at south", actions: [:])
     }
     
     func makeNorthPassage() -> Passage {
-        return SimplePassage(description: "you are at north", actions: [:])
+        return SimplePassage(text: "you are at north", actions: [:])
     }
 }

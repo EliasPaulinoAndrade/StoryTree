@@ -10,14 +10,14 @@ import Foundation
 @testable import StoryTree
 
 class PassageSpy: Passage {
-    var description: String
+    var text: String
     var actions: [String : Passage]
     var story: StoryTree?
     
     var goAheadWasCalled = false
     
     init(description: String = "") {
-        self.description = description
+        self.text = description
         self.actions = [:]
         self.story = nil
     }

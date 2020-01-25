@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol ConditionalPassage: Passage {
+public protocol ConditionalPassage: Passage {
     var passageCondition: ((Passage) -> Bool)? { get set }
 }

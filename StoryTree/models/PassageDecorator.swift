@@ -8,14 +8,14 @@
 
 import Foundation
 
-class PassageDecorator: Passage {
-    var description: String {
+public class PassageDecorator: Passage {
+    public var text: String {
         get {
-            return decoratedPassage.description
+            return decoratedPassage.text
         }
     }
     
-    var actions: [String : Passage] {
+    public var actions: [String : Passage] {
         get {
             return decoratedPassage.actions
         } set {
@@ -23,7 +23,7 @@ class PassageDecorator: Passage {
         }
     }
     
-    var story: StoryTree? {
+    public var story: StoryTree? {
         get {
             return decoratedPassage.story
         } set {
@@ -31,17 +31,17 @@ class PassageDecorator: Passage {
         }
     }
     
-    var decoratedPassage: Passage
+    public var decoratedPassage: Passage
     
     init(_ passage: Passage) {
         self.decoratedPassage = passage
     }
     
-    func goAhead(action: String) {
+    public func goAhead(action: String) {
         decoratedPassage.goAhead(action: action)
     }
     
-    func add(action: String, toPassage passage: Passage) {
+    public func add(action: String, toPassage passage: Passage) {
         decoratedPassage.add(action: action, toPassage: passage)
     }
 }
