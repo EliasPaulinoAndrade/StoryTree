@@ -9,7 +9,7 @@
 import Foundation
 import StoryTree
 
-let story = StoryTree(title: "Title", description: "Description", rootPassage:
+let story = StoryTree(title: "Title", description: "Description",
 SimplePassage("You are in the spooky foyer! To the left is a creepy bathroom and straight ahead is a terrifying kitchen.") {
     Choice("Go left into the bathroom") {
         SimplePassage("The bathroom contains a scary looking toilet that keeps running no matter how many times you jiggle the handle. Think of all that wasted water! Al Gore's worse nightmare!")
@@ -22,10 +22,21 @@ SimplePassage("You are in the spooky foyer! To the left is a creepy bathroom and
             Choice("Don't eat the cake") {
                 SimplePassage("Nice of you to not eat someone else's cake. You're so nice in fact that you take to tidying up the kitchen. Unfortunately, while washing the floor you slip and bang your head on the corner of the counter. You die from loss of blood. Never pays to be nice, eh?")
             }
-        }.withImage(URL(string: "testImage"))
+        }
+        .withImage(URL(string: "testImage"))
     }
 }
 )
 
-print("eae")
+
+story.foreachAction { passage in
+    print(passage.text, terminator: "\n")
+    passage.actions.keys.forEach { (action) in
+        print(">>> \(action)", terminator: "\n")
+    }
+    
+    if let firstAction = passage.actions.first {
+        passage.goAhead(action: firstAction.key)
+    }
+}
 

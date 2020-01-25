@@ -31,7 +31,7 @@ class StoryTreeTests: XCTestCase {
         let sutSpy = StoryTreeSpy(tree: sut)
         
         sut.goAhead(action: "south")
-        XCTAssertTrue(sutSpy.historyIsEqual(to: []))
+        XCTAssertTrue(sutSpy.historyIsEqual(to: [sut.rootPassage]))
     }
     
     func test_storyWithOneActionAndCallGoAhead_callsCallback() {
@@ -42,7 +42,7 @@ class StoryTreeTests: XCTestCase {
         sut.rootPassage.add(action: "south", toPassage: southPassage)
         sut.goAhead(action: "south")
         
-        XCTAssertTrue(sutSpy.historyIsEqual(to: [southPassage]))
+        XCTAssertTrue(sutSpy.historyIsEqual(to: [sut.rootPassage, southPassage]))
     }
     
     func test_storyWithTwoActionsAndCallGoAhead_callsRightCallback() {
@@ -54,7 +54,7 @@ class StoryTreeTests: XCTestCase {
         sut.rootPassage.add(action: "north", toPassage: northPassage)
         sut.goAhead(action: "north")
 
-        XCTAssertTrue(sutSpy.historyIsEqual(to: [northPassage]))
+        XCTAssertTrue(sutSpy.historyIsEqual(to: [sut.rootPassage, northPassage]))
     }
     
     func test_goAheadTwoTimes_callsCallbackTwoTimes() {
@@ -69,7 +69,7 @@ class StoryTreeTests: XCTestCase {
         sut.goAhead(action: "south")
         sut.goAhead(action: "north")
         
-        XCTAssertTrue(sutSpy.historyIsEqual(to: [southPassage, northPassage]))
+        XCTAssertTrue(sutSpy.historyIsEqual(to: [sut.rootPassage, southPassage, northPassage]))
     }
     
     func test_goAheadThreeTimesWithTwoActions_callsCallbackTwoTimes() {
@@ -85,7 +85,7 @@ class StoryTreeTests: XCTestCase {
         sut.goAhead(action: "north")
         sut.goAhead(action: "north")
         
-        XCTAssertTrue(sutSpy.historyIsEqual(to: [southPassage, northPassage]))
+        XCTAssertTrue(sutSpy.historyIsEqual(to: [sut.rootPassage, southPassage, northPassage]))
     }
     
     func test_storyWithOneActionAndCallGoAheadToWrongAction_dontCallsCallback() {
@@ -96,7 +96,7 @@ class StoryTreeTests: XCTestCase {
         sut.rootPassage.add(action: "south", toPassage: southPassage)
         sut.goAhead(action: "north")
         
-        XCTAssertTrue(sutSpy.historyIsEqual(to: []))
+        XCTAssertTrue(sutSpy.historyIsEqual(to: [sut.rootPassage]))
     }
     
     func test_storyWithOneActionAndFailedInActionConditionAndDecoratedPassage_dontCallsCalback() {
@@ -114,7 +114,7 @@ class StoryTreeTests: XCTestCase {
         
         sut.goAhead(action: "south")
         
-        XCTAssertTrue(sutSpy.historyIsEqual(to: []))
+        XCTAssertTrue(sutSpy.historyIsEqual(to: [sut.rootPassage]))
     }
     
     func test_storyWithOneActionAndSuceedInActionConditionAndDecoratedPassage_callsCalback() {
@@ -133,12 +133,31 @@ class StoryTreeTests: XCTestCase {
         
         sut.goAhead(action: "south")
         
-        XCTAssertTrue(sutSpy.historyIsEqual(to: [southPassage]))
+        XCTAssertTrue(sutSpy.historyIsEqual(to: [sut.rootPassage, southPassage]))
+    }
+    
+    func test_goAheadTwoTimes_callsCallbackTwoTimesWhileUsingForeachActionMethod () {
+        let sut = makeSUT()
+        let southPassage = makeSouthPassage()
+        let northPassage = makeNorthPassage()
+        var passagesHistory: [Passage] = []
+        
+        sut.rootPassage.add(action: "south", toPassage: southPassage)
+        southPassage.add(action: "north", toPassage: northPassage)
+        
+        sut.foreachAction { passage in
+            passagesHistory.append(passage)
+        }
+        
+        sut.goAhead(action: "south")
+        sut.goAhead(action: "north")
+        
+        XCTAssertTrue(passagesHistory.isEqual(to: [sut.rootPassage, southPassage, northPassage]))
     }
     
     // MARK: - Helpers
     func makeSUT(rootPassage: Passage = SimplePassage(text: "something happend", actions: [:])) -> StoryTree {
-        return StoryTree(title: "tree", description: "description", rootPassage: rootPassage)
+        return StoryTree(title: "tree", description: "description", rootPassage)
     }
     
     func makeSouthPassage() -> Passage {

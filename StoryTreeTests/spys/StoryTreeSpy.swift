@@ -18,10 +18,16 @@ class StoryTreeSpy {
     }
     
     func historyIsEqual(to passages: [Passage]) -> Bool {
-        guard passages.count == passagesHistory.count else {
+        return passagesHistory.isEqual(to: passages)
+    }
+}
+
+extension Array where Element == Passage {
+    func isEqual(to passages: [Passage]) -> Bool {
+        guard self.count == passages.count else {
             return false
         }
-        return zip(passagesHistory, passages).allSatisfy { (passages) -> Bool in
+        return zip(passages, self).allSatisfy { (passages) -> Bool in
             passages.0 === passages.1
         }
     }

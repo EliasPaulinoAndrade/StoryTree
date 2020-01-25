@@ -8,6 +8,8 @@
 
 import Foundation
 
+public typealias ActionCompletion = ((Passage) -> Void)
+
 public class StoryTree {
     public let title: String
     public let description: String
@@ -18,9 +20,13 @@ public class StoryTree {
         }
     }
     
-    public var actionDidHappen: ((Passage) -> Void)?
+    public var actionDidHappen: ActionCompletion? {
+        didSet {
+            self.actionDidHappen?(self.rootPassage)
+        }
+    }
     
-    public init(title: String, description: String, rootPassage: Passage) {
+    public init(title: String, description: String, _ rootPassage: Passage) {
         self.title = title
         self.description = description
         self.rootPassage = rootPassage
@@ -31,5 +37,9 @@ public class StoryTree {
     
     public func goAhead(action: String) {
         self.currentPassage?.goAhead(action: action)
+    }
+    
+    public func foreachAction(_ completion: @escaping ActionCompletion) {
+        self.actionDidHappen = completion
     }
 }

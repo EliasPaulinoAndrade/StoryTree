@@ -29,11 +29,11 @@ public class ConditionalPassageDecorator: PassageDecorator, ConditionalPassage {
 }
 
 extension Passage {
-    var asConditional: ConditionalPassage? {
+    public var asConditional: ConditionalPassage? {
         return findPassageDecorator(ofType: ConditionalPassage.self)
     }
     
-    func withCondition(_ condition: @escaping PassageCondition) -> ConditionalPassageDecorator {
+    public func withCondition(_ condition: @escaping PassageCondition) -> ConditionalPassageDecorator {
         return ConditionalPassageDecorator(self).withCondition(condition)
     }
 }

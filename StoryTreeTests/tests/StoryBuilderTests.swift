@@ -11,7 +11,7 @@ import XCTest
 
 class StoryBuilderTests: XCTestCase {
     func test_createStoryWithOneSubPassage_returnsTheCorrectTree() {
-        let story: StoryTree = StoryTree(title: "title", description: "description", rootPassage:
+        let story: StoryTree = StoryTree(title: "title", description: "description",
             SimplePassage("description") {
                 Choice("left", SimplePassage("leftDescription"))
                 Choice("right", SimplePassage("rightDescription"))
@@ -26,18 +26,18 @@ class StoryBuilderTests: XCTestCase {
     }
     
     func test_createStoryWithTwoSubPassage_returnsTheCorrectTree() {
-        let story = StoryTree(title: "title", description: "description", rootPassage:
+        let story = StoryTree(title: "title", description: "description",
             SimplePassage("description") {
                 Choice("left") {
-                    SimplePassage("subDescription") {
-                        Choice("north", SimplePassage("sub"))
-                        Choice("left", SimplePassage("sub"))
+                    SimplePassage("leftText") {
+                        Choice("north", SimplePassage("leftNorthText"))
+                        Choice("left", SimplePassage("leftLeftText"))
                     }.withImage(URL(string: "imageTest")).withCondition({ _ in true })
                 }
                 Choice("north") {
                     PassageWithImage(
-                        SimplePassage("subDescription") {
-                            Choice("west", SimplePassage("subDescription"))
+                        SimplePassage("northText") {
+                            Choice("west", SimplePassage("nortWestText"))
                         }
                     ).withImage(URL(string: "imageTest"))
                 }

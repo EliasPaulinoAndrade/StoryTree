@@ -7,3 +7,17 @@
 //
 
 import Foundation
+import StoryTree
+
+class StoryRunner {
+    var story: StoryTree
+    weak var presenter: StoryPresenter?
+    
+    init(_ story: StoryTree) {
+        self.story = story
+    }
+}
+
+protocol StoryPresenter: AnyObject {
+    
+}
