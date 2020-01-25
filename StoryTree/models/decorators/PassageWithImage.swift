@@ -24,8 +24,8 @@ public class PassageWithImage: PassageDecorator {
 }
 
 public extension Passage {
-    var asConditional: ConditionalPassage? {
-        return findPassageDecorator(ofType: ConditionalPassage.self)
+    var asPassageWithImage: PassageWithImage? {
+        return findPassageDecorator(ofType: PassageWithImage.self)
     }
     
     func withImage(_ url: URL?) -> PassageWithImage {

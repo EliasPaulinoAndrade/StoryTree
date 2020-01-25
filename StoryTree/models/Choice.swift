@@ -1,5 +1,5 @@
 //
-//  Action.swift
+//  Choice.swift
 //  StoryTree
 //
 //  Created by Elias Paulino on 24/01/20.

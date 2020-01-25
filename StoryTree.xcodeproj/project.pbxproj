@@ -19,6 +19,7 @@
 		E32AE22723DBDC66006BB2C5 /* Choice.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE22623DBDC66006BB2C5 /* Choice.swift */; };
 		E32AE22923DBDE58006BB2C5 /* InitializablePassage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE22823DBDE58006BB2C5 /* InitializablePassage.swift */; };
 		E32AE22D23DBDF9E006BB2C5 /* PassageWithImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE22C23DBDF9E006BB2C5 /* PassageWithImageTests.swift */; };
+		E32AE22F23DBE419006BB2C5 /* StoryRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE22E23DBE419006BB2C5 /* StoryRunner.swift */; };
 		E3D66CEF23D87DC40067D782 /* StoryTree.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3D66CE523D87DC40067D782 /* StoryTree.framework */; };
 		E3D66CF423D87DC40067D782 /* StoryTreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D66CF323D87DC40067D782 /* StoryTreeTests.swift */; };
 		E3D66CF623D87DC40067D782 /* StoryTree.h in Headers */ = {isa = PBXBuildFile; fileRef = E3D66CE823D87DC40067D782 /* StoryTree.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -69,6 +70,7 @@
 		E32AE22623DBDC66006BB2C5 /* Choice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Choice.swift; sourceTree = "<group>"; };
 		E32AE22823DBDE58006BB2C5 /* InitializablePassage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitializablePassage.swift; sourceTree = "<group>"; };
 		E32AE22C23DBDF9E006BB2C5 /* PassageWithImageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassageWithImageTests.swift; sourceTree = "<group>"; };
+		E32AE22E23DBE419006BB2C5 /* StoryRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryRunner.swift; sourceTree = "<group>"; };
 		E3D66CE523D87DC40067D782 /* StoryTree.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StoryTree.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3D66CE823D87DC40067D782 /* StoryTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StoryTree.h; sourceTree = "<group>"; };
 		E3D66CE923D87DC40067D782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -156,9 +158,9 @@
 			children = (
 				E32AE22623DBDC66006BB2C5 /* Choice.swift */,
 				E3D66CFF23D8811C0067D782 /* StoryTree.swift */,
+				E3D66D0523D9D0710067D782 /* SimplePassage.swift */,
 				E32AE22223DBD601006BB2C5 /* PassageBuilder.swift */,
 				E3D66D0323D9D0550067D782 /* PassageDecorator.swift */,
-				E3D66D0523D9D0710067D782 /* SimplePassage.swift */,
 				E3D66D0723D9D09B0067D782 /* decorators */,
 			);
 			path = models;
@@ -168,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				E32AE21923DBC9A3006BB2C5 /* main.swift */,
+				E32AE22E23DBE419006BB2C5 /* StoryRunner.swift */,
 			);
 			path = StoryTreeMac;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E32AE21A23DBC9A3006BB2C5 /* main.swift in Sources */,
+				E32AE22F23DBE419006BB2C5 /* StoryRunner.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,14 +8,32 @@
 
 import Foundation
 
-class ConditionalPassageDecorator: PassageDecorator, ConditionalPassage {
-    var passageCondition: ((Passage) -> Bool)?
+public typealias PassageCondition = ((Passage) -> Bool)
+
+public class ConditionalPassageDecorator: PassageDecorator, ConditionalPassage {
+    public var passageCondition: PassageCondition?
     
-    override func goAhead(action: String) {
+    override public func goAhead(action: String) {
         findPassage(forAction: action) { (passage) in
             if self.passageCondition?(passage) == true {
                 super.goAhead(action: action)
             }
         }
+    }
+    
+    public func withCondition(_ condition: @escaping PassageCondition) -> ConditionalPassageDecorator {
+        self.passageCondition = condition
+        
+        return self
+    }
+}
+
+extension Passage {
+    var asConditional: ConditionalPassage? {
+        return findPassageDecorator(ofType: ConditionalPassage.self)
+    }
+    
+    func withCondition(_ condition: @escaping PassageCondition) -> ConditionalPassageDecorator {
+        return ConditionalPassageDecorator(self).withCondition(condition)
     }
 }
