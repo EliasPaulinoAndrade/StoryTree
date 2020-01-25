@@ -68,6 +68,10 @@
 		E3D66D1223D9D7520067D782 /* PassageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D66D1123D9D7520067D782 /* PassageTests.swift */; };
 		E3D936B623DCFA4700B0244F /* MockBallonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D936B523DCFA4700B0244F /* MockBallonViewModel.swift */; };
 		E3D936B923DCFA8400B0244F /* MockChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D936B823DCFA8400B0244F /* MockChatViewModel.swift */; };
+		E3D936BD23DCFB1200B0244F /* DefaultChatViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D936BC23DCFB1200B0244F /* DefaultChatViewModelTests.swift */; };
+		E3D936BF23DCFC8800B0244F /* DefaultChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D936BE23DCFC8800B0244F /* DefaultChatViewModel.swift */; };
+		E3D936C123DCFCE500B0244F /* DefaultBallonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D936C023DCFCE500B0244F /* DefaultBallonViewModel.swift */; };
+		E3D936C623DCFD6500B0244F /* StoryTreeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D936C523DCFD6500B0244F /* StoryTreeRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -188,6 +192,10 @@
 		E3D66D1123D9D7520067D782 /* PassageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassageTests.swift; sourceTree = "<group>"; };
 		E3D936B523DCFA4700B0244F /* MockBallonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBallonViewModel.swift; sourceTree = "<group>"; };
 		E3D936B823DCFA8400B0244F /* MockChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockChatViewModel.swift; sourceTree = "<group>"; };
+		E3D936BC23DCFB1200B0244F /* DefaultChatViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultChatViewModelTests.swift; sourceTree = "<group>"; };
+		E3D936BE23DCFC8800B0244F /* DefaultChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultChatViewModel.swift; sourceTree = "<group>"; };
+		E3D936C023DCFCE500B0244F /* DefaultBallonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultBallonViewModel.swift; sourceTree = "<group>"; };
+		E3D936C523DCFD6500B0244F /* StoryTreeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryTreeRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -318,6 +326,7 @@
 		E32AE24B23DCB2F4006BB2C5 /* StoryTreeiOS */ = {
 			isa = PBXGroup;
 			children = (
+				E3D936C223DCFD4800B0244F /* Domain */,
 				E32AE33223DCF5B4006BB2C5 /* Presentation */,
 				E32AE24C23DCB2F4006BB2C5 /* AppDelegate.swift */,
 				E32AE25523DCB2F9006BB2C5 /* Assets.xcassets */,
@@ -330,6 +339,7 @@
 		E32AE26223DCB2FA006BB2C5 /* StoryTreeiOSTests */ = {
 			isa = PBXGroup;
 			children = (
+				E3D936BB23DCFAFB00B0244F /* DefaultChatViewModel */,
 				E3D936B723DCFA6A00B0244F /* ChatView */,
 				E3D936B423DCF9C300B0244F /* BallonView */,
 				E32AE26523DCB2FA006BB2C5 /* Info.plist */,
@@ -441,6 +451,8 @@
 			isa = PBXGroup;
 			children = (
 				E32AE33723DCF607006BB2C5 /* Protocols */,
+				E3D936BE23DCFC8800B0244F /* DefaultChatViewModel.swift */,
+				E3D936C023DCFCE500B0244F /* DefaultBallonViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -466,6 +478,7 @@
 				E32AE2C923DCC2BD006BB2C5 /* Twiner */,
 				E32AE2D423DCC2BD006BB2C5 /* TwinerTests */,
 				E3D66CE623D87DC40067D782 /* Products */,
+				E3D936C723DCFE6700B0244F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -554,6 +567,37 @@
 				E3D936B823DCFA8400B0244F /* MockChatViewModel.swift */,
 			);
 			path = ChatView;
+			sourceTree = "<group>";
+		};
+		E3D936BB23DCFAFB00B0244F /* DefaultChatViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E3D936BC23DCFB1200B0244F /* DefaultChatViewModelTests.swift */,
+			);
+			path = DefaultChatViewModel;
+			sourceTree = "<group>";
+		};
+		E3D936C223DCFD4800B0244F /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				E3D936C423DCFD5400B0244F /* Repositories */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		E3D936C423DCFD5400B0244F /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				E3D936C523DCFD6500B0244F /* StoryTreeRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		E3D936C723DCFE6700B0244F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -857,7 +901,10 @@
 				E32AE27E23DCBDE1006BB2C5 /* BallonView.swift in Sources */,
 				E32AE33B23DCF628006BB2C5 /* ChatViewModel.swift in Sources */,
 				E32AE33923DCF610006BB2C5 /* PassageViewModel.swift in Sources */,
+				E3D936C623DCFD6500B0244F /* StoryTreeRepository.swift in Sources */,
+				E3D936C123DCFCE500B0244F /* DefaultBallonViewModel.swift in Sources */,
 				E32AE32D23DCEECE006BB2C5 /* ifIsSafe.swift in Sources */,
+				E3D936BF23DCFC8800B0244F /* DefaultChatViewModel.swift in Sources */,
 				E32AE24D23DCB2F4006BB2C5 /* AppDelegate.swift in Sources */,
 				E32AE32723DCE7E5006BB2C5 /* UITableView+dequeueReusableCell+registerReusableCell.swift in Sources */,
 				E32AE32123DCC748006BB2C5 /* ViewCodable.swift in Sources */,
@@ -874,6 +921,7 @@
 				E32AE32323DCC848006BB2C5 /* ChatViewTests.swift in Sources */,
 				E32AE27B23DCBC0D006BB2C5 /* BallonViewTests.swift in Sources */,
 				E3D936B623DCFA4700B0244F /* MockBallonViewModel.swift in Sources */,
+				E3D936BD23DCFB1200B0244F /* DefaultChatViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1378,6 +1426,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.zombiechallenge.StoryTree;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
@@ -1404,6 +1453,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.zombiechallenge.StoryTree;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = macosx;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
