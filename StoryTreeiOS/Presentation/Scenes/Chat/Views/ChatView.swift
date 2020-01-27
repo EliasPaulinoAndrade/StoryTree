@@ -31,6 +31,9 @@ class ChatView: UITableView, ViewCodable {
     }
     
     func observeViewModel() {
+        viewModel.output.lastMessage.compactMap({ $0 }).sink { (viewModel) in
+            
+        }
         viewModel.output.showNewMessage = { [weak self] viewModel in
             ifIsSafe(self) { (self) in
                 if self.numberOfShowedItems == 0 {

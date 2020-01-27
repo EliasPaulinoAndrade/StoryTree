@@ -46,7 +46,7 @@ class DefaultChatViewModel: ChatViewModel {
             switch result {
             case .success(let story):
                 formatInputAndOutput(forStory: story)
-            case .failure(let error):
+            case .failure:
                 break
             }
         }

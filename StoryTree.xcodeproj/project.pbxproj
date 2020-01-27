@@ -75,12 +75,14 @@
 		E3D936F023DD022C00B0244F /* StoryTree.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3D66CE523D87DC40067D782 /* StoryTree.framework */; };
 		E3D936F123DD022C00B0244F /* StoryTree.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E3D66CE523D87DC40067D782 /* StoryTree.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E3D936F523DE4A8F00B0244F /* StoryTreeWithCombineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D936F423DE4A8F00B0244F /* StoryTreeWithCombineTests.swift */; };
-		E3D936F823DE544C00B0244F /* StoryTree+foreachAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D936F723DE544C00B0244F /* StoryTree+foreachAction.swift */; };
 		E3D936FB23DE573B00B0244F /* MockStoryTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D936FA23DE573B00B0244F /* MockStoryTree.swift */; };
 		E3D936FD23DE577F00B0244F /* XCTestCase+checkPublisherSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D936FC23DE577F00B0244F /* XCTestCase+checkPublisherSequence.swift */; };
 		E3D936FF23DE57B400B0244F /* MockRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D936FE23DE57B400B0244F /* MockRepository.swift */; };
 		E3D9370123DE5A1200B0244F /* Injector.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D9370023DE5A1200B0244F /* Injector.swift */; };
 		E3D9370323DE5AAA00B0244F /* BallonViewModelInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D9370223DE5AAA00B0244F /* BallonViewModelInjector.swift */; };
+		E3D9370623DE678000B0244F /* ChatViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D9370523DE678000B0244F /* ChatViewControllerTests.swift */; };
+		E3D9370923DE680700B0244F /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D9370823DE680600B0244F /* ChatViewController.swift */; };
+		E3D9370C23DE6B3000B0244F /* DefaultStoryTreeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D9370B23DE6B3000B0244F /* DefaultStoryTreeRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -224,12 +226,14 @@
 		E3D936C023DCFCE500B0244F /* DefaultBallonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultBallonViewModel.swift; sourceTree = "<group>"; };
 		E3D936C523DCFD6500B0244F /* StoryTreeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryTreeRepository.swift; sourceTree = "<group>"; };
 		E3D936F423DE4A8F00B0244F /* StoryTreeWithCombineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryTreeWithCombineTests.swift; sourceTree = "<group>"; };
-		E3D936F723DE544C00B0244F /* StoryTree+foreachAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StoryTree+foreachAction.swift"; sourceTree = "<group>"; };
 		E3D936FA23DE573B00B0244F /* MockStoryTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockStoryTree.swift; sourceTree = "<group>"; };
 		E3D936FC23DE577F00B0244F /* XCTestCase+checkPublisherSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+checkPublisherSequence.swift"; sourceTree = "<group>"; };
 		E3D936FE23DE57B400B0244F /* MockRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRepository.swift; sourceTree = "<group>"; };
 		E3D9370023DE5A1200B0244F /* Injector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injector.swift; sourceTree = "<group>"; };
 		E3D9370223DE5AAA00B0244F /* BallonViewModelInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallonViewModelInjector.swift; sourceTree = "<group>"; };
+		E3D9370523DE678000B0244F /* ChatViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewControllerTests.swift; sourceTree = "<group>"; };
+		E3D9370823DE680600B0244F /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		E3D9370B23DE6B3000B0244F /* DefaultStoryTreeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultStoryTreeRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -362,6 +366,7 @@
 			isa = PBXGroup;
 			children = (
 				E3D936C223DCFD4800B0244F /* Domain */,
+				E3D9370A23DE6B1B00B0244F /* Data */,
 				E32AE33223DCF5B4006BB2C5 /* Presentation */,
 				E32AE24C23DCB2F4006BB2C5 /* AppDelegate.swift */,
 				E32AE25523DCB2F9006BB2C5 /* Assets.xcassets */,
@@ -374,14 +379,9 @@
 		E32AE26223DCB2FA006BB2C5 /* StoryTreeiOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				E3D936F923DE572800B0244F /* Utils */,
-				E3D936BB23DCFAFB00B0244F /* DefaultChatViewModel */,
-				E3D936B723DCFA6A00B0244F /* ChatView */,
-				E3D936B423DCF9C300B0244F /* BallonView */,
+				E3D9370423DE674D00B0244F /* tests */,
+				E3D936F923DE572800B0244F /* utils */,
 				E32AE26523DCB2FA006BB2C5 /* Info.plist */,
-				E32AE32E23DCEF02006BB2C5 /* IfIsSafeTests.swift */,
-				E32AE33023DCF2EA006BB2C5 /* UITableViewDequeueAndRegisterTests.swift */,
-				E3D936F423DE4A8F00B0244F /* StoryTreeWithCombineTests.swift */,
 			);
 			path = StoryTreeiOSTests;
 			sourceTree = "<group>";
@@ -469,6 +469,7 @@
 		E32AE33423DCF5BF006BB2C5 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				E3D9370723DE67F900B0244F /* View Controllers */,
 				E32AE33623DCF5D9006BB2C5 /* View Models */,
 				E32AE33523DCF5C5006BB2C5 /* Views */,
 			);
@@ -619,7 +620,6 @@
 		E3D936C223DCFD4800B0244F /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				E3D936F623DE543B00B0244F /* Extensions */,
 				E3D936C423DCFD5400B0244F /* Repositories */,
 			);
 			path = Domain;
@@ -640,22 +640,44 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E3D936F623DE543B00B0244F /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				E3D936F723DE544C00B0244F /* StoryTree+foreachAction.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		E3D936F923DE572800B0244F /* Utils */ = {
+		E3D936F923DE572800B0244F /* utils */ = {
 			isa = PBXGroup;
 			children = (
 				E3D936FA23DE573B00B0244F /* MockStoryTree.swift */,
 				E3D936FC23DE577F00B0244F /* XCTestCase+checkPublisherSequence.swift */,
 				E3D9370223DE5AAA00B0244F /* BallonViewModelInjector.swift */,
 			);
-			path = Utils;
+			path = utils;
+			sourceTree = "<group>";
+		};
+		E3D9370423DE674D00B0244F /* tests */ = {
+			isa = PBXGroup;
+			children = (
+				E32AE32E23DCEF02006BB2C5 /* IfIsSafeTests.swift */,
+				E32AE33023DCF2EA006BB2C5 /* UITableViewDequeueAndRegisterTests.swift */,
+				E3D936F423DE4A8F00B0244F /* StoryTreeWithCombineTests.swift */,
+				E3D936BB23DCFAFB00B0244F /* DefaultChatViewModel */,
+				E3D936B723DCFA6A00B0244F /* ChatView */,
+				E3D936B423DCF9C300B0244F /* BallonView */,
+				E3D9370523DE678000B0244F /* ChatViewControllerTests.swift */,
+			);
+			path = tests;
+			sourceTree = "<group>";
+		};
+		E3D9370723DE67F900B0244F /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E3D9370823DE680600B0244F /* ChatViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		E3D9370A23DE6B1B00B0244F /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				E3D9370B23DE6B3000B0244F /* DefaultStoryTreeRepository.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -966,9 +988,10 @@
 				E3D936C123DCFCE500B0244F /* DefaultBallonViewModel.swift in Sources */,
 				E32AE32D23DCEECE006BB2C5 /* ifIsSafe.swift in Sources */,
 				E3D936BF23DCFC8800B0244F /* DefaultChatViewModel.swift in Sources */,
+				E3D9370C23DE6B3000B0244F /* DefaultStoryTreeRepository.swift in Sources */,
+				E3D9370923DE680700B0244F /* ChatViewController.swift in Sources */,
 				E32AE24D23DCB2F4006BB2C5 /* AppDelegate.swift in Sources */,
 				E32AE32723DCE7E5006BB2C5 /* UITableView+dequeueReusableCell+registerReusableCell.swift in Sources */,
-				E3D936F823DE544C00B0244F /* StoryTree+foreachAction.swift in Sources */,
 				E32AE32123DCC748006BB2C5 /* ViewCodable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -986,6 +1009,7 @@
 				E3D9370323DE5AAA00B0244F /* BallonViewModelInjector.swift in Sources */,
 				E32AE27B23DCBC0D006BB2C5 /* BallonViewTests.swift in Sources */,
 				E3D936B623DCFA4700B0244F /* MockBallonViewModel.swift in Sources */,
+				E3D9370623DE678000B0244F /* ChatViewControllerTests.swift in Sources */,
 				E3D936FF23DE57B400B0244F /* MockRepository.swift in Sources */,
 				E3D936BD23DCFB1200B0244F /* DefaultChatViewModelTests.swift in Sources */,
 				E3D936F523DE4A8F00B0244F /* StoryTreeWithCombineTests.swift in Sources */,
