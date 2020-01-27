@@ -7,27 +7,27 @@
 //
 
 import Foundation
+import Combine
 @testable import StoryTreeiOS
 
 class MockChatViewModel: ChatViewModel {
     struct Output: ChatViewModelOutput {
+        var choices: CurrentValueSubject<[String], Never> = .init([])
+        var numberOfMessages: Int = 0
+        var lastMessage: CurrentValueSubject<String?, Never> = .init(nil)
         var ballonViewModelAt: (Int) -> PassageViewModel
-        var numberOfMessages: () -> Int
         var showNewMessage: ((PassageViewModel) -> Void)?
     }
     
-    lazy var output: ChatViewModelOutput = Output(
-        ballonViewModelAt: { _ in
-            return MockBallonViewModel(text: "teste")
-        }, numberOfMessages: { [weak self] in
-            return self?.numberOfMessages ?? 0
-        }
-    )
+    struct Input: ChatViewModelInput {
+        var choiceWasMade: PassthroughSubject<String, Never>
+    }
     
-    var numberOfMessages: Int = 0
-    
+    lazy var output: ChatViewModelOutput = Output(ballonViewModelAt: { _ in return MockBallonViewModel(text: "teste")})
+    var input: ChatViewModelInput = Input(choiceWasMade: .init())
+        
     func showNewMessage(text: String) {
-        numberOfMessages += 1
+        output.numberOfMessages += 1
         self.output.showNewMessage?(MockBallonViewModel(text: text))
     }
 }

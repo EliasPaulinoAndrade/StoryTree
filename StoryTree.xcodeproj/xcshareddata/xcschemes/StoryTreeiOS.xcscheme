@@ -59,6 +59,16 @@
                ReferencedContainer = "container:StoryTree.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E3D936D923DD004600B0244F"
+               BuildableName = "StoryTreeForIosTests.xctest"
+               BlueprintName = "StoryTreeForIosTests"
+               ReferencedContainer = "container:StoryTree.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

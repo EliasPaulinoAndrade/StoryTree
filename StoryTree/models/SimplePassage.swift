@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class SimplePassage: InitializablePassage {
+open class SimplePassage: InitializablePassage, Equatable {
     public let text: String
     public var actions: [String: Passage]
     weak public var story: StoryTree? {
@@ -32,5 +32,9 @@ public class SimplePassage: InitializablePassage {
         self.actions.values.forEach { [weak self] (passage) in
             passage.story = self?.story
         }
+    }
+    
+    public static func == (lhs: SimplePassage, rhs: SimplePassage) -> Bool {
+        return lhs === rhs
     }
 }

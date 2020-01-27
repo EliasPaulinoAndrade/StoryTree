@@ -50,7 +50,7 @@ class ChatView: UITableView, ViewCodable {
 
 extension ChatView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.output.numberOfMessages()
+        return viewModel.output.numberOfMessages
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

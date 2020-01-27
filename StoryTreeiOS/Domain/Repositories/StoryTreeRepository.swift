@@ -7,10 +7,8 @@
 //
 
 import Foundation
-//import StoryTree
+import StoryTree
     
-//protocol StoryTreeRepository {
-//    func getTree(completion: Result<Sot>) {
-//
-//    }
-//}
+protocol StoryTreeRepository {
+    func getTree(completion: (Result<StoryTree, Error>) -> Void)
+}

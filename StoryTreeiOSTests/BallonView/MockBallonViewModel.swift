@@ -9,9 +9,6 @@
 import Foundation
 @testable import StoryTreeiOS
 
-class MockBallonViewModel: PassageViewModel {
+struct MockBallonViewModel: PassageViewModel, Equatable {
     let text: String
-    init(text: String) {
-        self.text = text
-    }
 }

@@ -30,9 +30,23 @@ class SimplePassageTests: XCTestCase {
     }
     
     func test_initilizeSimplePassageWithTwoActionsAndAddStoryWithNoStrongReference_theStoryReferenceIsLosen() {
-        let sut = SimplePassage(text: "test", actions: ["left": SimplePassage(""), "right": SimplePassage("")])
+        let sut = SimplePassage()
         sut.story = StoryTree(title: "", description: "", sut)
    
         XCTAssertNil(sut.story)
+    }
+    
+    func test_compareSuceedByDoubleEqual_isEquivalentToTribleEqual() {
+        let sut = SimplePassage()
+        let sut2 = sut
+        
+        XCTAssertEqual(sut, sut2)
+    }
+    
+    func test_compareFailByDoubleEqual_isEquivalentToTribleEqual() {
+        let sut = SimplePassage()
+        let sut2 = SimplePassage()
+        
+        XCTAssertNotEqual(sut, sut2)
     }
 }

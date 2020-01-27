@@ -8,10 +8,6 @@
 
 import Foundation
 
-class DefaultBallonViewModel: PassageViewModel {
+struct DefaultBallonViewModel: PassageViewModel {
     var text: String
-    
-    init(text: String) {
-        self.text = text
-    }
 }

@@ -7,16 +7,21 @@
 //
 
 import Foundation
+import Combine
 
 public typealias ActionCompletion = ((Passage) -> Void)
 
-public class StoryTree {
+open class StoryTree {
     public let title: String
     public let description: String
     public let rootPassage: Passage
-    var currentPassage: Passage! {
+    public var currentPassage: Passage! {
         didSet {
             self.actionDidHappen?(currentPassage)
+            
+            if #available(OSX 10.15, *) {
+                self.foreachAction.send(currentPassage)
+            }
         }
     }
     
@@ -27,6 +32,9 @@ public class StoryTree {
             }
         }
     }
+    
+    @available(OSX 10.15, *)
+    lazy public var foreachAction: CurrentValueSubject<Passage, Never> = .init(currentPassage)
     
     public init(title: String, description: String, _ rootPassage: Passage) {
         self.title = title
