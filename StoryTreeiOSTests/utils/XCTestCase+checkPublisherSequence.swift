@@ -24,4 +24,19 @@ extension XCTestCase {
             }
         }.store(in: &cancellablesStore)
     }
+    
+    func checkPublisherSequence<PublisherType: Publisher>(
+        publisher: PublisherType,
+        callCount: Int,
+        storeIn cancellablesStore: inout [AnyCancellable],
+        _ completion: @escaping () -> Void) where PublisherType.Failure == Never  {
+
+        var valuesHistory: [PublisherType.Output] = []
+        publisher.sink { newValue in
+            valuesHistory.append(newValue)
+            if valuesHistory.count == callCount {
+                completion()
+            }
+        }.store(in: &cancellablesStore)
+    }
 }

@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import Combine
 
 class ChatView: UITableView, ViewCodable {
     private var viewModel: ChatViewModel
+    private var cancellableStore: [AnyCancellable] = []
     
     public var numberOfShowedItems: Int {
         return self.numberOfRows(inSection: 0)
@@ -18,8 +20,6 @@ class ChatView: UITableView, ViewCodable {
     init(viewModel: ChatViewModel) {
         self.viewModel = viewModel
         super.init(frame: .zero, style: .plain)
-                
-        setupView()
     }
     
     required init?(coder: NSCoder) {
@@ -31,23 +31,32 @@ class ChatView: UITableView, ViewCodable {
     }
     
     func observeViewModel() {
-        viewModel.output.lastMessage.compactMap({ $0 }).sink { (viewModel) in
-            
-        }
-        viewModel.output.showNewMessage = { [weak self] viewModel in
+        self.endUpdates()
+        
+        viewModel.output.messageWasAdded.sink { [weak self] _ in
             ifIsSafe(self) { (self) in
                 if self.numberOfShowedItems == 0 {
-                    self.reloadData()
+                    DispatchQueue.main.async {
+                        self.reloadData()
+                        self.endUpdates()
+                    }
                 } else {
-                    self.insertRows(at: [.init(row: self.numberOfShowedItems, section: 0)], with: .bottom)
+                    DispatchQueue.main.async {
+                        self.insertRows(at: [.init(row: self.numberOfShowedItems, section: 0)], with: .bottom)
+                        self.endUpdates()
+                    }
                 }
             }
-        }
+        }.store(in: &cancellableStore)        
     }
     
     func applyAditionalChanges() {
         self.dataSource = self
         self.registerReusableCell(forCellType: BallonView.self)
+    }
+    
+    override func didMoveToSuperview() {
+        setupView()
     }
 }
 

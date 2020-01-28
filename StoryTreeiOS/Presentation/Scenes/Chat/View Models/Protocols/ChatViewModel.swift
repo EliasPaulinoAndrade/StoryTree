@@ -12,8 +12,7 @@ import Combine
 protocol ChatViewModelOutput {
     var numberOfMessages: Int { get set }
     var ballonViewModelAt: (Int) -> PassageViewModel { get set }
-    var showNewMessage: ((_ viewModel: PassageViewModel) -> Void)? { get set }
-    var lastMessage: CurrentValueSubject<String?, Never> { get set }
+    var messageWasAdded: CurrentValueSubject<Void, Never> { get set }
     var choices: CurrentValueSubject<[String], Never> { get set }
 }
 

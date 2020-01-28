@@ -54,6 +54,8 @@
 		E32AE33123DCF2EA006BB2C5 /* UITableViewDequeueAndRegisterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE33023DCF2EA006BB2C5 /* UITableViewDequeueAndRegisterTests.swift */; };
 		E32AE33923DCF610006BB2C5 /* PassageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE33823DCF610006BB2C5 /* PassageViewModel.swift */; };
 		E32AE33B23DCF628006BB2C5 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE33A23DCF628006BB2C5 /* ChatViewModel.swift */; };
+		E3CFA4DF23E079E900BE4E49 /* TableViewOperatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CFA4DE23E079E900BE4E49 /* TableViewOperatorTests.swift */; };
+		E3CFA4E123E07EDD00BE4E49 /* TableViewOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CFA4E023E07EDD00BE4E49 /* TableViewOperator.swift */; };
 		E3D66CEF23D87DC40067D782 /* StoryTree.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3D66CE523D87DC40067D782 /* StoryTree.framework */; };
 		E3D66CF423D87DC40067D782 /* StoryTreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D66CF323D87DC40067D782 /* StoryTreeTests.swift */; };
 		E3D66CF623D87DC40067D782 /* StoryTree.h in Headers */ = {isa = PBXBuildFile; fileRef = E3D66CE823D87DC40067D782 /* StoryTree.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -204,6 +206,8 @@
 		E32AE33023DCF2EA006BB2C5 /* UITableViewDequeueAndRegisterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewDequeueAndRegisterTests.swift; sourceTree = "<group>"; };
 		E32AE33823DCF610006BB2C5 /* PassageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassageViewModel.swift; sourceTree = "<group>"; };
 		E32AE33A23DCF628006BB2C5 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		E3CFA4DE23E079E900BE4E49 /* TableViewOperatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewOperatorTests.swift; sourceTree = "<group>"; };
+		E3CFA4E023E07EDD00BE4E49 /* TableViewOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewOperator.swift; sourceTree = "<group>"; };
 		E3D66CE523D87DC40067D782 /* StoryTree.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StoryTree.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3D66CE823D87DC40067D782 /* StoryTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StoryTree.h; sourceTree = "<group>"; };
 		E3D66CE923D87DC40067D782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -504,6 +508,14 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		E3CFA4DD23E079A000BE4E49 /* TableViewOperator */ = {
+			isa = PBXGroup;
+			children = (
+				E3CFA4DE23E079E900BE4E49 /* TableViewOperatorTests.swift */,
+			);
+			path = TableViewOperator;
+			sourceTree = "<group>";
+		};
 		E3D66CDB23D87DC40067D782 = {
 			isa = PBXGroup;
 			children = (
@@ -585,6 +597,7 @@
 				E32AE32623DCE7E5006BB2C5 /* UITableView+dequeueReusableCell+registerReusableCell.swift */,
 				E32AE32023DCC748006BB2C5 /* ViewCodable.swift */,
 				E3D9370023DE5A1200B0244F /* Injector.swift */,
+				E3CFA4E023E07EDD00BE4E49 /* TableViewOperator.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -653,6 +666,7 @@
 		E3D9370423DE674D00B0244F /* tests */ = {
 			isa = PBXGroup;
 			children = (
+				E3CFA4DD23E079A000BE4E49 /* TableViewOperator */,
 				E32AE32E23DCEF02006BB2C5 /* IfIsSafeTests.swift */,
 				E32AE33023DCF2EA006BB2C5 /* UITableViewDequeueAndRegisterTests.swift */,
 				E3D936F423DE4A8F00B0244F /* StoryTreeWithCombineTests.swift */,
@@ -986,6 +1000,7 @@
 				E3D9370123DE5A1200B0244F /* Injector.swift in Sources */,
 				E3D936C623DCFD6500B0244F /* StoryTreeRepository.swift in Sources */,
 				E3D936C123DCFCE500B0244F /* DefaultBallonViewModel.swift in Sources */,
+				E3CFA4E123E07EDD00BE4E49 /* TableViewOperator.swift in Sources */,
 				E32AE32D23DCEECE006BB2C5 /* ifIsSafe.swift in Sources */,
 				E3D936BF23DCFC8800B0244F /* DefaultChatViewModel.swift in Sources */,
 				E3D9370C23DE6B3000B0244F /* DefaultStoryTreeRepository.swift in Sources */,
@@ -1012,6 +1027,7 @@
 				E3D9370623DE678000B0244F /* ChatViewControllerTests.swift in Sources */,
 				E3D936FF23DE57B400B0244F /* MockRepository.swift in Sources */,
 				E3D936BD23DCFB1200B0244F /* DefaultChatViewModelTests.swift in Sources */,
+				E3CFA4DF23E079E900BE4E49 /* TableViewOperatorTests.swift in Sources */,
 				E3D936F523DE4A8F00B0244F /* StoryTreeWithCombineTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1569,6 +1585,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.zombiechallenge.StoryTreeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos watchos watchsimulator appletvos appletvsimulator";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -1588,6 +1605,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.zombiechallenge.StoryTreeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos watchos watchsimulator appletvos appletvsimulator";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;

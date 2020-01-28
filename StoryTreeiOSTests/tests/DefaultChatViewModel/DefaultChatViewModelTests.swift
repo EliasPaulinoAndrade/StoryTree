@@ -21,14 +21,14 @@ class DefaultChatViewModelTests: XCTestCase {
     func test_initializeWithOnePassage_callsShowNewMessageAndNumberOfMessagesOne() {
         let sut = DefaultChatViewModel(repository: MockRepository(option: .onePassage), ballonViewModelInjector: ballonViewModelInjector)
         let newMessageExpectation = expectation(description: "new message arrived")
-        let wantedMessages: [String?] = ["rootText"]
         
-        checkPublisherSequence(publisher: sut.output.lastMessage, toBeEqualTo: wantedMessages, storeIn: &cancellablesStore) {
+        checkPublisherSequence(publisher: sut.output.messageWasAdded, callCount: 1, storeIn: &cancellablesStore) {
             newMessageExpectation.fulfill()
         }
         
         XCTAssertEqual(sut.output.numberOfMessages, 1)
         wait(for: [newMessageExpectation], timeout: 1)
+        
     }
     
     func test_initializeWithMultiplePassages_callsShowNewMessageAndNumberOfMessagesOneAndCallsChoiceWasMade() {
@@ -37,10 +37,9 @@ class DefaultChatViewModelTests: XCTestCase {
         let newMessageExpectation = expectation(description: "new message arrived")
         let choicesExpectation = expectation(description: "choices arrived")
         
-        let wantedMessages: [String?] = ["rootText"]
         let wantedChoices: [[String]] = [["choice1", "choice2"]]
 
-        checkPublisherSequence(publisher: sut.output.lastMessage, toBeEqualTo: wantedMessages, storeIn: &cancellablesStore) {
+        checkPublisherSequence(publisher: sut.output.messageWasAdded, callCount: 1, storeIn: &cancellablesStore) {
             newMessageExpectation.fulfill()
         }
         
@@ -56,9 +55,8 @@ class DefaultChatViewModelTests: XCTestCase {
     func test_callOptionWasChosed_callsShowNewMessageAndNumberOfMessagesIncreases() {
         let sut = DefaultChatViewModel(repository: MockRepository(option: .multiplePassages), ballonViewModelInjector: ballonViewModelInjector)
         let newMessageExpectation = expectation(description: "new message arrived")
-        let wantedMessages: [String?] = ["rootText", "TextOfChoice1"]
 
-        checkPublisherSequence(publisher: sut.output.lastMessage, toBeEqualTo: wantedMessages, storeIn: &cancellablesStore) {
+        checkPublisherSequence(publisher: sut.output.messageWasAdded, callCount: 2, storeIn: &cancellablesStore) {
             newMessageExpectation.fulfill()
         }
 
@@ -74,7 +72,7 @@ class DefaultChatViewModelTests: XCTestCase {
     func test_callBallonViewModelAt_returnsTheRightViewModel() {
         let sut = DefaultChatViewModel(repository: MockRepository(option: .onePassage), ballonViewModelInjector: ballonViewModelInjector)
         
-        sut.output.lastMessage.sink { message in
+        sut.output.messageWasAdded.sink { message in
             XCTAssertEqual(sut.output.ballonViewModelAt(0).text, "rootText")
         }.store(in: &cancellablesStore)
     }
@@ -82,7 +80,7 @@ class DefaultChatViewModelTests: XCTestCase {
     func test_callBallonViewModelAt_returnsThetViewModelWithRightType() {
         let sut = DefaultChatViewModel(repository: MockRepository(option: .onePassage), ballonViewModelInjector: ballonViewModelInjector)
         
-        sut.output.lastMessage.sink { message in
+        sut.output.messageWasAdded.sink { message in
             XCTAssertTrue(sut.output.ballonViewModelAt(0) is MockBallonViewModel)
         }.store(in: &cancellablesStore)
     }
@@ -107,8 +105,8 @@ class DefaultChatViewModelTests: XCTestCase {
 }
 
 extension ChatViewModel {
-    var ballonViewModelsPublisher: Publishers.CompactMap<CurrentValueSubject<String?, Never>, MockBallonViewModel> {
-        self.output.lastMessage.compactMap { _ -> MockBallonViewModel? in
+    var ballonViewModelsPublisher: Publishers.CompactMap<CurrentValueSubject<Void, Never>, MockBallonViewModel> {
+        self.output.messageWasAdded.compactMap { _ -> MockBallonViewModel? in
             self.output.ballonViewModelAt(self.output.numberOfMessages - 1) as? MockBallonViewModel
         }
     }

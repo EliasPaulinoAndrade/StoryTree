@@ -12,11 +12,10 @@ import Combine
 
 class MockChatViewModel: ChatViewModel {
     struct Output: ChatViewModelOutput {
+        var messageWasAdded: CurrentValueSubject<Void, Never> = .init(())
         var choices: CurrentValueSubject<[String], Never> = .init([])
         var numberOfMessages: Int = 0
-        var lastMessage: CurrentValueSubject<String?, Never> = .init(nil)
         var ballonViewModelAt: (Int) -> PassageViewModel
-        var showNewMessage: ((PassageViewModel) -> Void)?
     }
     
     struct Input: ChatViewModelInput {
@@ -28,6 +27,6 @@ class MockChatViewModel: ChatViewModel {
         
     func showNewMessage(text: String) {
         output.numberOfMessages += 1
-        self.output.showNewMessage?(MockBallonViewModel(text: text))
+        self.output.messageWasAdded.send()
     }
 }

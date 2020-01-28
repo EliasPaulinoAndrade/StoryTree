@@ -11,8 +11,8 @@ import Combine
 import StoryTree
 
 private struct Output: ChatViewModelOutput {
+    var messageWasAdded: CurrentValueSubject<Void, Never> = .init(())
     var choices: CurrentValueSubject<[String], Never> = .init([])
-    var lastMessage: CurrentValueSubject<String?, Never> = .init(nil)
     var numberOfMessages: Int = 0
     var ballonViewModelAt: (Int) -> PassageViewModel
     var showNewMessage: ((PassageViewModel) -> Void)?
@@ -34,6 +34,7 @@ class DefaultChatViewModel: ChatViewModel {
     init(repository: StoryTreeRepository, ballonViewModelInjector: @escaping Injector<PassageViewModel, String>) {
         self.repository = repository
         self.ballonViewModelInjector = ballonViewModelInjector
+        
         getStory()
     }
     
@@ -57,7 +58,7 @@ class DefaultChatViewModel: ChatViewModel {
             ifIsSafe(self) { (self) in
                 self.output.numberOfMessages += 1
                 self.passagesHistory.append(passage)
-                self.output.lastMessage.send(passage.text)
+                self.output.messageWasAdded.send()
                 self.output.choices.send(Array(passage.actions.keys.sorted()))
             }
         }
@@ -65,5 +66,6 @@ class DefaultChatViewModel: ChatViewModel {
         input.choiceWasMade.sink { choice in
             story.goAhead(action: choice)
         }.store(in: &self.cancellables)
+        
     }
 }
