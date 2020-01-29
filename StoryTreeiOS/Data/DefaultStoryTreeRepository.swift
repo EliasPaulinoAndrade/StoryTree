@@ -11,7 +11,7 @@ import StoryTree
 
 struct DefaultStoryTreeRepository: StoryTreeRepository {
     func getTree(completion: (Result<StoryTree, Error>) -> Void) {
-        let story = StoryTree(title: "", description: "", SimplePassage("rootPassage"))
+        let story = StoryTree(title: "", description: "", SimplePassage("rootPassage wqe wqe wqe wqe weweqwewqewe qwewq"))
         completion(.success(story))
     }
 }

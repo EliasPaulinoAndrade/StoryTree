@@ -11,7 +11,7 @@ import XCTest
 
 class ChatViewControllerTests: XCTestCase {
     func test_initilization_mustAddChatViewAsChild() {
-        let sut = ChatViewController(viewModel: MockChatViewModel())
+        let sut = ChatViewController(viewModel: MockMessagesViewModel())
             
         XCTAssertEqual(sut.chatView.superview, sut.view)
     }

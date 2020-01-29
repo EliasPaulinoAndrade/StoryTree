@@ -19,7 +19,14 @@ class BallonView: UITableViewCell, ViewCodable {
         }
     }
     
-    let descriptionLabel: UILabel = UILabel()
+    let descriptionLabel: UILabel = UILabel().build {
+        $0.numberOfLines = 0
+    }
+    
+    let ballonBackgroundView = UIView().build {
+        $0.backgroundColor = .white
+        $0.layer.cornerRadius = 15
+    }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -32,10 +39,19 @@ class BallonView: UITableViewCell, ViewCodable {
     }
     
     func buildHierarchy() {
-        self.addSubview(descriptionLabel)
+        addSubview(ballonBackgroundView)
+        ballonBackgroundView.addSubview(descriptionLabel)
     }
      
     func addConstraints() {
-        descriptionLabel.layout.fillSuperView()
+        ballonBackgroundView.layout.build {
+            $0.group.top.left.bottom.fill(to: layoutMarginsGuide)
+            $0.right.lessThanOrEqual(to: layoutMarginsGuide.layout.right)
+        }
+        descriptionLabel.layout.fillSuperView(withMargin: 10)
+    }
+    
+    func applyAditionalChanges() {
+        backgroundColor = .clear
     }
 }

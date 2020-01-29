@@ -12,3 +12,7 @@ import Foundation
 func ballonViewModelInjector(_ text: String) -> PassageViewModel {
     return MockBallonViewModel(text: text)
 }
+
+func inputViewModelInjector() -> InputViewModel {
+    return MockInputViewModel()
+}

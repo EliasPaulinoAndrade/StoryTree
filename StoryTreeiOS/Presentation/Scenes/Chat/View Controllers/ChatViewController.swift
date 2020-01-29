@@ -10,11 +10,11 @@ import UIKit
 import Twiner
 
 class ChatViewController: UIViewController, ViewCodable {
-    lazy var chatView = ChatView(viewModel: viewModel)
+    lazy var chatView = MessagesView(viewModel: viewModel)
     
-    private let viewModel: ChatViewModel
+    private let viewModel: MessagesViewModel
     
-    init(viewModel: ChatViewModel) {
+    init(viewModel: MessagesViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
         setupView()
@@ -30,5 +30,9 @@ class ChatViewController: UIViewController, ViewCodable {
     
     func addConstraints() {
         chatView.layout.fill(view: view.layoutMarginsGuide)
+    }
+    
+    func applyAditionalChanges() {
+        view.backgroundColor = .red
     }
 }

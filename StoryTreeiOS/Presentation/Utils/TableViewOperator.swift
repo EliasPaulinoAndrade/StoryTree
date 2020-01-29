@@ -13,19 +13,31 @@ struct CellConfigurator<CellType: UITableViewCell, Element> {
     var configurationBlock: (_ cell: CellType, _ position: Int, _ element: Element) -> Void
 }
 
-class TableViewOperator<CellType: UITableViewCell, Element>: NSObject, UITableViewDataSource {
+struct TapObserver {
+    var tapHandleBlock: (_ position: Int) -> Void
+}
+
+class TableViewOperator<CellType: UITableViewCell, Element>: NSObject, UITableViewDataSource, UITableViewDelegate {
     private weak var tableView: UITableView?
     private var configurator: CellConfigurator<CellType, Element>
+    private var tapObserver: TapObserver?
     private var collection: [Element] = []
     
-    init(tableView: UITableView, configurator: CellConfigurator<CellType, Element>) {
+    init(_ tableView: UITableView, configurator: CellConfigurator<CellType, Element>, tapObserver: TapObserver? = nil) {
         self.tableView = tableView
         self.configurator = configurator
+        self.tapObserver = tapObserver
         
         super.init()
         
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.registerReusableCell(forCellType: CellType.self)
+    }
+    
+    func with(_ tapObserver: TapObserver) -> TableViewOperator {
+        self.tapObserver = tapObserver
+        return self
     }
     
     func reloadCollection(_ collection: [Element]) {
@@ -44,17 +56,8 @@ class TableViewOperator<CellType: UITableViewCell, Element>: NSObject, UITableVi
         
         return cell
     }
-}
-
-@_functionBuilder
-struct TableOperatorBuilder {
-    static func buildBlock<CellType: UITableViewCell, Element>(_ segment: CellConfigurator<CellType, Element>) -> CellConfigurator<CellType, Element> {
-        return segment
-    }
-}
-
-extension TableViewOperator {
-    convenience init(_ tableView: UITableView, @TableOperatorBuilder _ content: () -> CellConfigurator<CellType, Element>) {
-        self.init(tableView: tableView, configurator: content())
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.tapObserver?.tapHandleBlock(indexPath.row)
     }
 }

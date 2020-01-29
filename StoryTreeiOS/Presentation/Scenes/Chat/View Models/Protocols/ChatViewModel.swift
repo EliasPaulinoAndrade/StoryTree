@@ -2,25 +2,18 @@
 //  ChatViewModel.swift
 //  StoryTreeiOS
 //
-//  Created by Elias Paulino on 25/01/20.
+//  Created by Elias Paulino on 29/01/20.
 //  Copyright © 2020 Elias Paulino. All rights reserved.
 //
 
 import Foundation
-import Combine
 
 protocol ChatViewModelOutput {
-    var numberOfMessages: Int { get set }
-    var ballonViewModelAt: (Int) -> PassageViewModel { get set }
-    var messageWasAdded: CurrentValueSubject<Void, Never> { get set }
-    var choices: CurrentValueSubject<[String], Never> { get set }
-}
-
-protocol ChatViewModelInput {
-    var choiceWasMade: PassthroughSubject<String, Never> { get set }
+    var inputViewModel: InputViewModel { get }
+    var messagesViewModel: MessagesViewModel { get }
 }
 
 protocol ChatViewModel {
-    var output: ChatViewModelOutput { get set }
-    var input: ChatViewModelInput { get set }
+    typealias ChatOutput = ChatViewModelOutput
+    var output: ChatOutput { get set }
 }
