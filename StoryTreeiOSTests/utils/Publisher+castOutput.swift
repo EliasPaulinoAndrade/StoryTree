@@ -9,6 +9,7 @@
 import Foundation
 import Combine
 
+@available(OSX 10.15, *)
 extension Publisher where Failure == Never {
     func castOutput<O>(to newOutputType: O.Type) -> AnyPublisher<O, Never> {
         return self.compactMap { (output) -> O? in

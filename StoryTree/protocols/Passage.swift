@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Combine
 
 public protocol Passage: AnyObject {
     var text: String { get }
@@ -35,5 +36,14 @@ public extension Passage {
         findPassage(forAction: action) { passage in
             story?.currentPassage = passage
         }
+    }
+}
+
+@available(OSX 10.15, *)
+public extension Passage {
+    func goAhead<P: Publisher>(_ choiceMade: P, cancellable: inout [AnyCancellable]) where P.Output == String, P.Failure == Never {
+        choiceMade.sink { (choice) in
+            self.goAhead(action: choice)
+        }.store(in: &cancellable)
     }
 }

@@ -62,6 +62,10 @@
 		E38C621A23E303C100D8729B /* MockSubscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38C621923E303C100D8729B /* MockSubscriber.swift */; };
 		E38C621C23E3046A00D8729B /* DefaultChatViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38C621B23E3046A00D8729B /* DefaultChatViewModelTests.swift */; };
 		E38C621E23E3055A00D8729B /* DefaultChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38C621D23E3055A00D8729B /* DefaultChatViewModel.swift */; };
+		E38C621F23E38BE200D8729B /* AnySubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38C621423E2EB2500D8729B /* AnySubject.swift */; };
+		E38C622023E38F0800D8729B /* Subject+eraseToAnySubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38C621223E2EB0700D8729B /* Subject+eraseToAnySubject.swift */; };
+		E38C622123E394CB00D8729B /* XCTestCase+checkPublisherSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D936FC23DE577F00B0244F /* XCTestCase+checkPublisherSequence.swift */; };
+		E38C622223E3951500D8729B /* Publisher+castOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38C620F23E26B3800D8729B /* Publisher+castOutput.swift */; };
 		E3CFA4DF23E079E900BE4E49 /* TableViewOperatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CFA4DE23E079E900BE4E49 /* TableViewOperatorTests.swift */; };
 		E3CFA4E123E07EDD00BE4E49 /* TableViewOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CFA4E023E07EDD00BE4E49 /* TableViewOperator.swift */; };
 		E3CFA4E323E0D3D200BE4E49 /* CustomMockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CFA4E223E0D3D200BE4E49 /* CustomMockCell.swift */; };
@@ -1204,8 +1208,10 @@
 				E32AE22923DBDE58006BB2C5 /* InitializablePassage.swift in Sources */,
 				E32AE22723DBDC66006BB2C5 /* Choice.swift in Sources */,
 				E32AE24123DC9CE7006BB2C5 /* PassageWithExtraTextSections.swift in Sources */,
+				E38C622023E38F0800D8729B /* Subject+eraseToAnySubject.swift in Sources */,
 				E3D66D0923D9D0AA0067D782 /* ConditionalPassageDecorator.swift in Sources */,
 				E32AE22323DBD601006BB2C5 /* PassageBuilder.swift in Sources */,
+				E38C621F23E38BE200D8729B /* AnySubject.swift in Sources */,
 				E3D66D0C23D9D0D30067D782 /* ConditionalPassage.swift in Sources */,
 				E3D66D0223D9D0320067D782 /* Passage.swift in Sources */,
 				E3D66D0023D8811C0067D782 /* StoryTree.swift in Sources */,
@@ -1219,9 +1225,11 @@
 			files = (
 				E32AE20723DB8949006BB2C5 /* DecoratorMock.swift in Sources */,
 				E32AE20523DB891A006BB2C5 /* PassageProtocolsAndDecoratorsMocks.swift in Sources */,
+				E38C622223E3951500D8729B /* Publisher+castOutput.swift in Sources */,
 				E3D66D1023D9D1E50067D782 /* PassageDecoratorTests.swift in Sources */,
 				E32AE20223DB88E5006BB2C5 /* PassageSpy.swift in Sources */,
 				E3D66D1223D9D7520067D782 /* PassageTests.swift in Sources */,
+				E38C622123E394CB00D8729B /* XCTestCase+checkPublisherSequence.swift in Sources */,
 				E32AE20C23DB89CA006BB2C5 /* SimplePassage+init.swift in Sources */,
 				E32AE20023DB88A5006BB2C5 /* StoryTreeSpy.swift in Sources */,
 				E32AE22D23DBDF9E006BB2C5 /* PassageWithImageTests.swift in Sources */,

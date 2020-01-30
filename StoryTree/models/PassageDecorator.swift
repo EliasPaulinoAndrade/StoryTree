@@ -9,6 +9,16 @@
 import Foundation
 
 public class PassageDecorator: Passage {
+    
+//    @available(OSX 10.15, *)
+//    public var goAhead: AnySubject<String, Never> {
+//        get {
+//            return decoratedPassage.goAhead
+//        } set {
+//            decoratedPassage.goAhead = newValue
+//        }
+//    }
+    
     public var text: String {
         get {
             return decoratedPassage.text

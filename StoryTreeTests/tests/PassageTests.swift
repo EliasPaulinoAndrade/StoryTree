@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import Combine
 import XCTest
 @testable import StoryTree
 
@@ -36,5 +36,30 @@ class PassageTests: XCTestCase {
         }
         
         XCTAssertEqual(callbackWasCalled, false)
+    }
+    
+    func test_goAheadSubject_bla() {
+        guard #available(OSX 10.15, *) else { return }
+        
+        let subPassage = SimplePassage()
+        let sut = SimplePassage("rootPassage") {
+            Choice("choice1") {
+                subPassage
+            }
+        }
+        
+        let tree = StoryTree(title: "", description: "", sut)
+        var cancellableStore: [AnyCancellable] = []
+        let newActionExpectation = expectation(description: "new action arrived")
+        
+        checkPublisherSequence(publisher: tree.foreachAction.castOutput(to: SimplePassage.self),
+                               toBeEqualTo: [sut, subPassage],
+                               storeIn: &cancellableStore) {
+            newActionExpectation.fulfill()
+        }
+        
+        sut.goAhead(Just("choice1"), cancellable: &cancellableStore)
+        
+        wait(for: [newActionExpectation], timeout: 1)
     }
 }
