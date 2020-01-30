@@ -23,7 +23,7 @@ class DefaultMessagesViewModelTests: XCTestCase {
         let newMessageExpectation = expectation(description: "new message arrived")
         let wantedViewModels: [[MockBallonViewModel]] = [[MockBallonViewModel(text: "rootText")]]
 
-        checkPublisherSequence(publisher: sut.output.messages.asMockPassageViewModelsObserver, toBeEqualTo: wantedViewModels, storeIn: &cancellablesStore) {
+        checkPublisherSequence(publisher: sut.output.messages.castOutput(to: [MockBallonViewModel].self), toBeEqualTo: wantedViewModels, storeIn: &cancellablesStore) {
             newMessageExpectation.fulfill()
         }
         
@@ -37,7 +37,7 @@ class DefaultMessagesViewModelTests: XCTestCase {
         
         let wantedViewModels: [[MockBallonViewModel]] = [[MockBallonViewModel(text: "rootText")]]
 
-        checkPublisherSequence(publisher: sut.output.messages.asMockPassageViewModelsObserver, toBeEqualTo: wantedViewModels, storeIn: &cancellablesStore) {
+        checkPublisherSequence(publisher: sut.output.messages.castOutput(to: [MockBallonViewModel].self), toBeEqualTo: wantedViewModels, storeIn: &cancellablesStore) {
             newMessageExpectation.fulfill()
         }
 
@@ -53,16 +53,11 @@ class DefaultMessagesViewModelTests: XCTestCase {
             [MockBallonViewModel(text: "rootText"), MockBallonViewModel(text: "TextOfChoice1")]
         ]
 
-        checkPublisherSequence(publisher: sut.output.messages.asMockPassageViewModelsObserver, toBeEqualTo: wantedViewModels, storeIn: &cancellablesStore) {
+        checkPublisherSequence(publisher: sut.output.messages.castOutput(to: [MockBallonViewModel].self), toBeEqualTo: wantedViewModels, storeIn: &cancellablesStore) {
             newMessageExpectation.fulfill()
         }
 
         sutInput.send(["rootText", "TextOfChoice1"])
-//        sut.output.choices.sink { choices in
-//            if choices.count > 0 {
-//                sut.input.choiceWasMade.send(choices[0])
-//            }
-//        }.store(in: &cancellablesStore)
 
         wait(for: [newMessageExpectation], timeout: 1)
     }
@@ -75,13 +70,5 @@ class DefaultMessagesViewModelTests: XCTestCase {
             input: DefaultMessagesViewModel.Input(messages: input),
             ballonViewModelInjector: ballonViewModelInjector
         )
-    }
-}
-
-extension Publisher where Output == [PassageViewModel], Failure == Never {
-    var asMockPassageViewModelsObserver: AnyPublisher<[MockBallonViewModel], Never> {
-        return self.compactMap { (viewModels) -> [MockBallonViewModel]? in
-            return viewModels as? [MockBallonViewModel]
-        }.eraseToAnyPublisher()
     }
 }

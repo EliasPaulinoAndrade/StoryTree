@@ -54,6 +54,14 @@
 		E32AE33123DCF2EA006BB2C5 /* UITableViewDequeueAndRegisterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE33023DCF2EA006BB2C5 /* UITableViewDequeueAndRegisterTests.swift */; };
 		E32AE33923DCF610006BB2C5 /* PassageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE33823DCF610006BB2C5 /* PassageViewModel.swift */; };
 		E32AE33B23DCF628006BB2C5 /* MessagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AE33A23DCF628006BB2C5 /* MessagesViewModel.swift */; };
+		E36D49E823E2693800B10133 /* MockChoiceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36D49E723E2693800B10133 /* MockChoiceViewModel.swift */; };
+		E38C621023E26B3800D8729B /* Publisher+castOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38C620F23E26B3800D8729B /* Publisher+castOutput.swift */; };
+		E38C621323E2EB0700D8729B /* Subject+eraseToAnySubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38C621223E2EB0700D8729B /* Subject+eraseToAnySubject.swift */; };
+		E38C621523E2EB2500D8729B /* AnySubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38C621423E2EB2500D8729B /* AnySubject.swift */; };
+		E38C621723E2EB7700D8729B /* AnySubjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38C621623E2EB7700D8729B /* AnySubjectTests.swift */; };
+		E38C621A23E303C100D8729B /* MockSubscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38C621923E303C100D8729B /* MockSubscriber.swift */; };
+		E38C621C23E3046A00D8729B /* DefaultChatViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38C621B23E3046A00D8729B /* DefaultChatViewModelTests.swift */; };
+		E38C621E23E3055A00D8729B /* DefaultChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38C621D23E3055A00D8729B /* DefaultChatViewModel.swift */; };
 		E3CFA4DF23E079E900BE4E49 /* TableViewOperatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CFA4DE23E079E900BE4E49 /* TableViewOperatorTests.swift */; };
 		E3CFA4E123E07EDD00BE4E49 /* TableViewOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CFA4E023E07EDD00BE4E49 /* TableViewOperator.swift */; };
 		E3CFA4E323E0D3D200BE4E49 /* CustomMockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CFA4E223E0D3D200BE4E49 /* CustomMockCell.swift */; };
@@ -92,12 +100,14 @@
 		E3D936FD23DE577F00B0244F /* XCTestCase+checkPublisherSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D936FC23DE577F00B0244F /* XCTestCase+checkPublisherSequence.swift */; };
 		E3D936FF23DE57B400B0244F /* MockRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D936FE23DE57B400B0244F /* MockRepository.swift */; };
 		E3D9370123DE5A1200B0244F /* Injector.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D9370023DE5A1200B0244F /* Injector.swift */; };
-		E3D9370323DE5AAA00B0244F /* BallonViewModelInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D9370223DE5AAA00B0244F /* BallonViewModelInjector.swift */; };
+		E3D9370323DE5AAA00B0244F /* Injectors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D9370223DE5AAA00B0244F /* Injectors.swift */; };
 		E3D9370623DE678000B0244F /* ChatViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D9370523DE678000B0244F /* ChatViewControllerTests.swift */; };
 		E3D9370923DE680700B0244F /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D9370823DE680600B0244F /* ChatViewController.swift */; };
 		E3D9370C23DE6B3000B0244F /* DefaultStoryTreeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D9370B23DE6B3000B0244F /* DefaultStoryTreeRepository.swift */; };
 		E3F98FD923E214D000690D4E /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F98FD823E214D000690D4E /* ChatViewModel.swift */; };
 		E3F98FDB23E2155500690D4E /* MockChatViewmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F98FDA23E2155500690D4E /* MockChatViewmodel.swift */; };
+		E3F98FDD23E2663A00690D4E /* DefaultInputViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F98FDC23E2663A00690D4E /* DefaultInputViewModelTests.swift */; };
+		E3F98FDF23E266E600690D4E /* ChoiceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F98FDE23E266E600690D4E /* ChoiceViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -227,6 +237,14 @@
 		E32AE33023DCF2EA006BB2C5 /* UITableViewDequeueAndRegisterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewDequeueAndRegisterTests.swift; sourceTree = "<group>"; };
 		E32AE33823DCF610006BB2C5 /* PassageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassageViewModel.swift; sourceTree = "<group>"; };
 		E32AE33A23DCF628006BB2C5 /* MessagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewModel.swift; sourceTree = "<group>"; };
+		E36D49E723E2693800B10133 /* MockChoiceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockChoiceViewModel.swift; sourceTree = "<group>"; };
+		E38C620F23E26B3800D8729B /* Publisher+castOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+castOutput.swift"; sourceTree = "<group>"; };
+		E38C621223E2EB0700D8729B /* Subject+eraseToAnySubject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Subject+eraseToAnySubject.swift"; sourceTree = "<group>"; };
+		E38C621423E2EB2500D8729B /* AnySubject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnySubject.swift; sourceTree = "<group>"; };
+		E38C621623E2EB7700D8729B /* AnySubjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnySubjectTests.swift; sourceTree = "<group>"; };
+		E38C621923E303C100D8729B /* MockSubscriber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSubscriber.swift; sourceTree = "<group>"; };
+		E38C621B23E3046A00D8729B /* DefaultChatViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultChatViewModelTests.swift; sourceTree = "<group>"; };
+		E38C621D23E3055A00D8729B /* DefaultChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultChatViewModel.swift; sourceTree = "<group>"; };
 		E3CFA4DE23E079E900BE4E49 /* TableViewOperatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewOperatorTests.swift; sourceTree = "<group>"; };
 		E3CFA4E023E07EDD00BE4E49 /* TableViewOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewOperator.swift; sourceTree = "<group>"; };
 		E3CFA4E223E0D3D200BE4E49 /* CustomMockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMockCell.swift; sourceTree = "<group>"; };
@@ -264,12 +282,14 @@
 		E3D936FC23DE577F00B0244F /* XCTestCase+checkPublisherSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+checkPublisherSequence.swift"; sourceTree = "<group>"; };
 		E3D936FE23DE57B400B0244F /* MockRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRepository.swift; sourceTree = "<group>"; };
 		E3D9370023DE5A1200B0244F /* Injector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injector.swift; sourceTree = "<group>"; };
-		E3D9370223DE5AAA00B0244F /* BallonViewModelInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallonViewModelInjector.swift; sourceTree = "<group>"; };
+		E3D9370223DE5AAA00B0244F /* Injectors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injectors.swift; sourceTree = "<group>"; };
 		E3D9370523DE678000B0244F /* ChatViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewControllerTests.swift; sourceTree = "<group>"; };
 		E3D9370823DE680600B0244F /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		E3D9370B23DE6B3000B0244F /* DefaultStoryTreeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultStoryTreeRepository.swift; sourceTree = "<group>"; };
 		E3F98FD823E214D000690D4E /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		E3F98FDA23E2155500690D4E /* MockChatViewmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockChatViewmodel.swift; sourceTree = "<group>"; };
+		E3F98FDC23E2663A00690D4E /* DefaultInputViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultInputViewModelTests.swift; sourceTree = "<group>"; };
+		E3F98FDE23E266E600690D4E /* ChoiceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -402,6 +422,7 @@
 		E32AE24B23DCB2F4006BB2C5 /* StoryTreeiOS */ = {
 			isa = PBXGroup;
 			children = (
+				E38C621123E2EADE00D8729B /* Utils */,
 				E3D936C223DCFD4800B0244F /* Domain */,
 				E3D9370A23DE6B1B00B0244F /* Data */,
 				E32AE33223DCF5B4006BB2C5 /* Presentation */,
@@ -531,6 +552,7 @@
 				E3D936BE23DCFC8800B0244F /* DefaultMessagesViewModel.swift */,
 				E3D936C023DCFCE500B0244F /* DefaultBallonViewModel.swift */,
 				E3CFA4EE23E0DFA900BE4E49 /* DefaultInputViewModel.swift */,
+				E38C621D23E3055A00D8729B /* DefaultChatViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -542,8 +564,36 @@
 				E32AE33A23DCF628006BB2C5 /* MessagesViewModel.swift */,
 				E3CFA4EC23E0DE0100BE4E49 /* InputViewModel.swift */,
 				E3F98FD823E214D000690D4E /* ChatViewModel.swift */,
+				E3F98FDE23E266E600690D4E /* ChoiceViewModel.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		E36D49E623E2691C00B10133 /* DefaultInputViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E3F98FDC23E2663A00690D4E /* DefaultInputViewModelTests.swift */,
+				E36D49E723E2693800B10133 /* MockChoiceViewModel.swift */,
+			);
+			path = DefaultInputViewModel;
+			sourceTree = "<group>";
+		};
+		E38C621123E2EADE00D8729B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E38C621223E2EB0700D8729B /* Subject+eraseToAnySubject.swift */,
+				E38C621423E2EB2500D8729B /* AnySubject.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		E38C621823E303B100D8729B /* AnySubjectTests */ = {
+			isa = PBXGroup;
+			children = (
+				E38C621623E2EB7700D8729B /* AnySubjectTests.swift */,
+				E38C621923E303C100D8729B /* MockSubscriber.swift */,
+			);
+			path = AnySubjectTests;
 			sourceTree = "<group>";
 		};
 		E3CFA4DD23E079A000BE4E49 /* TableViewOperator */ = {
@@ -707,8 +757,9 @@
 			children = (
 				E3D936FA23DE573B00B0244F /* MockStoryTree.swift */,
 				E3D936FC23DE577F00B0244F /* XCTestCase+checkPublisherSequence.swift */,
-				E3D9370223DE5AAA00B0244F /* BallonViewModelInjector.swift */,
+				E3D9370223DE5AAA00B0244F /* Injectors.swift */,
 				E3CFA4F023E0E07300BE4E49 /* MockInputViewModel.swift */,
+				E38C620F23E26B3800D8729B /* Publisher+castOutput.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -720,12 +771,15 @@
 				E32AE33023DCF2EA006BB2C5 /* UITableViewDequeueAndRegisterTests.swift */,
 				E3D936F423DE4A8F00B0244F /* StoryTreeWithCombineTests.swift */,
 				E3CFA4F823E1CACF00BE4E49 /* InputViewTests.swift */,
+				E3D9370523DE678000B0244F /* ChatViewControllerTests.swift */,
+				E38C621B23E3046A00D8729B /* DefaultChatViewModelTests.swift */,
+				E38C621823E303B100D8729B /* AnySubjectTests */,
+				E36D49E623E2691C00B10133 /* DefaultInputViewModel */,
 				E3CFA4F723E1CAA900BE4E49 /* ChatView */,
 				E3D936BB23DCFAFB00B0244F /* DefaultMessagesViewModel */,
 				E3D936B723DCFA6A00B0244F /* MessagesView */,
 				E3D936B423DCF9C300B0244F /* BallonView */,
 				E3CFA4DD23E079A000BE4E49 /* TableViewOperator */,
-				E3D9370523DE678000B0244F /* ChatViewControllerTests.swift */,
 			);
 			path = tests;
 			sourceTree = "<group>";
@@ -1049,11 +1103,14 @@
 				E3CFA4F623E1CA8500BE4E49 /* ChatView.swift in Sources */,
 				E32AE32523DCCD63006BB2C5 /* MessagesView.swift in Sources */,
 				E32AE27E23DCBDE1006BB2C5 /* BallonView.swift in Sources */,
+				E38C621323E2EB0700D8729B /* Subject+eraseToAnySubject.swift in Sources */,
+				E38C621523E2EB2500D8729B /* AnySubject.swift in Sources */,
 				E32AE33B23DCF628006BB2C5 /* MessagesViewModel.swift in Sources */,
 				E32AE33923DCF610006BB2C5 /* PassageViewModel.swift in Sources */,
 				E3D9370123DE5A1200B0244F /* Injector.swift in Sources */,
 				E3CFA4EB23E0DCE600BE4E49 /* InputView.swift in Sources */,
 				E3D936C623DCFD6500B0244F /* StoryTreeRepository.swift in Sources */,
+				E38C621E23E3055A00D8729B /* DefaultChatViewModel.swift in Sources */,
 				E3D936C123DCFCE500B0244F /* DefaultBallonViewModel.swift in Sources */,
 				E3CFA4E123E07EDD00BE4E49 /* TableViewOperator.swift in Sources */,
 				E32AE32D23DCEECE006BB2C5 /* ifIsSafe.swift in Sources */,
@@ -1065,6 +1122,7 @@
 				E32AE24D23DCB2F4006BB2C5 /* AppDelegate.swift in Sources */,
 				E32AE32723DCE7E5006BB2C5 /* UITableView+dequeueReusableCell+registerReusableCell.swift in Sources */,
 				E3F98FD923E214D000690D4E /* ChatViewModel.swift in Sources */,
+				E3F98FDF23E266E600690D4E /* ChoiceViewModel.swift in Sources */,
 				E32AE32123DCC748006BB2C5 /* ViewCodable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1076,19 +1134,25 @@
 				E3F98FDB23E2155500690D4E /* MockChatViewmodel.swift in Sources */,
 				E3CFA4F423E1C9D600BE4E49 /* DefaultMessagesViewModelTests.swift in Sources */,
 				E32AE32F23DCEF02006BB2C5 /* IfIsSafeTests.swift in Sources */,
+				E38C621723E2EB7700D8729B /* AnySubjectTests.swift in Sources */,
 				E32AE33123DCF2EA006BB2C5 /* UITableViewDequeueAndRegisterTests.swift in Sources */,
 				E3CFA4F123E0E07300BE4E49 /* MockInputViewModel.swift in Sources */,
+				E36D49E823E2693800B10133 /* MockChoiceViewModel.swift in Sources */,
 				E3D936FB23DE573B00B0244F /* MockStoryTree.swift in Sources */,
 				E3D936B923DCFA8400B0244F /* MockMessagesViewModel.swift in Sources */,
 				E3D936FD23DE577F00B0244F /* XCTestCase+checkPublisherSequence.swift in Sources */,
 				E32AE32323DCC848006BB2C5 /* MessagesViewTests.swift in Sources */,
-				E3D9370323DE5AAA00B0244F /* BallonViewModelInjector.swift in Sources */,
+				E3D9370323DE5AAA00B0244F /* Injectors.swift in Sources */,
 				E32AE27B23DCBC0D006BB2C5 /* BallonViewTests.swift in Sources */,
+				E38C621A23E303C100D8729B /* MockSubscriber.swift in Sources */,
+				E38C621023E26B3800D8729B /* Publisher+castOutput.swift in Sources */,
 				E3CFA4E323E0D3D200BE4E49 /* CustomMockCell.swift in Sources */,
 				E3CFA4FB23E2132700BE4E49 /* ChatViewTests.swift in Sources */,
 				E3CFA4E523E0D3F400BE4E49 /* UITableView+textLabelValuesFor+checkCellTypesFor.swift in Sources */,
+				E38C621C23E3046A00D8729B /* DefaultChatViewModelTests.swift in Sources */,
 				E3D936B623DCFA4700B0244F /* MockBallonViewModel.swift in Sources */,
 				E3D9370623DE678000B0244F /* ChatViewControllerTests.swift in Sources */,
+				E3F98FDD23E2663A00690D4E /* DefaultInputViewModelTests.swift in Sources */,
 				E3D936FF23DE57B400B0244F /* MockRepository.swift in Sources */,
 				E3CFA4DF23E079E900BE4E49 /* TableViewOperatorTests.swift in Sources */,
 				E3D936F523DE4A8F00B0244F /* StoryTreeWithCombineTests.swift in Sources */,

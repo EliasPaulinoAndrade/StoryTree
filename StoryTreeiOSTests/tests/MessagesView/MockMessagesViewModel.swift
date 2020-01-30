@@ -19,13 +19,23 @@ class MockMessagesViewModel: MessagesViewModel {
         var messages: AnyPublisher<[String], Never>
     }
     
-    var messagesSubject = CurrentValueSubject<[String], Never>([])
-    lazy var input: MessagesViewModelInput = Input(messages: messagesSubject.eraseToAnyPublisher())
+    var messagesSubject: CurrentValueSubject<[String], Never>
+    var messagesInputSubject: CurrentValueSubject<[String], Never> = .init([])
+    var input: MessagesViewModelInput
     
     var messages: [String] = []
-    var messageWasSent: ((String) -> Void)?
     
     var cancellableStore: [AnyCancellable] = []
+    
+    init(input: Input? = nil) {
+        let messagesSubject = CurrentValueSubject<[String], Never>([])
+        self.messagesSubject = messagesSubject
+        
+        self.input = input ?? Input(messages: messagesSubject.eraseToAnyPublisher())
+        self.input.messages.sink { [weak self] (messages) in
+            self?.messagesInputSubject.send(messages)
+        }.store(in: &cancellableStore)
+    }
     
     func showNewMessage(text: String = "test") {
         messages.append(text)

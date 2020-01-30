@@ -17,11 +17,15 @@ class MockStoryTree: StoryTree {
     }
 
     convenience init(option: Option) {
+        self.init(title: "", description: "", SimplePassage(option: option))
+    }
+}
+
+extension SimplePassage {
+    convenience init(option: MockStoryTree.Option) {
         switch option {
-        case .onePassage:
-            self.init(title: "", description: "", SimplePassage("rootText"))
         case .multiplePassages:
-            let rootPassage = SimplePassage("rootText") {
+            self.init("rootText") {
                 Choice("choice1") {
                     SimplePassage("TextOfChoice1")
                 }
@@ -29,7 +33,8 @@ class MockStoryTree: StoryTree {
                     SimplePassage("textOfChoice2")
                 }
             }
-            self.init(title: "", description: "", rootPassage)
+        case .onePassage:
+            self.init("")
         }
     }
 }

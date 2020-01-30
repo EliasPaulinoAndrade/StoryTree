@@ -10,8 +10,8 @@ import UIKit
 
 class ChatView: UIView, ViewCodable {
     private var viewModel: ChatViewModel
-    lazy var messagesView = MessagesView(viewModel: viewModel.output.messagesViewModel)
-    lazy var messagesInputView = InputView(viewModel: viewModel.output.inputViewModel)
+    lazy var messagesView = MessagesView(viewModel: viewModel.subViewModels.messagesViewModel)
+    lazy var messagesInputView = InputView(viewModel: viewModel.subViewModels.inputViewModel)
     
     init(viewModel: ChatViewModel) {
         self.viewModel = viewModel

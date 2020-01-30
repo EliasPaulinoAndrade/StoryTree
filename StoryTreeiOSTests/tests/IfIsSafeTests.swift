@@ -26,4 +26,20 @@ class IfIsSafeTests: XCTestCase {
         
         XCTAssertTrue(!completionWasCalled)
     }
+    
+    func test_safeValue_returnsValue() {
+        let usafeVar: String? = "test"
+        
+        XCTAssertEqual(ifIsSafe(usafeVar) { str -> [String] in
+            return ["\(str)1", "\(str)2"]
+        }, ["test1", "test2"])
+    }
+
+    func test_unsafeValue_retursDefaultValue() {
+        let usafeVar: String? = nil
+
+        XCTAssertEqual(ifIsSafe(usafeVar, default: 4) { str -> Int in
+            return str.count
+        }, 4)
+    }
 }

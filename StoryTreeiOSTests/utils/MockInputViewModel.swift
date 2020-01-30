@@ -10,20 +10,36 @@ import Foundation
 import Combine
 @testable import StoryTreeiOS
 
-private struct Input: InputViewModelInput {
-    var messageWasSent: PassthroughSubject<String, Never> = .init()
+struct Input: InputViewModelInput {
+    var choiceWasMade: AnySubject<String, Never> = .init(subject: PassthroughSubject())
+    var messageWasSent: AnySubject<String, Never> = .init(subject: PassthroughSubject())
+    var choices: AnyPublisher<[String], Never>
 }
 
 private struct Output: InputViewModelOutput {
-    var choices: CurrentValueSubject<[String], Never> = .init([])
-    var message: CurrentValueSubject<String?, Never> = .init(nil)
+    var message: AnyPublisher<String?, Never> = .init(CurrentValueSubject(nil))
+    var choices: AnyPublisher<[ChoiceViewModel], Never> = .init(CurrentValueSubject([]))
 }
 
 class MockInputViewModel: InputViewModel {
-    var input: InputViewModelInput = Input()
-    var output: InputViewModelOutput = Output()
+    var input: InputViewModelInput
+    private var choicesSubject = CurrentValueSubject<[String], Never>([])
+    var choiceWasMadeSubject = CurrentValueSubject<[String], Never>([])
+    var cancellableStore: [AnyCancellable] = []
+    
+    init(input: Input = .init(choices: PassthroughSubject<[String], Never>().eraseToAnyPublisher())) {
+        self.input = input
+        input.choices.sink { [weak self] (choices) in
+            self?.choiceWasMadeSubject.send(choices)
+        }.store(in: &cancellableStore)
+    }
     
     func changeChoices(to choices: [String]) {
-        output.choices.send(choices)
+        choicesSubject.send(choices)
+    }
+    
+    func transform(input: InputViewModelInput) -> InputViewModelOutput {
+    
+        return Output()
     }
 }

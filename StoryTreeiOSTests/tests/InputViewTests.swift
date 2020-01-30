@@ -48,11 +48,11 @@ class InputViewTests: XCTestCase {
         sut.inputButton.sendActions(for: .touchUpInside)
     }
     
-    func test_choicesArrived_reloadPicker() {
-        let viewModel = MockInputViewModel()
-        let sut = InputView(viewModel: viewModel)
-        
-        viewModel.changeChoices(to: ["choice1", "choice2"])
-        
-    }
+//    func test_choicesArrived_reloadPicker() {
+//        let viewModel = MockInputViewModel()
+//        let sut = InputView(viewModel: viewModel)
+//        
+//        viewModel.changeChoices(to: ["choice1", "choice2"])
+//
+//    }
 }

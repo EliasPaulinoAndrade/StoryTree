@@ -14,15 +14,24 @@ extension XCTestCase {
         publisher: PublisherType,
         toBeEqualTo sequence: [T],
         storeIn cancellablesStore: inout [AnyCancellable],
-        _ completion: @escaping () -> Void) where PublisherType.Output == T, PublisherType.Failure == Never {
+        _ completion: @escaping () -> Void) where PublisherType.Output == T {
 
         var valuesHistory: [T] = []
-        publisher.sink { newValue in
+        
+        publisher.sink(receiveCompletion: { _ in }, receiveValue: { (newValue) in
             valuesHistory.append(newValue)
             if valuesHistory.count == sequence.count, valuesHistory == sequence {
                 completion()
             }
-        }.store(in: &cancellablesStore)
+        }).store(in: &cancellablesStore)
+    }
+    
+    func checkPublisherCompletion<PublisherType: Publisher>(publisher: PublisherType,
+                                                            storeIn cancellablesStore: inout [AnyCancellable],
+                                                            _ completion: @escaping () -> Void) {
+        publisher.sink(receiveCompletion: { publisherCompletion in
+            completion()
+        }, receiveValue: { _ in }).store(in: &cancellablesStore)
     }
     
     func checkPublisherSequence<PublisherType: Publisher>(

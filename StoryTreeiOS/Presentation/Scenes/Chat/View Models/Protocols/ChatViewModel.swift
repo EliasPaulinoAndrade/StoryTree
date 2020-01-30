@@ -7,13 +7,38 @@
 //
 
 import Foundation
+import Combine
+import StoryTree
 
 protocol ChatViewModelOutput {
+    
+}
+
+protocol ChatViewModelInput {
+    var passages: AnyPublisher<Passage, Never> { get }
+}
+
+protocol ChatViewModelSubViewModels {
     var inputViewModel: InputViewModel { get }
     var messagesViewModel: MessagesViewModel { get }
 }
 
 protocol ChatViewModel {
-    typealias ChatOutput = ChatViewModelOutput
-    var output: ChatOutput { get set }
+    typealias SubViewModels = ChatViewModelSubViewModels
+    typealias Output = ChatViewModelOutput
+    typealias Input = ChatViewModelInput
+    
+    var input: Input { get set }
+    
+    func transform(input: Input) -> (output: Output, subViewModels: SubViewModels)
+}
+
+extension ChatViewModel {
+    var subViewModels: SubViewModels {
+        return transform(input: input).subViewModels
+    }
+    
+    var output: ChatViewModelOutput {
+        return transform(input: input).output
+    }
 }

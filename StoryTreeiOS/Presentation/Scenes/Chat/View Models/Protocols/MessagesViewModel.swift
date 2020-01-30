@@ -21,7 +21,6 @@ protocol MessagesViewModel {
     typealias MessagesOutput = MessagesViewModelOutput
     typealias MessagesInput = MessagesViewModelInput
     
-//    var output: MessagesOutput { get set }
     var input: MessagesInput { get set }
     
     func transform(input: MessagesInput) -> MessagesOutput

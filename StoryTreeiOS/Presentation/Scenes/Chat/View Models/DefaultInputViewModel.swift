@@ -9,16 +9,51 @@
 import Foundation
 import Combine
 
-private struct Input: InputViewModelInput {
-    var messageWasSent: PassthroughSubject<String, Never> = .init()
+struct InputViewModelInputObject: InputViewModelInput {
+    var choiceWasMade: AnySubject<String, Never> = .init(subject: PassthroughSubject())
+    var messageWasSent: AnySubject<String, Never> = .init(subject: PassthroughSubject())
+    var choices: AnyPublisher<[String], Never>
 }
 
-private struct Output: InputViewModelOutput {
-    var message: CurrentValueSubject<String?, Never> = .init(nil)
-    var choices: CurrentValueSubject<[String], Never> = .init([])
+struct InputViewModelOutputObject: InputViewModelOutput {
+    var message: AnyPublisher<String?, Never>
+    var choices: AnyPublisher<[ChoiceViewModel], Never>
 }
 
-struct DefaultInputViewModel: InputViewModel {
-    var input: InputViewModelInput = Input()
-    var output: InputViewModelOutput = Output()
+class DefaultInputViewModel: InputViewModel {
+    typealias Input = InputViewModelInputObject
+    typealias Output = InputViewModelOutputObject
+    
+    var input: InputViewModelInput
+    
+    private let choiceViewModelInjector: Injector<ChoiceViewModel, String>
+    private var cancellableStore: [AnyCancellable] = []
+    
+    init(input: Input, choiceViewModelInjector: @escaping Injector<ChoiceViewModel, String>) {
+        self.input = input
+        self.choiceViewModelInjector = choiceViewModelInjector
+    }
+    
+    func transform(input: InputViewModelInput) -> InputViewModelOutput {
+        Output(
+            message: transform(messaseWasSent: input.messageWasSent.eraseToAnyPublisher(),
+                               choiceWasMade: input.choiceWasMade.eraseToAnyPublisher()),
+            choices: transform(choices: input.choices)
+        )
+    }
+    
+    func transform(messaseWasSent: AnyPublisher<String, Never>,
+                   choiceWasMade: AnyPublisher<String, Never>) -> AnyPublisher<String?, Never> {
+        let deleteMessagePublisher = messaseWasSent.map {_ in String?(nil) }
+        let addMessagePublisher = choiceWasMade.map ( String?.init )
+        let messageObserver = Just(nil).merge(with: addMessagePublisher).merge(with: deleteMessagePublisher)
+        
+        return messageObserver.eraseToAnyPublisher()
+    }
+    
+    func transform(choices: AnyPublisher<[String], Never>) -> AnyPublisher<[ChoiceViewModel], Never> {
+        choices.map{ choices -> [ChoiceViewModel] in
+            choices.map(self.choiceViewModelInjector)
+        }.eraseToAnyPublisher()
+    }
 }

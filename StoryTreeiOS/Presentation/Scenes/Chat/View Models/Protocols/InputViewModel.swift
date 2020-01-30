@@ -10,15 +10,24 @@ import Foundation
 import Combine
 
 protocol InputViewModelInput {
-    var messageWasSent: PassthroughSubject<String, Never> { get set }
+    var messageWasSent: AnySubject<String, Never> { get set }
+    var choiceWasMade: AnySubject<String, Never> { get set }
+    var choices: AnyPublisher<[String], Never> { get set }
 }
 
 protocol InputViewModelOutput {
-    var message: CurrentValueSubject<String?, Never> { get set }
-    var choices: CurrentValueSubject<[String], Never> { get set }
+    var message: AnyPublisher<String?, Never> { get set }
+    var choices: AnyPublisher<[ChoiceViewModel], Never> { get set }
 }
 
 protocol InputViewModel {
     var input: InputViewModelInput { get set }
-    var output: InputViewModelOutput { get set }
+    
+    func transform(input: InputViewModelInput) -> InputViewModelOutput
+}
+
+extension InputViewModel {
+    var output: InputViewModelOutput {
+        return transform(input: input)
+    }
 }
