@@ -30,28 +30,23 @@ class DefaultMessagesViewModelTests: XCTestCase {
         wait(for: [newMessageExpectation], timeout: 1)
     }
     
-    func test_initializeWithMultiplePassages_callsMessageAndChoices() {
+    func test_initializeWithMultiplePassages_callsMessage() {
         let sut = makeSUT(option: .multiplePassages)
         
         let newMessageExpectation = expectation(description: "new message arrived")
-        let choicesExpectation = expectation(description: "choices arrived")
         
-        let wantedChoices: [[String]] = [["choice1", "choice2"]]
         let wantedViewModels: [[MockBallonViewModel]] = [[MockBallonViewModel(text: "rootText")]]
 
         checkPublisherSequence(publisher: sut.output.messages.asMockPassageViewModelsObserver, toBeEqualTo: wantedViewModels, storeIn: &cancellablesStore) {
             newMessageExpectation.fulfill()
         }
-        
-        checkPublisherSequence(publisher: sut.output.choices, toBeEqualTo: wantedChoices, storeIn: &cancellablesStore) {
-            choicesExpectation.fulfill()
-        }
-    
-        wait(for: [newMessageExpectation, choicesExpectation], timeout: 1)
+
+        wait(for: [newMessageExpectation], timeout: 1)
     }
 
-    func test_callOptionWasChosed_callsMessage() {
-        let sut = makeSUT(option: .multiplePassages)
+    func test_inputMessageChange_callsMessage() {
+        let sutInput = CurrentValueSubject<[String], Never>(["rootText"])
+        let sut = makeSUT(option: .multiplePassages, input: sutInput.eraseToAnyPublisher())
         let newMessageExpectation = expectation(description: "new message arrived")
         let wantedViewModels: [[MockBallonViewModel]] = [
             [MockBallonViewModel(text: "rootText")],
@@ -62,27 +57,31 @@ class DefaultMessagesViewModelTests: XCTestCase {
             newMessageExpectation.fulfill()
         }
 
-        sut.output.choices.sink { choices in
-            if choices.count > 0 {
-                sut.input.choiceWasMade.send(choices[0])
-            }
-        }.store(in: &cancellablesStore)
+        sutInput.send(["rootText", "TextOfChoice1"])
+//        sut.output.choices.sink { choices in
+//            if choices.count > 0 {
+//                sut.input.choiceWasMade.send(choices[0])
+//            }
+//        }.store(in: &cancellablesStore)
 
         wait(for: [newMessageExpectation], timeout: 1)
     }
     
-    func makeSUT(option: MockStoryTree.Option) -> DefaultMessagesViewModel {
+    func makeSUT(
+        option: MockStoryTree.Option,
+        input: AnyPublisher<[String], Never> = Just(["rootText"]).eraseToAnyPublisher()) -> DefaultMessagesViewModel {
+        
         return DefaultMessagesViewModel(
-            repository: MockRepository(option: option),
+            input: DefaultMessagesViewModel.Input(messages: input),
             ballonViewModelInjector: ballonViewModelInjector
         )
     }
 }
 
-extension CurrentValueSubject where Output == [PassageViewModel], Failure == Never {
-    var asMockPassageViewModelsObserver: Publishers.CompactMap<CurrentValueSubject<[PassageViewModel], Never>, [MockBallonViewModel]> {
+extension Publisher where Output == [PassageViewModel], Failure == Never {
+    var asMockPassageViewModelsObserver: AnyPublisher<[MockBallonViewModel], Never> {
         return self.compactMap { (viewModels) -> [MockBallonViewModel]? in
             return viewModels as? [MockBallonViewModel]
-        }
+        }.eraseToAnyPublisher()
     }
 }

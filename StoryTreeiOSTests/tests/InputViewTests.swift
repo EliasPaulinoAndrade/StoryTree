@@ -26,7 +26,7 @@ class InputViewTests: XCTestCase {
         let sut = InputView(viewModel: viewModel)
         let messageExpecation = expectation(description: "message is sent when the button is tapped")
         
-        viewModel.input.message.sink { message in
+        viewModel.input.messageWasSent.sink { message in
             messageExpecation.fulfill()
         }.store(in: &cancellablesStore)
         
@@ -40,11 +40,19 @@ class InputViewTests: XCTestCase {
         let viewModel = MockInputViewModel()
         let sut = InputView(viewModel: viewModel)
         
-        viewModel.input.message.sink { message in
+        viewModel.input.messageWasSent.sink { message in
             XCTAssertTrue(false)
         }.store(in: &cancellablesStore)
         
         sut.inputLabel.text = nil
         sut.inputButton.sendActions(for: .touchUpInside)
+    }
+    
+    func test_choicesArrived_reloadPicker() {
+        let viewModel = MockInputViewModel()
+        let sut = InputView(viewModel: viewModel)
+        
+        viewModel.changeChoices(to: ["choice1", "choice2"])
+        
     }
 }

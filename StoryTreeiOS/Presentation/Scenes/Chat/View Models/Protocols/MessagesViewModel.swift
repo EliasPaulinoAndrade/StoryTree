@@ -10,12 +10,25 @@ import Foundation
 import Combine
 
 protocol MessagesViewModelOutput {
-    var messages: CurrentValueSubject<[PassageViewModel], Never> { get set }
-    var choices: CurrentValueSubject<[String], Never> { get set }
+    var messages: AnyPublisher<[PassageViewModel], Never> { get set }
+}
+
+protocol MessagesViewModelInput {
+    var messages: AnyPublisher<[String], Never> { get set }
 }
 
 protocol MessagesViewModel {
     typealias MessagesOutput = MessagesViewModelOutput
+    typealias MessagesInput = MessagesViewModelInput
     
-    var output: MessagesOutput { get set }
+//    var output: MessagesOutput { get set }
+    var input: MessagesInput { get set }
+    
+    func transform(input: MessagesInput) -> MessagesOutput
+}
+
+extension MessagesViewModel {
+    var output: MessagesOutput {
+        return self.transform(input: self.input)
+    }
 }

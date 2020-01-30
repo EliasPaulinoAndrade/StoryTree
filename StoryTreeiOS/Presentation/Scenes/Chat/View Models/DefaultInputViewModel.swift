@@ -10,11 +10,15 @@ import Foundation
 import Combine
 
 private struct Input: InputViewModelInput {
-    var message: PassthroughSubject<String, Never> = .init()
-    
+    var messageWasSent: PassthroughSubject<String, Never> = .init()
+}
+
+private struct Output: InputViewModelOutput {
+    var message: CurrentValueSubject<String?, Never> = .init(nil)
+    var choices: CurrentValueSubject<[String], Never> = .init([])
 }
 
 struct DefaultInputViewModel: InputViewModel {
     var input: InputViewModelInput = Input()
-    
+    var output: InputViewModelOutput = Output()
 }

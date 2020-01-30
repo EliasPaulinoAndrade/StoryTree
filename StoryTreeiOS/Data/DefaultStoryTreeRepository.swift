@@ -8,10 +8,11 @@
 
 import Foundation
 import StoryTree
+import Combine
 
 struct DefaultStoryTreeRepository: StoryTreeRepository {
-    func getTree(completion: (Result<StoryTree, Error>) -> Void) {
+    var storyTree: AnyPublisher<StoryTree, Never> {
         let story = StoryTree(title: "", description: "", SimplePassage("rootPassage wqe wqe wqe wqe weweqwewqewe qwewq"))
-        completion(.success(story))
+        return Just(story).eraseToAnyPublisher()
     }
 }

@@ -12,12 +12,16 @@ import Combine
 
 class MockMessagesViewModel: MessagesViewModel {
     struct Output: MessagesViewModelOutput {
-        var inputViewModel: InputViewModel
-        var messages: CurrentValueSubject<[PassageViewModel], Never> = .init([])
-        var choices: CurrentValueSubject<[String], Never> = .init([])
+        var messages: AnyPublisher<[PassageViewModel], Never>
     }
     
-    lazy var output: MessagesViewModelOutput = Output(inputViewModel: MockInputViewModel())
+    struct Input: MessagesViewModelInput {
+        var messages: AnyPublisher<[String], Never>
+    }
+    
+    var messagesSubject = CurrentValueSubject<[String], Never>([])
+    lazy var input: MessagesViewModelInput = Input(messages: messagesSubject.eraseToAnyPublisher())
+    
     var messages: [String] = []
     var messageWasSent: ((String) -> Void)?
     
@@ -25,6 +29,14 @@ class MockMessagesViewModel: MessagesViewModel {
     
     func showNewMessage(text: String = "test") {
         messages.append(text)
-        self.output.messages.send(messages.map({ MockBallonViewModel(text: $0) }))
+        messagesSubject.send(messages)
+    }
+    
+    func transform(input: MessagesViewModelInput) -> MessagesViewModelOutput {
+        Output(messages: input.messages.map { (messages) -> [MockBallonViewModel] in
+            return messages.map { (message) -> MockBallonViewModel in
+                return MockBallonViewModel(text: message)
+            }
+        }.eraseToAnyPublisher())
     }
 }

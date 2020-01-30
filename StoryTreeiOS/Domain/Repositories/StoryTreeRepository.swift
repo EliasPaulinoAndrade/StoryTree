@@ -8,7 +8,9 @@
 
 import Foundation
 import StoryTree
+import Combine
     
 protocol StoryTreeRepository {
-    func getTree(completion: (Result<StoryTree, Error>) -> Void)
+    var storyTree: AnyPublisher<StoryTree, Never> { get }    
 }
+

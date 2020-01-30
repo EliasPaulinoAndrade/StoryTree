@@ -12,9 +12,10 @@ import Combine
 @testable import StoryTreeiOS
 
 struct MockRepository: StoryTreeRepository {
+    
     var option: MockStoryTree.Option
     
-    func getTree(completion: (Result<StoryTree, Error>) -> Void) {
-        completion(.success(MockStoryTree(option: option)))
+    var storyTree: AnyPublisher<StoryTree, Never> {
+        return Just(MockStoryTree(option: option)).eraseToAnyPublisher()
     }
 }

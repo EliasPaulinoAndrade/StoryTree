@@ -11,9 +11,19 @@ import Combine
 @testable import StoryTreeiOS
 
 private struct Input: InputViewModelInput {
-    var message: PassthroughSubject<String, Never> = .init()
+    var messageWasSent: PassthroughSubject<String, Never> = .init()
+}
+
+private struct Output: InputViewModelOutput {
+    var choices: CurrentValueSubject<[String], Never> = .init([])
+    var message: CurrentValueSubject<String?, Never> = .init(nil)
 }
 
 class MockInputViewModel: InputViewModel {
     var input: InputViewModelInput = Input()
+    var output: InputViewModelOutput = Output()
+    
+    func changeChoices(to choices: [String]) {
+        output.choices.send(choices)
+    }
 }

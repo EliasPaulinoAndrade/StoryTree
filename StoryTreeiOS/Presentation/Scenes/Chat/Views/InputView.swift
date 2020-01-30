@@ -31,7 +31,7 @@ class InputView: UIView, ViewCodable {
         guard let labelText = inputLabel.text else {
             return
         }
-        viewModel.input.message.send(labelText)
+        viewModel.input.messageWasSent.send(labelText)
     }
     
     func buildHierarchy() {
