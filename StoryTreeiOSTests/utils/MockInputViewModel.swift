@@ -8,6 +8,7 @@
 
 import Foundation
 import Combine
+import CombineHelpers
 @testable import StoryTreeiOS
 
 struct Input: InputViewModelInput {
@@ -17,6 +18,7 @@ struct Input: InputViewModelInput {
 }
 
 private struct Output: InputViewModelOutput {
+    var messageWasSent: AnyPublisher<String, Never> = .init(PassthroughSubject())
     var message: AnyPublisher<String?, Never> = .init(CurrentValueSubject(nil))
     var choices: AnyPublisher<[ChoiceViewModel], Never> = .init(CurrentValueSubject([]))
 }
@@ -26,6 +28,7 @@ class MockInputViewModel: InputViewModel {
     private var choicesSubject = CurrentValueSubject<[String], Never>([])
     var choiceWasMadeSubject = CurrentValueSubject<[String], Never>([])
     var cancellableStore: [AnyCancellable] = []
+    var messageWasSentOutput: AnySubject<String, Never> = PassthroughSubject().eraseToAnySubject()
     
     init(input: Input = .init(choices: PassthroughSubject<[String], Never>().eraseToAnyPublisher())) {
         self.input = input
@@ -40,6 +43,6 @@ class MockInputViewModel: InputViewModel {
     
     func transform(input: InputViewModelInput) -> InputViewModelOutput {
     
-        return Output()
+        return Output(messageWasSent: messageWasSentOutput.eraseToAnyPublisher())
     }
 }

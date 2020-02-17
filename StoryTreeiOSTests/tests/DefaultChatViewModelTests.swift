@@ -45,7 +45,6 @@ class DefaultChatViewModelTests: XCTestCase {
         }
         
         inputSubject.send(SimplePassage("secondPassage"))
-        
         wait(for: [choicesExpectation], timeout: 1)
     }
     
@@ -65,7 +64,37 @@ class DefaultChatViewModelTests: XCTestCase {
         }
         
         inputSubject.send(SimplePassage("secondPassage"))
-        
         wait(for: [choicesExpectation], timeout: 1)
+    }
+    
+    func test_choiceWasChosed_passageChanges() {
+        let inputPassage = SimplePassage(option: .multiplePassages)
+        let inputTree = StoryTree(title: "", description: "", inputPassage)
+        let inputSubject = CurrentValueSubject<Passage, Never>(inputPassage)
+        let chatInput = ChatInput(passages: inputSubject.eraseToAnyPublisher())
+        let actionExpectation = expectation(description: "choice was sent to the passage")
+        let sut = DefaultChatViewModel(input: chatInput,
+                                       inputViewModelInjector: inputViewModelInjector,
+                                       messagesViewModelInjector: messagesViewModelInjector)
+        let inputViewViewModel = sut.subViewModels.inputViewModel as! MockInputViewModel
+
+        checkPublisherSequence(publisher: inputTree.foreachAction.castOutput(to: SimplePassage.self),
+                               toBeEqualTo: [inputPassage, inputPassage.actions["choice1"]! as! SimplePassage],
+                               storeIn: &cancellableStore) {
+            actionExpectation.fulfill()
+        }
+        
+        inputTree.foreachAction.sink { (passage) in
+            print(passage)
+        }.store(in: &cancellableStore)
+        
+        inputViewViewModel.output.messageWasSent.sink { (choice) in
+            print(choice)
+        }.store(in: &cancellableStore)
+        
+        inputViewViewModel.messageWasSentOutput.send("choice1")
+
+        wait(for: [actionExpectation], timeout: 1)
+        
     }
 }

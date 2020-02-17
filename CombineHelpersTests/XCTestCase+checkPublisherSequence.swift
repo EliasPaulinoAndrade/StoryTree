@@ -10,7 +10,7 @@ import XCTest
 import Combine
 
 @available(OSX 10.15, *)
-extension XCTestCase {
+public extension XCTestCase {
     func checkPublisherSequence<T: Equatable, PublisherType: Publisher>(
         publisher: PublisherType,
         toBeEqualTo sequence: [T],

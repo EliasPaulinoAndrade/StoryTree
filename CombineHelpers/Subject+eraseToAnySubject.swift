@@ -10,7 +10,7 @@ import Foundation
 import Combine
 
 @available(OSX 10.15, *)
-extension Subject {
+public extension Subject {
     func eraseToAnySubject() -> AnySubject<Output, Failure> {
         return AnySubject(subject: self)
     }

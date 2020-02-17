@@ -8,7 +8,7 @@
 
 import XCTest
 import Combine
-@testable import StoryTreeiOS
+@testable import CombineHelpers
 
 class AnySubjectTests: XCTestCase {
     var cancellableStore: [AnyCancellable] = []

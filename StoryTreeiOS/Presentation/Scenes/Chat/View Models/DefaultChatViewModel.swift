@@ -28,9 +28,10 @@ class DefaultChatViewModel: ChatViewModel {
     typealias MessagesViewModelInjector = Injector<MessagesViewModel, AnyPublisher<[String], Never>>
     
     var input: Input
-    var inputViewModelInjector: InputViewModelInjector
-    var messagesViewModelInjector: MessagesViewModelInjector
-    var messagesHistory: [String] = []
+    private var inputViewModelInjector: InputViewModelInjector
+    private var messagesViewModelInjector: MessagesViewModelInjector
+    private var messagesHistory: [String] = []
+    private var cancellableStore: [AnyCancellable] = []
     
     init(input: ChatInput,
          inputViewModelInjector: @escaping InputViewModelInjector,
@@ -53,6 +54,14 @@ class DefaultChatViewModel: ChatViewModel {
                 return messagesHistory
             }
         }.eraseToAnyPublisher()
+        
+        let inputViewModel = inputViewModelInjector(choices)
+        
+        input.passages.sink { [weak self] passage in
+            ifIsSafe(self) { (self) in
+                passage.goAhead(inputViewModel.output.messageWasSent, cancellable: &self.cancellableStore)
+            }
+        }.store(in: &cancellableStore)
         
         return (
             ChatOutput(),

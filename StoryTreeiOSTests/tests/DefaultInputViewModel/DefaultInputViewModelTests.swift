@@ -56,6 +56,22 @@ class DefaultInputViewModelTests: XCTestCase {
         sut.input.messageWasSent.send("newMessage")
         wait(for: [messageNilExpectation], timeout: 1)
     }
+    
+    func test_choiceWasMadeInput_callChoiceWasMadeOutput() {
+        let sut = makeSUT()
+        let choiceExpectation = expectation(description: "choice output was called")
+        
+        checkPublisherSequence(publisher: sut.output.messageWasSent,
+                               toBeEqualTo: ["text1", "text2"],
+                               storeIn: &cancellablesStore) {
+            choiceExpectation.fulfill()
+        }
+        
+        sut.input.messageWasSent.send("text1")
+        sut.input.messageWasSent.send("text2")
+        wait(for: [choiceExpectation], timeout: 1)
+        
+    }
 
     func makeSUT(input: AnyPublisher<[String], Never> = Just(["choice1"]).eraseToAnyPublisher()) -> DefaultInputViewModel {
         return DefaultInputViewModel(

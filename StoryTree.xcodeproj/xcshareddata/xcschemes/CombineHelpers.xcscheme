@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E32AE24923DCB2F4006BB2C5"
-               BuildableName = "StoryTreeiOS.app"
-               BlueprintName = "StoryTreeiOS"
+               BlueprintIdentifier = "E38C626B23E3994800D8729B"
+               BuildableName = "CombineHelpers.framework"
+               BlueprintName = "CombineHelpers"
                ReferencedContainer = "container:StoryTree.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,9 +32,9 @@
       <CodeCoverageTargets>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E32AE24923DCB2F4006BB2C5"
-            BuildableName = "StoryTreeiOS.app"
-            BlueprintName = "StoryTreeiOS"
+            BlueprintIdentifier = "E38C626B23E3994800D8729B"
+            BuildableName = "CombineHelpers.framework"
+            BlueprintName = "CombineHelpers"
             ReferencedContainer = "container:StoryTree.xcodeproj">
          </BuildableReference>
       </CodeCoverageTargets>
@@ -43,39 +43,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E32AE25E23DCB2F9006BB2C5"
-               BuildableName = "StoryTreeiOSTests.xctest"
-               BlueprintName = "StoryTreeiOSTests"
-               ReferencedContainer = "container:StoryTree.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E32AE26923DCB2FA006BB2C5"
-               BuildableName = "StoryTreeiOSUITests.xctest"
-               BlueprintName = "StoryTreeiOSUITests"
-               ReferencedContainer = "container:StoryTree.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E3D936D923DD004600B0244F"
-               BuildableName = "StoryTreeForIosTests.xctest"
-               BlueprintName = "StoryTreeForIosTests"
-               ReferencedContainer = "container:StoryTree.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E38C622F23E3971100D8729B"
-               BuildableName = "CombineUtilitiesTests.xctest"
-               BlueprintName = "CombineUtilitiesTests"
+               BlueprintIdentifier = "E38C627323E3994B00D8729B"
+               BuildableName = "CombineHelpersTests.xctest"
+               BlueprintName = "CombineHelpersTests"
                ReferencedContainer = "container:StoryTree.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -91,16 +61,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E32AE24923DCB2F4006BB2C5"
-            BuildableName = "StoryTreeiOS.app"
-            BlueprintName = "StoryTreeiOS"
-            ReferencedContainer = "container:StoryTree.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -108,16 +68,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E32AE24923DCB2F4006BB2C5"
-            BuildableName = "StoryTreeiOS.app"
-            BlueprintName = "StoryTreeiOS"
+            BlueprintIdentifier = "E38C626B23E3994800D8729B"
+            BuildableName = "CombineHelpers.framework"
+            BlueprintName = "CombineHelpers"
             ReferencedContainer = "container:StoryTree.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

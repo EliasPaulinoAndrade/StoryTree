@@ -8,6 +8,7 @@
 
 import Foundation
 import Combine
+import CombineHelpers
 
 protocol InputViewModelInput {
     var messageWasSent: AnySubject<String, Never> { get set }
@@ -18,6 +19,7 @@ protocol InputViewModelInput {
 protocol InputViewModelOutput {
     var message: AnyPublisher<String?, Never> { get set }
     var choices: AnyPublisher<[ChoiceViewModel], Never> { get set }
+    var messageWasSent: AnyPublisher<String, Never> { get set }
 }
 
 protocol InputViewModel {

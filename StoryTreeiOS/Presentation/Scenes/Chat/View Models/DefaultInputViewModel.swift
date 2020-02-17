@@ -8,6 +8,7 @@
 
 import Foundation
 import Combine
+import CombineHelpers
 
 struct InputViewModelInputObject: InputViewModelInput {
     var choiceWasMade: AnySubject<String, Never> = .init(subject: PassthroughSubject())
@@ -16,6 +17,7 @@ struct InputViewModelInputObject: InputViewModelInput {
 }
 
 struct InputViewModelOutputObject: InputViewModelOutput {
+    var messageWasSent: AnyPublisher<String, Never>
     var message: AnyPublisher<String?, Never>
     var choices: AnyPublisher<[ChoiceViewModel], Never>
 }
@@ -36,6 +38,7 @@ class DefaultInputViewModel: InputViewModel {
     
     func transform(input: InputViewModelInput) -> InputViewModelOutput {
         Output(
+            messageWasSent: input.messageWasSent.eraseToAnyPublisher(),
             message: transform(messaseWasSent: input.messageWasSent.eraseToAnyPublisher(),
                                choiceWasMade: input.choiceWasMade.eraseToAnyPublisher()),
             choices: transform(choices: input.choices)
